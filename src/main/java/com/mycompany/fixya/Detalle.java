@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.fixya;
 
 /**
@@ -9,28 +5,28 @@ package com.mycompany.fixya;
  * @author estebanpardo
  */
 public class Detalle {
-    private String Trabajo;
-    private double Costo;
+    private String descripcion;
+    private double costo;
     
-    public Detalle(String Trabajo,double costo){
-        this.Trabajo = Trabajo;
-        this.Costo=Costo;
+    public Detalle(String descripcion,double costo){
+        this.descripcion = descripcion;
+        this.costo=costo;
     }
 
-    public String getTrabajo() {
-        return Trabajo;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setTrabajo(String Trabajo) {
-        this.Trabajo = Trabajo;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public double getCosto() {
-        return Costo;
+        return costo;
     }
 
-    public void setCosto(double Costo) {
-        this.Costo = Costo;
+    public void setCosto(double costo) {
+        this.costo = costo;
     }
     
     
