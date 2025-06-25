@@ -8,20 +8,20 @@ package com.mycompany.fixya;
 //Clase para el servicio de los vehiculos
 
 public class Servicio {
-    private int costo_total; //Valor total del servicio
+    private int costoTotal; //Valor total del servicio
     private Visita visita; //No se si conviene atributo de clase visita o una fecha nomas ¿?
     
-    public Servicio(int costo_total){
-        this.costo_total = costo_total;
+    public Servicio(int costoTotal){
+        this.costoTotal = costoTotal;
         this.visita = new Visita();
     }
 
-    public int getCosto_total() {
-        return costo_total;
+    public int getCostTotal() {
+        return costoTotal;
     }
 
-    public void setCosto_total(int costo_total) {
-        this.costo_total = costo_total;
+    public void setCostoTotal(int costoTotal) {
+        this.costoTotal = costoTotal;
     }
 
     public Visita getVisita() {
