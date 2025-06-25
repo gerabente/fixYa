@@ -15,6 +15,9 @@ public class Vehiculo {
     this.chasis = chasis;
     }
     
+    public void AsignarVehiculoCliente(Cliente cliente, Vehiculo vehiculo){
+        cliente.listaVehiculos.add(vehiculo);
+    }
 
     public String getModelo() {
         return modelo;

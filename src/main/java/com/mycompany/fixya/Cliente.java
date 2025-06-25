@@ -11,6 +11,7 @@ public class Cliente {
     private String correo;
     private String numeroTelefono;
     private final ArrayList<Visita> historialVisitas = new ArrayList<>();
+    public ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
     
     public Cliente(String nombre, String apellido, String correo, String numeroTelefono){
         this.nombre = nombre;
