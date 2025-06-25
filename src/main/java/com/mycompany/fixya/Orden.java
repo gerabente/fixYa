@@ -9,11 +9,11 @@ public class Orden {
     Random random = new Random();
     private final int numeroOrden;
     private double costoTotal;
-    private ArrayList<Detalle> historial = new ArrayList<>();
+    private ArrayList<Detalle> historialDetalles = new ArrayList<>();
     
     public Orden() {
         numeroOrden = random.nextInt(1,101);
-        this.historial = new ArrayList<>();
+        this.historialDetalles = new ArrayList<>();
     }
     
     public Orden(int numeroOrden, double CostoTotal){
@@ -38,12 +38,12 @@ public class Orden {
         this.costoTotal = costoTotal;
     }
 
-    public ArrayList<Detalle> getHistorial() {
-        return historial;
+    public ArrayList<Detalle> getHistorialDetalles() {
+        return historialDetalles;
     }
 
-    public void setHistorial(ArrayList<Detalle> historial) {
-        this.historial = historial;
+    public void setHistorial(ArrayList<Detalle> historialDetalles) {
+        this.historialDetalles = historialDetalles;
     }
 
 
