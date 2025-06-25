@@ -1,25 +1,33 @@
 package com.mycompany.fixya;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Orden {
     //Atributos de la Orden
     Random random = new Random();
     private final int numeroOrden;
-    private double costoTotal;
+    private double costoTotal = 0;
     private ArrayList<Detalle> historialDetalles = new ArrayList<>();
+    private Estado estado;
+    private Vehiculo vehiculo;
     
-    public Orden() {
-        numeroOrden = random.nextInt(1,101);
-        this.historialDetalles = new ArrayList<>();
+    public Orden(Vehiculo vehiculo){
+        this.vehiculo = vehiculo;
+        this.numeroOrden= random.nextInt(1,101);
+        this.estado = estado.Espera;
     }
     
-    public Orden(int numeroOrden, double CostoTotal){
-        this.numeroOrden=numeroOrden;
-        this.costoTotal=costoTotal;
-        
+    public void cambiarEstado(Estado estado){
+        if (estado==estado.Espera){
+            this.estado = estado.Espera;
+        }
+        else if (estado==estado.Proceso){
+            this.estado = estado.Proceso;
+        }
+        else if (estado==estado.Terminado){
+            this.estado = estado.Terminado;
+        }
     }
 
     public Random getRandom() {

@@ -7,7 +7,7 @@ public class Vehiculo {
     private String modelo;
     private String chapa;
     private String chasis;
-    private ArrayList<Servicio> historialServicios =new ArrayList <>();
+    private ArrayList<Orden> historialOrdenes =new ArrayList <>();
     
     public Vehiculo(String modelo, String chapa, String chasis){
     this.modelo= modelo;
@@ -43,12 +43,12 @@ public class Vehiculo {
         this.chasis = chasis;
     }
 
-    public ArrayList<Servicio> getHistorial_servicios() {
-        return historialServicios;
+    public ArrayList<Orden> getHistorialOrdenes() {
+        return historialOrdenes;
     }
 
-    public void setHistorial_servicios(ArrayList<Servicio> historial_servicios) {
-        this.historialServicios = historial_servicios;
+    public void setHistorialOrden(ArrayList<Orden> historialOrdenes) {
+        this.historialOrdenes = historialOrdenes;
     }
     
     

@@ -18,7 +18,7 @@ public class Persona {
     }
     //Metodo para desplegar informacion esencial de la persona
     public String mostrarDatos(){
-        return "Datos del cliente : " + this.nombre + " " + this.apellido + " " + this.correo + " " + this.numeroTelefono;
+        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo() + " " + getNumeroTelefono();
     }
 
     public String getNombre() {
