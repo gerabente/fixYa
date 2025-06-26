@@ -6,12 +6,16 @@ package com.mycompany.fixya;
  */
 public class Usuario extends Persona{
     //Atributo de contraseña (HASHEADA)
+    private String nombreUsuario; 
     
     
-    public Usuario(String nombre, String apellido, String correo, String numeroTelefono, String contraseña){
-        super(nombre, apellido, correo, numeroTelefono);
-        //this.contraseña = contraseña;
+    public Usuario(String nombre, String apellido, String correo, String numeroTelefono, String nombreUsuario){
+        super(nombre, apellido , correo,numeroTelefono );
+        this.nombreUsuario = nombreUsuario;
+        
     }
+    
+    
     
     @Override
     public String mostrarDatos(){
