@@ -15,6 +15,10 @@ public class Vehiculo {
     this.chasis = chasis;
     }
     
+    
+    
+    // Asignar vehiculo cliente
+    
     public void asignarVehiculoCliente(Cliente cliente, Vehiculo vehiculo){
         cliente.listaVehiculos.add(vehiculo);
     }
@@ -50,6 +54,14 @@ public class Vehiculo {
     public void setHistorialOrden(ArrayList<Orden> historialOrdenes) {
         this.historialOrdenes = historialOrdenes;
     }
+    
+    // Metodo de historial de ordenes de un vehiculo 
+    
+    
+    //Mostrar datos del vehiculo 
+    
+    
+    
     
     
 }
