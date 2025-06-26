@@ -8,11 +8,13 @@ public class Vehiculo {
     private String chapa;
     private String chasis;
     private ArrayList<Orden> historialOrdenes =new ArrayList <>();
+    private Cliente dueño;
     
-    public Vehiculo(String modelo, String chapa, String chasis){
+    public Vehiculo(String modelo, String chapa, String chasis, Cliente dueño){
     this.modelo= modelo;
     this.chapa = chapa;
     this.chasis = chasis;
+    this.dueño = dueño;
     }
     
     
