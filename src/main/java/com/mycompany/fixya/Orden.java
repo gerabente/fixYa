@@ -9,36 +9,36 @@ public class Orden {
     private final int numeroOrden;
     private double costoTotal = 0;
     private ArrayList<Detalle> historialDetalles = new ArrayList<>();
-    private Estado estado;
+    private Estado estadoOrden;
     private Vehiculo vehiculo;
     
     public Orden(Vehiculo vehiculo){
         this.vehiculo = vehiculo;
         this.numeroOrden= random.nextInt(1,101);
-        this.estado = estado.Espera;
+        this.estadoOrden = Estado.Espera;
     }
     
     
     //Cambiar estado de la orden 
     
-    public void cambiarEstado(Estado estado){
-        if (estado==estado.Espera){
-            this.estado = estado.Espera;
+    public void cambiarEstado(Estado nuevoEstado){
+        if (estadoOrden==Estado.Espera){
+            this.estadoOrden = Estado.Espera;
         }
-        else if (estado==estado.Proceso){
-            this.estado = estado.Proceso;
+        else if (estadoOrden==Estado.Proceso){
+            this.estadoOrden = Estado.Proceso;
         }
-        else if (estado==estado.Terminado){
-            this.estado = estado.Terminado;
+        else if (estadoOrden==Estado.Terminado){
+            this.estadoOrden = Estado.Terminado;
         }
     }
 
     public Estado getEstado() {
-        return estado;
+        return estadoOrden;
     }
 
     public void setEstado(Estado estado) {
-        this.estado = estado;
+        this.estadoOrden = estado;
     }
 
     
@@ -62,12 +62,12 @@ public class Orden {
         return historialDetalles;
     }
 
-    public void setHistorial(ArrayList<Detalle> historialDetalles) {
+    public void setHistorialDetalles(ArrayList<Detalle> historialDetalles) {
         this.historialDetalles = historialDetalles;
     }
     
      public String mostrarEstadoOrden() {
-        return this.estado.mostrarEstado(); // Llama al método del enum
+        return estadoOrden.mostrarEstado(); // Llama al método del enum
     }
 
     // Metodo historial de detalle de la orden 

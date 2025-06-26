@@ -14,6 +14,7 @@ public class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
+        this.numeroTelefono = numeroTelefono;
         
     }
     //Metodo para desplegar informacion esencial de la persona
