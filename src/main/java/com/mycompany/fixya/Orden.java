@@ -18,6 +18,9 @@ public class Orden {
         this.estado = estado.Espera;
     }
     
+    
+    //Cambiar estado de la orden 
+    
     public void cambiarEstado(Estado estado){
         if (estado==estado.Espera){
             this.estado = estado.Espera;
@@ -30,6 +33,15 @@ public class Orden {
         }
     }
 
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    
     public Random getRandom() {
         return random;
     }
@@ -53,8 +65,17 @@ public class Orden {
     public void setHistorial(ArrayList<Detalle> historialDetalles) {
         this.historialDetalles = historialDetalles;
     }
+    
+     public String mostrarEstadoOrden() {
+        return this.estado.mostrarEstado(); // Llama al método del enum
+    }
 
-
+    // Metodo historial de detalle de la orden 
+    
+    public String mostrarHistorialDetalle(){
+        return "Los detalles realizados al auto fueron "+ getHistorialDetalles();  
+    }
+    
     
     
 }
