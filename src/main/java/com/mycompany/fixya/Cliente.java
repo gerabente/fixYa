@@ -8,9 +8,14 @@ import java.util.ArrayList;
 public class Cliente extends Persona{
     private final ArrayList<Visita> historialVisitas = new ArrayList<>();
     public ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
+    private final int CEDULA;
+    private final int ID; //Numero generado por base de datos
+   
     
-    public Cliente(String nombre, String apellido, String correo, String numeroTelefono){
+    public Cliente(String nombre, String apellido, String correo, String numeroTelefono,int ID, int CEDULA){
         super(nombre,apellido,correo,numeroTelefono);
+        this.ID = ID;
+        this.CEDULA = CEDULA;
     }
     
     //Metodo para desplegar informacion esencial del cliente
