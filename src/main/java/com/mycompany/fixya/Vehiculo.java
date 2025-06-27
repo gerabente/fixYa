@@ -4,34 +4,28 @@ import java.util.ArrayList;
 
 public class Vehiculo {
     // Atributos del vehiculo
-    private String modelo;
+    private final int ID_VEHICULO;
+    private final String FABRICANTE;
+    private final String MODELO;
     private String chapa;
-    private String chasis;
+    private final String CHASIS;
     private ArrayList<Orden> historialOrdenes =new ArrayList <>();
     private Cliente dueño;
     
-    public Vehiculo(String modelo, String chapa, String chasis, Cliente dueño){
-    this.modelo= modelo;
+    public Vehiculo(int ID_VEHICULO, String FABRICANTE, String MODELO, String chapa, String CHASIS, Cliente dueño){
+    this.ID_VEHICULO = ID_VEHICULO;
+    this.FABRICANTE = FABRICANTE;
+    this.MODELO= MODELO;
     this.chapa = chapa;
-    this.chasis = chasis;
+    this.CHASIS = CHASIS;
     this.dueño = dueño;
     }
     
-    
-    
     // Asignar vehiculo cliente
-    
-    public void asignarVehiculoCliente(Cliente cliente, Vehiculo vehiculo){
-        cliente.listaVehiculos.add(vehiculo);
+    public void asignarVehiculoCliente(Vehiculo vehiculo){
+        dueño.listaVehiculos.add(vehiculo);
     }
 
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
 
     public String getChapa() {
         return chapa;
@@ -39,14 +33,6 @@ public class Vehiculo {
 
     public void setChapa(String chapa) {
         this.chapa = chapa;
-    }
-
-    public String getChasis() {
-        return chasis;
-    }
-
-    public void setChasis(String chasis) {
-        this.chasis = chasis;
     }
 
     public ArrayList<Orden> getHistorialOrdenes() {
@@ -57,13 +43,16 @@ public class Vehiculo {
         this.historialOrdenes = historialOrdenes;
     }
     
+    public Cliente getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(Cliente dueño) {
+        this.dueño = dueño;
+    }
+    
     // Metodo de historial de ordenes de un vehiculo 
     
     
-    //Mostrar datos del vehiculo 
-    
-    
-    
-    
-    
+    //Mostrar datos del vehiculo
 }

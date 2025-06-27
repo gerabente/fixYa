@@ -29,5 +29,8 @@ public class Detalle {
         this.costo = costo;
     }
     
+    public String mostrarDatosDetalle() {
+        return "Detalle{" + "descripcion=" + descripcion + ", costo=" + costo + '}';
+    }
     
 }

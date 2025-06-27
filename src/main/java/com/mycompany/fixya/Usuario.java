@@ -12,10 +12,9 @@ public class Usuario extends Persona{
     public Usuario(String nombre, String apellido, String correo, String numeroTelefono, String nombreUsuario){
         super(nombre, apellido , correo,numeroTelefono );
         this.nombreUsuario = nombreUsuario;
+        //this.contraseña = contraseña; (HASHEADA)
         
     }
-    
-    
     
     @Override
     public String mostrarDatos(){
