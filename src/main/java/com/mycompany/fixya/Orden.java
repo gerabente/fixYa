@@ -10,10 +10,10 @@ public class Orden {
     private double costoTotal = 0;
     private ArrayList<Detalle> historialDetalles = new ArrayList<>();
     private Estado estadoOrden;
-    private final Vehiculo vehiculoOrden;
+    private final Vehiculo VEHICULO_ORDEN;
     
-    public Orden(Vehiculo vehiculo){
-        this.vehiculoOrden = vehiculo;
+    public Orden(Vehiculo VEHICULO_ORDEN){
+        this.VEHICULO_ORDEN = VEHICULO_ORDEN;
         this.numeroOrden= random.nextInt(1,101);
         this.estadoOrden = Estado.Espera;
     }
