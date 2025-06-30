@@ -6,40 +6,33 @@ package com.mycompany.fixya;
 import java.util.ArrayList;
 
 public class Cliente extends Persona{
-    private final ArrayList<Visita> historialVisitas = new ArrayList<>();
-    public ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
     private final int DNI; //Para buscar por cliente
     private final int ID; //Numero generado por base de datos
+    private final String NUMERO_TELEFONO;
    
     
-    public Cliente(String nombre, String apellido, String correo, String numeroTelefono,int ID, int DNI){
-        super(nombre,apellido,correo,numeroTelefono);
+    public Cliente(String nombre, String apellido, String correo, String NUMERO_TELEFONO,int ID, int DNI){
+        super(nombre,apellido,correo);
         this.ID = ID;
         this.DNI = DNI;
+        this.NUMERO_TELEFONO = NUMERO_TELEFONO;
     }
     
     //Metodo para desplegar informacion esencial del cliente
     @Override
     public String mostrarDatos(){
-        return "Datos del cliente : " + ID + " " + getNombre() + " " + getApellido() + " " + getCorreo() + " " + getNumeroTelefono() + " " + DNI;
-    }
-    
-    //Metodo para agregar una visita
-    public void agregarVisita(){
-        historialVisitas.add(new Visita());
-    }
-    
-    //Metodo para desplegar visitas
-    public ArrayList<Visita> getHistorialVisitas(){
-        return historialVisitas;
+        return "Datos del cliente : " + ID + " " + getNombre() + " " + getApellido() + " " + getCorreo() + " " + getNUMERO_TELEFONO() + " " + getDNI();
     }
 
-    public ArrayList<Vehiculo> getListaVehiculos() {
-        return listaVehiculos;
+    public int getDNI() {
+        return DNI;
     }
 
-    public void setListaVehiculos(ArrayList<Vehiculo> listaVehiculos) {
-        this.listaVehiculos = listaVehiculos;
+    public int getID() {
+        return ID;
     }
-    
+
+    public String getNUMERO_TELEFONO() {
+        return NUMERO_TELEFONO;
+    }
 }

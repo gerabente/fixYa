@@ -9,8 +9,8 @@ public class Usuario extends Persona{
     private String nombreUsuario; 
     
     
-    public Usuario(String nombre, String apellido, String correo, String numeroTelefono, String nombreUsuario){
-        super(nombre, apellido , correo,numeroTelefono );
+    public Usuario(String nombre, String apellido, String correo, String nombreUsuario){
+        super(nombre, apellido , correo);
         this.nombreUsuario = nombreUsuario;
         //this.contraseña = contraseña; (HASHEADA)
         
@@ -18,6 +18,6 @@ public class Usuario extends Persona{
     
     @Override
     public String mostrarDatos(){
-        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo() + " " + getNumeroTelefono();
+        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo();
     }
 }

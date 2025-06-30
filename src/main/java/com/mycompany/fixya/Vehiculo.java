@@ -7,25 +7,18 @@ public class Vehiculo {
     private final int ID_VEHICULO;
     private final String FABRICANTE;
     private final String MODELO;
+    private final String ANIO;
     private String chapa;
-    private final String CHASIS;
-    private ArrayList<Orden> historialOrdenes =new ArrayList <>();
     private Cliente dueño;
     
-    public Vehiculo(int ID_VEHICULO, String FABRICANTE, String MODELO, String chapa, String CHASIS, Cliente dueño){
+    public Vehiculo(int ID_VEHICULO, String FABRICANTE, String MODELO,String ANIO, String chapa, Cliente dueño){
     this.ID_VEHICULO = ID_VEHICULO;
     this.FABRICANTE = FABRICANTE;
     this.MODELO= MODELO;
+    this.ANIO = ANIO;
     this.chapa = chapa;
-    this.CHASIS = CHASIS;
     this.dueño = dueño;
     }
-    
-    // Asignar vehiculo cliente
-    public void asignarVehiculoCliente(Vehiculo vehiculo){
-        dueño.listaVehiculos.add(vehiculo);
-    }
-
 
     public String getChapa() {
         return chapa;
@@ -33,14 +26,6 @@ public class Vehiculo {
 
     public void setChapa(String chapa) {
         this.chapa = chapa;
-    }
-
-    public ArrayList<Orden> getHistorialOrdenes() {
-        return historialOrdenes;
-    }
-
-    public void setHistorialOrden(ArrayList<Orden> historialOrdenes) {
-        this.historialOrdenes = historialOrdenes;
     }
     
     public Cliente getDueño() {

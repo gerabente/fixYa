@@ -8,18 +8,16 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String correo;
-    private String numeroTelefono;
     
-    public Persona(String nombre, String apellido, String correo, String numeroTelefono){
+    public Persona(String nombre, String apellido, String correo){
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.numeroTelefono = numeroTelefono;
         
     }
     //Metodo para desplegar informacion esencial de la persona
     public String mostrarDatos(){
-        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo() + " " + getNumeroTelefono();
+        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo();
     }
 
     public String getNombre() {
@@ -44,14 +42,6 @@ public class Persona {
 
     public void setCorreo(String correo) {
         this.correo = correo;
-    }
-
-    public String getNumeroTelefono() {
-        return numeroTelefono;
-    }
-
-    public void setNumeroTelefono(String numeroTelefono) {
-        this.numeroTelefono = numeroTelefono;
     }
     
 }
