@@ -2,6 +2,7 @@ package com.mycompany.fixya;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.time.LocalDate;
 
 public class Orden {
     //Atributos de la Orden
@@ -11,11 +12,13 @@ public class Orden {
     private ArrayList<Detalle> historialDetalles = new ArrayList<>();
     private Estado estadoOrden;
     private final Vehiculo VEHICULO_ORDEN;
+    private final LocalDate FECHA;
     
     public Orden(Vehiculo VEHICULO_ORDEN){
         this.VEHICULO_ORDEN = VEHICULO_ORDEN;
         this.numeroOrden= random.nextInt(1,101);
         this.estadoOrden = Estado.Espera;
+        this.FECHA = LocalDate.now();
     }
     
     
