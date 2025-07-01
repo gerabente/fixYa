@@ -51,4 +51,17 @@ public class UsuarioDAO {
     public boolean existeNombreUsuario(String nombreUsuario) {
         return buscarPorNombreUsuario(nombreUsuario) != null;
     }
+
+    public void actualizarUltimoLogin(String nombreUsuario) {
+        String sql = "UPDATE usuarios SET last_login = NOW() WHERE nombre_usuario = ?";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, nombreUsuario);
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar last_login: " + e.getMessage());
+        }
+    }
 }
