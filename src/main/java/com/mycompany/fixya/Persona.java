@@ -1,9 +1,5 @@
 package com.mycompany.fixya;
 
-/**
- *
- * @author PC
- */
 import java.time.LocalDateTime;
 
 public class Persona {

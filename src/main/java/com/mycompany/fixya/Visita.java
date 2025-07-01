@@ -1,8 +1,5 @@
     package com.mycompany.fixya;
 
-/**
- * @author gerabente
- */
 import java.time.LocalDate; // Libreria para crear y manipular objetos de tipo fecha
 
 public class Visita {

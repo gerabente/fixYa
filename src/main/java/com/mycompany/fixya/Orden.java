@@ -1,6 +1,5 @@
 package com.mycompany.fixya;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.time.LocalDate;
 

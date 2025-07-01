@@ -1,9 +1,6 @@
 package com.mycompany.fixya;
 
-/**
- *
- * @author estebanpardo
- */
+
 public class Detalle {
     private String descripcion;
     private double costo;

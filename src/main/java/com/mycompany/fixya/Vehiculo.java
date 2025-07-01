@@ -1,6 +1,5 @@
 package com.mycompany.fixya;
 
-import java.util.ArrayList;
 
 public class Vehiculo {
     // Atributos del vehiculo

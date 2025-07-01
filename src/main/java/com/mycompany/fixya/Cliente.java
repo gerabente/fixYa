@@ -1,10 +1,5 @@
 package com.mycompany.fixya;
 
-/**
- * @author gerabente
- */
-import java.util.ArrayList;
-
 public class Cliente extends Persona{
     private final int DNI; //Para buscar por cliente
 
