@@ -46,9 +46,11 @@ public class UsuarioDAO {
 
             if (rs.next()) {
                 return new Usuario(
+                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("apellido"),
                     rs.getString("correo"),
+                    rs.getString("telefono"),
                     rs.getString("nombre_usuario"),
                     rs.getString("contrasena_hash")
                 );
