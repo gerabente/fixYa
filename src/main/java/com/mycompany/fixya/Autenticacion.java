@@ -22,6 +22,7 @@ public class Autenticacion {
     public Usuario iniciarSesion(String nombreUsuario, String contrasena) {
         Usuario usuario = usuarioDAO.buscarPorNombreUsuario(nombreUsuario);
         if (usuario != null && BCrypt.checkpw(contrasena, usuario.getContrasenaHash())) {
+            usuarioDAO.actualizarUltimoLogin(nombreUsuario);
             return usuario;
         }
         return null;
