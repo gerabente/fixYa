@@ -1,23 +1,32 @@
 package com.mycompany.fixya;
 
-/**
- *
- * @author PC
- */
+
 public class Usuario extends Persona{
-    //Atributo de contraseña (HASHEADA)
-    private String nombreUsuario; 
+    private String nombreUsuario;
+    private String contrasenaHash;
     
     
-    public Usuario(String nombre, String apellido, String correo, String nombreUsuario){
+    public Usuario(String nombre, String apellido, String correo, String nombreUsuario, String contrasenaHash){
         super(nombre, apellido , correo);
         this.nombreUsuario = nombreUsuario;
-        //this.contraseña = contraseña; (HASHEADA)
+        this.contrasenaHash = contrasenaHash;
         
     }
-    
-    @Override
-    public String mostrarDatos(){
-        return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo();
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasenaHash() {
+        return contrasenaHash;
+    }
+
+    public void setContrasenaHash(String contrasenaHash) {
+        this.contrasenaHash = contrasenaHash;
+    }
+    
 }
