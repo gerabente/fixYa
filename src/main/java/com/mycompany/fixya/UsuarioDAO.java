@@ -5,27 +5,39 @@ import java.sql.*;
 public class UsuarioDAO {
 
     public boolean insertarUsuario(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nombre, apellido, correo, nombre_usuario, contrasena_hash) VALUES (?, ?, ?, ?, ?)";
+        String sqlPersona = "INSERT INTO personas (nombre, apellido, correo) VALUES (?, ?, ?) RETURNING id";
+        String sqlUsuario = "INSERT INTO usuarios (persona_id, nombre_usuario, contrasena_hash) VALUES (?, ?, ?)";
         try (Connection conn = ConexionDB.obtenerConexion();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmtPersona = conn.prepareStatement(sqlPersona)) {
 
-            pstmt.setString(1, usuario.getNombre());
-            pstmt.setString(2, usuario.getApellido());
-            pstmt.setString(3, usuario.getCorreo());
-            pstmt.setString(4, usuario.getNombreUsuario());
-            pstmt.setString(5, usuario.getContrasenaHash());
+            pstmtPersona.setString(1, usuario.getNombre());
+            pstmtPersona.setString(2, usuario.getApellido());
+            pstmtPersona.setString(3, usuario.getCorreo());
 
-            int filasInsertadas = pstmt.executeUpdate();
-            return filasInsertadas > 0;
+            ResultSet rs = pstmtPersona.executeQuery();
 
+            if (rs.next()) {
+                int personaId = rs.getInt("id");
+
+                try (PreparedStatement pstmtUsuario = conn.prepareStatement(sqlUsuario)) {
+                    pstmtUsuario.setInt(1, personaId);
+                    pstmtUsuario.setString(2, usuario.getNombreUsuario());
+                    pstmtUsuario.setString(3, usuario.getContrasenaHash());
+
+                    int filasInsertadas = pstmtUsuario.executeUpdate();
+                    return filasInsertadas > 0;
+                }
+            }
         } catch (SQLException e) {
             System.err.println("Error al insertar usuario: " + e.getMessage());
-            return false;
         }
+        return false;
     }
 
     public Usuario buscarPorNombreUsuario(String nombreUsuario) {
-        String sql = "SELECT * FROM usuarios WHERE nombre_usuario = ?";
+        String sql = "SELECT p.nombre, p.apellido, p.correo, u.nombre_usuario, u.contrasena_hash " +
+                     "FROM usuarios u JOIN personas p ON u.persona_id = p.id " +
+                     "WHERE u.nombre_usuario = ?";
         try (Connection conn = ConexionDB.obtenerConexion();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
