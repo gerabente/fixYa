@@ -15,7 +15,7 @@ public class Autenticacion {
         }
 
         String hash = BCrypt.hashpw(contrasena, BCrypt.gensalt());
-        Usuario usuario = new Usuario(nombre, apellido, correo, nombreUsuario, hash);
+        Usuario usuario = new Usuario(0, nombre, apellido, correo, "", nombreUsuario, hash);
         return usuarioDAO.insertarUsuario(usuario);
     }
 
