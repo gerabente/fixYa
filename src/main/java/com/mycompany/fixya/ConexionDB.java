@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConexionDB {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/fixya";
-    private static final String USUARIO = "fixyaAdmin";
-    private static final String CONTRASENA = "AdminFixYa2025";
+    private static final String URL = System.getenv("URL");
+    private static final String USUARIO = System.getenv("USUARIO");
+    private static final String CONTRASENA = System.getenv("CONTRASENA");
 
     public static Connection obtenerConexion() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, CONTRASENA);
