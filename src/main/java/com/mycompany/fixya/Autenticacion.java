@@ -9,13 +9,13 @@ public class Autenticacion {
         usuarioDAO = new UsuarioDAO();
     }
 
-    public boolean registrarUsuario(String nombre, String apellido, String correo, String nombreUsuario, String contrasena) {
+    public boolean registrarUsuario(String nombre, String apellido, String correo, String telefono, String nombreUsuario, String contrasena) {
         if (usuarioDAO.existeNombreUsuario(nombreUsuario)) {
             return false; // Ya existe ese nombre de usuario
         }
 
         String hash = BCrypt.hashpw(contrasena, BCrypt.gensalt());
-        Usuario usuario = new Usuario(0, nombre, apellido, correo, "", nombreUsuario, hash);
+        Usuario usuario = new Usuario(nombre, apellido, correo, telefono, nombreUsuario, hash);
         return usuarioDAO.insertarUsuario(usuario);
     }
 

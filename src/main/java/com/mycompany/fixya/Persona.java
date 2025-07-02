@@ -3,19 +3,17 @@ package com.mycompany.fixya;
 import java.time.LocalDateTime;
 
 public class Persona {
-    private int id;
     private String nombre;
     private String apellido;
     private String correo;
     private String telefono;
     private LocalDateTime fechaCreacion;
 
-    public Persona(int id, String nombre, String apellido, String correo, String telefono){
-        this(id, nombre, apellido, correo, telefono, LocalDateTime.now());
+    public Persona(String nombre, String apellido, String correo, String telefono){
+        this(nombre, apellido, correo, telefono, LocalDateTime.now());
     }
 
-    public Persona(int id, String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion){
-        this.id = id;
+    public Persona(String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion){
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -26,14 +24,6 @@ public class Persona {
     //Metodo para desplegar informacion esencial de la persona
     public String mostrarDatos(){
         return "Datos del cliente : " + getNombre() + " " + getApellido() + " " + getCorreo();
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {

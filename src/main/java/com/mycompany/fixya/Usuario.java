@@ -8,15 +8,15 @@ public class Usuario extends Persona{
     private String contrasenaHash;
 
 
-    public Usuario(int id, String nombre, String apellido, String correo, String telefono, String nombreUsuario, String contrasenaHash){
-        super(id, nombre, apellido , correo, telefono);
+    public Usuario(String nombre, String apellido, String correo, String telefono, String nombreUsuario, String contrasenaHash){
+        super(nombre, apellido , correo, telefono);
         this.nombreUsuario = nombreUsuario;
         this.contrasenaHash = contrasenaHash;
 
     }
 
-    public Usuario(int id, String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion, String nombreUsuario, String contrasenaHash){
-        super(id, nombre, apellido , correo, telefono, fechaCreacion);
+    public Usuario(String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion, String nombreUsuario, String contrasenaHash){
+        super(nombre, apellido , correo, telefono, fechaCreacion);
         this.nombreUsuario = nombreUsuario;
         this.contrasenaHash = contrasenaHash;
 

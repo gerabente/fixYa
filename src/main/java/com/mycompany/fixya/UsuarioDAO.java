@@ -5,16 +5,15 @@ import java.sql.*;
 public class UsuarioDAO {
 
     public boolean insertarUsuario(Usuario usuario) {
-        String sqlPersona = "INSERT INTO personas (nombre, apellido, correo, telefono, fecha_creacion) VALUES (?, ?, ?,?,?) RETURNING id";
-        String sqlUsuario = "INSERT INTO usuarios (persona_id, nombre_usuario, contrasena_hash,last_login) VALUES (?, ?, ?,NOW()";
+        String sqlPersona = "INSERT INTO personas (nombre, apellido, correo, telefono, fecha_creacion) VALUES (?, ?, ?, ?, NOW()) RETURNING id";
+        String sqlUsuario = "INSERT INTO usuarios (persona_id, nombre_usuario, contrasena_hash,last_login) VALUES (?, ?, ?, NOW()";
         try (Connection conn = ConexionDB.obtenerConexion();
              PreparedStatement pstmtPersona = conn.prepareStatement(sqlPersona)) {
 
             pstmtPersona.setString(1, usuario.getNombre());
             pstmtPersona.setString(2, usuario.getApellido());
             pstmtPersona.setString(3, usuario.getCorreo());
-            pstmtPersona.setString(4, usuario.getCorreo());
-            pstmtPersona.setString(5, "NOW()");
+            pstmtPersona.setString(4, usuario.getTelefono());
 
             ResultSet rs = pstmtPersona.executeQuery();
 
@@ -48,7 +47,6 @@ public class UsuarioDAO {
 
             if (rs.next()) {
                 return new Usuario(
-                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("apellido"),
                     rs.getString("correo"),
