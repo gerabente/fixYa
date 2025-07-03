@@ -23,7 +23,7 @@ public class UsuarioDAO {
                 try (PreparedStatement pstmtUsuario = conn.prepareStatement(sqlUsuario)) {
                     pstmtUsuario.setInt(1, personaId);
                     pstmtUsuario.setString(2, usuario.getNombreUsuario());
-                    pstmtUsuario.setString(3, usuario.getContrasenaHash());
+                    pstmtUsuario.setString(3, usuario.getContrasena());
 
                     int filasInsertadas = pstmtUsuario.executeUpdate();
                     return filasInsertadas > 0;

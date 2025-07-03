@@ -5,20 +5,20 @@ import java.time.LocalDateTime;
 
 public class Usuario extends Persona{
     private String nombreUsuario;
-    private String contrasenaHash;
+    private String contrasena;
 
 
     public Usuario(String nombre, String apellido, String correo, String telefono, String nombreUsuario, String contrasenaHash){
         super(nombre, apellido , correo, telefono);
         this.nombreUsuario = nombreUsuario;
-        this.contrasenaHash = contrasenaHash;
+        this.contrasena = contrasenaHash;
 
     }
 
     public Usuario(String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion, String nombreUsuario, String contrasenaHash){
         super(nombre, apellido , correo, telefono, fechaCreacion);
         this.nombreUsuario = nombreUsuario;
-        this.contrasenaHash = contrasenaHash;
+        this.contrasena = contrasenaHash;
 
     }
 
@@ -30,12 +30,12 @@ public class Usuario extends Persona{
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContrasenaHash() {
-        return contrasenaHash;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContrasenaHash(String contrasenaHash) {
-        this.contrasenaHash = contrasenaHash;
+    public void setContrasena(String contrasenaHash) {
+        this.contrasena = contrasenaHash;
     }
     
 }

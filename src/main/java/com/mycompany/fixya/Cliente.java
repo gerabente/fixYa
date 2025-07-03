@@ -2,6 +2,7 @@ package com.mycompany.fixya;
 
 public class Cliente extends Persona{
     private final int DNI; //Para buscar por cliente
+    
 
 
     public Cliente(String nombre, String apellido, String correo, String telefono, int DNI){
