@@ -24,13 +24,14 @@ public class CrearCliente extends JFrame {
     public CrearCliente() {
         clienteDAO = new ClienteDAO();
         initUI();
+        SwingUtilities.invokeLater(() ->
+            ImageUtils.setImageLabel(fondoLabel, "/CrearClientes.png"));
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     private void initUI() {
         fondoLabel = new JLabel();
         fondoLabel.setLayout(new AbsoluteLayout());
-        ImageUtils.setImageLabel(fondoLabel, "/CrearClientes.png");
 
         nombreField = new JTextField();
         apellidoField = new JTextField();
