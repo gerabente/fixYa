@@ -4,11 +4,11 @@
  */
 package com.mycompany.fixya;
 
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+// Utilidad para cargar imagenes en etiquetas
+import com.mycompany.fixya.ImageUtils;
 
 /**
  *
@@ -29,7 +29,7 @@ public class BuscarCliente extends javax.swing.JFrame {
     //jLabel2.setIcon(null);
     
     javax.swing.SwingUtilities.invokeLater(() -> {
-        SetImageLabel(jLabel2, "/BuscarCliente.png");
+        ImageUtils.setImageLabel(jLabel2, "/BuscarCliente.png");
     });
 }
 
@@ -114,14 +114,6 @@ public class BuscarCliente extends javax.swing.JFrame {
    
     }
 
-    private void SetImageLabel(JLabel labelName, String root){
-    ImageIcon image = new ImageIcon(getClass().getResource(root));
-    Icon icon = new ImageIcon(image.getImage().getScaledInstance(
-        labelName.getWidth(), 
-        labelName.getHeight(), 
-        Image.SCALE_FAST));
-    labelName.setIcon(icon);
-}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;

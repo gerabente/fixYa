@@ -4,6 +4,8 @@
  */
 package com.mycompany.fixya;
 
+import javax.swing.JFrame;
+import com.mycompany.fixya.ImageUtils;
 /**
  *
  *https://youtu.be/jegnbN8nVB8?si=uPggB2VScy0NSP8d
@@ -15,6 +17,10 @@ public class CrearCuenta extends javax.swing.JFrame {
      */
     public CrearCuenta() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            ImageUtils.setImageLabel(jLabel2, "/CrearCuenta.png");
+        });
     }
 
     /**
