@@ -6,7 +6,7 @@ public class UsuarioDAO {
 
     public boolean insertarUsuario(Usuario usuario) {
         String sqlPersona = "INSERT INTO personas (nombre, apellido, correo, telefono, fecha_creacion) VALUES (?, ?, ?, ?, NOW()) RETURNING id";
-        String sqlUsuario = "INSERT INTO usuarios (persona_id, nombre_usuario, contrasena_hash,last_login) VALUES (?, ?, ?, NOW()";
+        String sqlUsuario = "INSERT INTO usuarios (persona_id, nombre_usuario, contrasena_hash,last_login) VALUES (?, ?, ?, NOW())";
         try (Connection conn = ConexionDB.obtenerConexion();
              PreparedStatement pstmtPersona = conn.prepareStatement(sqlPersona)) {
 
@@ -36,7 +36,7 @@ public class UsuarioDAO {
     }
 
     public Usuario buscarPorNombreUsuario(String nombreUsuario) {
-        String sql = "SELECT p.nombre, p.apellido, p.correo, u.nombre_usuario, u.contrasena_hash " +
+        String sql = "SELECT p.nombre, p.apellido, p.correo,p.telefono , u.nombre_usuario, u.contrasena_hash " +
                      "FROM usuarios u JOIN personas p ON u.persona_id = p.id " +
                      "WHERE u.nombre_usuario = ?";
         try (Connection conn = ConexionDB.obtenerConexion();
