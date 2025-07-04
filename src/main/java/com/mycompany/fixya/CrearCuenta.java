@@ -1,26 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.fixya;
 
-import javax.swing.JFrame;
-import com.mycompany.fixya.ImageUtils;
-/**
- *
- *https://youtu.be/jegnbN8nVB8?si=uPggB2VScy0NSP8d
- */
-public class CrearCuenta extends javax.swing.JFrame {
+import javax.swing.*;
 
+public class CrearCuenta extends JFrame {
+    private JFrame InicioSesion;
     /**
      * Creates new form CrearCuenta
      */
     public CrearCuenta() {
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        javax.swing.SwingUtilities.invokeLater(() -> {
-            ImageUtils.setImageLabel(jLabel2, "/CrearCuenta.png");
-        });
     }
 
     /**
@@ -32,48 +20,195 @@ public class CrearCuenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        background = new javax.swing.JPanel();
+        Volver = new javax.swing.JPanel();
+        VolverBtn = new javax.swing.JButton();
+        CrearCuenta = new javax.swing.JPanel();
+        CrearCuentaBtn = new javax.swing.JButton();
+        Header = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        CredencialesPersona = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        CredencialesUsuario = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("jLabel2");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        background.setBackground(new java.awt.Color(0, 102, 102));
+        background.setPreferredSize(new java.awt.Dimension(700, 400));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(254, 254, 254)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(546, Short.MAX_VALUE))
+        Volver.setBackground(new java.awt.Color(0, 153, 153));
+
+        VolverBtn.setBackground(new java.awt.Color(0, 51, 51));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.setToolTipText("");
+        VolverBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                VolverBtnMousePressed(evt);
+            }
+        });
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout VolverLayout = new javax.swing.GroupLayout(Volver);
+        Volver.setLayout(VolverLayout);
+        VolverLayout.setHorizontalGroup(
+            VolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(VolverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(249, 249, 249)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(302, Short.MAX_VALUE))
+        VolverLayout.setVerticalGroup(
+            VolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(VolverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
+
+        background.add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 160, 30));
+
+        CrearCuenta.setBackground(new java.awt.Color(0, 153, 153));
+
+        CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 51));
+        CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        CrearCuentaBtn.setText("Crear cuenta");
+        CrearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearCuentaBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CrearCuentaLayout = new javax.swing.GroupLayout(CrearCuenta);
+        CrearCuenta.setLayout(CrearCuentaLayout);
+        CrearCuentaLayout.setHorizontalGroup(
+            CrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CrearCuentaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
+        CrearCuentaLayout.setVerticalGroup(
+            CrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CrearCuentaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        background.add(CrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 30));
+
+        Header.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("FixYa-Taller Vehicular");
+
+        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
+        Header.setLayout(HeaderLayout);
+        HeaderLayout.setHorizontalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+        );
+        HeaderLayout.setVerticalGroup(
+            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 70));
+
+        CredencialesPersona.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel1.setText("Nombre");
+
+        jLabel2.setText("Apellido");
+
+        jLabel4.setText("Correo");
+
+        jLabel5.setText("Correo");
+
+        javax.swing.GroupLayout CredencialesPersonaLayout = new javax.swing.GroupLayout(CredencialesPersona);
+        CredencialesPersona.setLayout(CredencialesPersonaLayout);
+        CredencialesPersonaLayout.setHorizontalGroup(
+            CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTextField2)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+        );
+        CredencialesPersonaLayout.setVerticalGroup(
+            CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CredencialesPersonaLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        background.add(CredencialesPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 280, 200));
+
+        CredencialesUsuario.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout CredencialesUsuarioLayout = new javax.swing.GroupLayout(CredencialesUsuario);
+        CredencialesUsuario.setLayout(CredencialesUsuarioLayout);
+        CredencialesUsuarioLayout.setHorizontalGroup(
+            CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        CredencialesUsuarioLayout.setVerticalGroup(
+            CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+
+        background.add(CredencialesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1607, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 500, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void VolverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverBtnMousePressed
+        // TODO add your handling code here:
+            if (InicioSesion != null) InicioSesion.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_VolverBtnMousePressed
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VolverBtnActionPerformed
+
+    private void CrearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearCuentaBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CrearCuentaBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,7 +246,22 @@ public class CrearCuenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CrearCuenta;
+    private javax.swing.JButton CrearCuentaBtn;
+    private javax.swing.JPanel CredencialesPersona;
+    private javax.swing.JPanel CredencialesUsuario;
+    private javax.swing.JPanel Header;
+    private javax.swing.JPanel Volver;
+    private javax.swing.JButton VolverBtn;
+    private javax.swing.JPanel background;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

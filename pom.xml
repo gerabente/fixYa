@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
-        <exec.mainClass>com.mycompany.fixya.InterfazGrafica</exec.mainClass>
+        <exec.mainClass>com.mycompany.fixya.LoginFrame</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
@@ -41,11 +41,6 @@
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE220</version>
-        </dependency>
-        <dependency>
-            <groupId>Rescale.library</groupId>
-            <artifactId>RRScaleLabel-library</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
