@@ -2,12 +2,12 @@ package com.mycompany.fixya;
 
 import javax.swing.*;
 
-public class InicioSesion extends JFrame {
+public class InicioSesionFrame extends JFrame {
     private Autenticacion auth;
     /**
      * Creates new form InicioSesion
      */
-    public InicioSesion() {
+    public InicioSesionFrame() {
         auth = new Autenticacion();
         initComponents();
     }
@@ -215,8 +215,8 @@ public class InicioSesion extends JFrame {
 
     private void CrearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCuentaBtnMousePressed
         // TODO add your handling code here:
-        new RegistroFrame(this).setVisible(true);
-            setVisible(false);
+        new CrearCuentaFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_CrearCuentaBtnMousePressed
 
     private void ContrasenaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContrasenaPasswordFieldActionPerformed
@@ -250,20 +250,21 @@ public class InicioSesion extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioSesionFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioSesionFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioSesionFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioSesionFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicioSesion().setVisible(true);
+                new InicioSesionFrame().setVisible(true);
             }
         });
     }

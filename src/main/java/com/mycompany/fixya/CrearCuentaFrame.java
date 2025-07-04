@@ -2,12 +2,15 @@ package com.mycompany.fixya;
 
 import javax.swing.*;
 
-public class CrearCuenta extends JFrame {
-    private JFrame InicioSesion;
+public class CrearCuentaFrame extends JFrame {
+    private JFrame InicioSesionFrame;
+    private Autenticacion auth;
     /**
      * Creates new form CrearCuenta
      */
-    public CrearCuenta() {
+    public CrearCuentaFrame() {
+        this.InicioSesionFrame = InicioSesionFrame;
+        auth = new Autenticacion();
         initComponents();
     }
 
@@ -28,15 +31,19 @@ public class CrearCuenta extends JFrame {
         Header = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         CredencialesPersona = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        Nombre = new javax.swing.JLabel();
+        NombreField = new javax.swing.JTextField();
+        Apellido = new javax.swing.JLabel();
+        TelefonoField = new javax.swing.JTextField();
+        Correo = new javax.swing.JLabel();
+        ApellidoField = new javax.swing.JTextField();
+        Telefono = new javax.swing.JLabel();
+        CorreoField = new javax.swing.JTextField();
         CredencialesUsuario = new javax.swing.JPanel();
+        NombreUsuario = new javax.swing.JLabel();
+        NombreUsuarioField = new javax.swing.JTextField();
+        Contrasena = new javax.swing.JLabel();
+        ContrasenaField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +86,11 @@ public class CrearCuenta extends JFrame {
         CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 51));
         CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
         CrearCuentaBtn.setText("Crear cuenta");
+        CrearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                CrearCuentaBtnMousePressed(evt);
+            }
+        });
         CrearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CrearCuentaBtnActionPerformed(evt);
@@ -121,61 +133,112 @@ public class CrearCuenta extends JFrame {
 
         CredencialesPersona.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel1.setText("Nombre");
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nombre.setText("Nombre");
 
-        jLabel2.setText("Apellido");
+        NombreField.setBackground(new java.awt.Color(255, 255, 255));
+        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel4.setText("Correo");
+        Apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Apellido.setText("Apellido");
 
-        jLabel5.setText("Correo");
+        TelefonoField.setBackground(new java.awt.Color(255, 255, 255));
+        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Correo.setText("Correo");
+
+        ApellidoField.setBackground(new java.awt.Color(255, 255, 255));
+        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Telefono.setText("Telefono");
+
+        CorreoField.setBackground(new java.awt.Color(255, 255, 255));
+        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout CredencialesPersonaLayout = new javax.swing.GroupLayout(CredencialesPersona);
         CredencialesPersona.setLayout(CredencialesPersonaLayout);
         CredencialesPersonaLayout.setHorizontalGroup(
             CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField2)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NombreField)
+            .addComponent(Apellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(TelefonoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(Correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ApellidoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(CorreoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(Telefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         CredencialesPersonaLayout.setVerticalGroup(
             CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CredencialesPersonaLayout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(Nombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(Apellido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ApellidoField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Correo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CorreoField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(TelefonoField, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         background.add(CredencialesPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 280, 200));
 
         CredencialesUsuario.setBackground(new java.awt.Color(0, 153, 153));
 
+        NombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NombreUsuario.setText("Nombre de usuario");
+
+        NombreUsuarioField.setBackground(new java.awt.Color(255, 255, 255));
+        NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        Contrasena.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Contrasena.setText("Contraseña");
+
+        ContrasenaField.setBackground(new java.awt.Color(255, 255, 255));
+        ContrasenaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout CredencialesUsuarioLayout = new javax.swing.GroupLayout(CredencialesUsuario);
         CredencialesUsuario.setLayout(CredencialesUsuarioLayout);
         CredencialesUsuarioLayout.setHorizontalGroup(
             CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ContrasenaField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NombreUsuarioField)
+                        .addComponent(Contrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap()))
         );
         CredencialesUsuarioLayout.setVerticalGroup(
             CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CredencialesUsuarioLayout.createSequentialGroup()
+                .addContainerGap(124, Short.MAX_VALUE)
+                .addComponent(ContrasenaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+            .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
+                    .addGap(52, 52, 52)
+                    .addComponent(NombreUsuario)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(NombreUsuarioField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Contrasena)
+                    .addContainerGap(84, Short.MAX_VALUE)))
         );
 
         background.add(CredencialesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
@@ -198,7 +261,7 @@ public class CrearCuenta extends JFrame {
 
     private void VolverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverBtnMousePressed
         // TODO add your handling code here:
-            if (InicioSesion != null) InicioSesion.setVisible(true);
+            if (InicioSesionFrame != null) InicioSesionFrame.setVisible(true);
             dispose();
     }//GEN-LAST:event_VolverBtnMousePressed
 
@@ -210,6 +273,27 @@ public class CrearCuenta extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CrearCuentaBtnActionPerformed
 
+    private void CrearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCuentaBtnMousePressed
+        // TODO add your handling code here:
+        registrarUsuario();
+    }//GEN-LAST:event_CrearCuentaBtnMousePressed
+    private void registrarUsuario() {
+        String nombre = NombreUsuarioField.getText();
+        String apellido = ApellidoField.getText();
+        String correo = CorreoField.getText();
+        String telefono = TelefonoField.getText();
+        String nombreUsuario = NombreUsuarioField.getText();
+        String contrasena = new String(ContrasenaField.getPassword());
+
+        boolean creado = auth.registrarUsuario(nombre, apellido, correo, telefono, nombreUsuario, contrasena);
+        if (creado) {
+            JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
+            if (InicioSesionFrame != null) InicioSesionFrame.setVisible(true);
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -227,41 +311,46 @@ public class CrearCuenta extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CrearCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearCuentaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CrearCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearCuentaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CrearCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearCuentaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CrearCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearCuentaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CrearCuenta().setVisible(true);
+                new CrearCuentaFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Apellido;
+    private javax.swing.JTextField ApellidoField;
+    private javax.swing.JLabel Contrasena;
+    private javax.swing.JPasswordField ContrasenaField;
+    private javax.swing.JLabel Correo;
+    private javax.swing.JTextField CorreoField;
     private javax.swing.JPanel CrearCuenta;
     private javax.swing.JButton CrearCuentaBtn;
     private javax.swing.JPanel CredencialesPersona;
     private javax.swing.JPanel CredencialesUsuario;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel Nombre;
+    private javax.swing.JTextField NombreField;
+    private javax.swing.JLabel NombreUsuario;
+    private javax.swing.JTextField NombreUsuarioField;
+    private javax.swing.JLabel Telefono;
+    private javax.swing.JTextField TelefonoField;
     private javax.swing.JPanel Volver;
     private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
