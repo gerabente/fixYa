@@ -4,20 +4,24 @@
  */
 package com.mycompany.fixya;
 
-import javax.swing.JFrame;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
- * @author Tote
+ * @author estebanpardo
  */
-public class MenuVehiculoFrame extends javax.swing.JFrame {
-    private JFrame MenuVehiculoFrame;
+public class BuscarVehiculo extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVehiculo.class.getName());
+
     /**
-     * Creates new form MenuVehiculoFrame
+     * Creates new form BuscarVehiculo
      */
-    public MenuVehiculoFrame() {
+    public BuscarVehiculo() {
+        this.setContentPane(new imagenes());
         initComponents();
-        this.MenuVehiculoFrame= MenuVehiculoFrame;
     }
 
     /**
@@ -29,28 +33,17 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-
-        jLabel1.setText("Menu Vehiculo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jLabel1)
-                .addContainerGap(167, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(jLabel1)
-                .addContainerGap(158, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -72,26 +65,27 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuVehiculoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuVehiculoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuVehiculoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuVehiculoFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuVehiculoFrame().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new BuscarVehiculo().setVisible(true));
     }
 
+    public class imagenes extends JPanel{
+        public void paint(Graphics g){
+            ImageIcon imagen = new ImageIcon(getClass().getResource("/10.png"));
+            g.drawImage(imagen.getImage(),0,0,getWidth(),getHeight(),this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
+
+
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

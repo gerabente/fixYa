@@ -85,6 +85,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         });
         jPanel2.add(MenuOrdenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 120, 30));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuprincipalLogo.png"))); // NOI18N
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 300, 50));
 
