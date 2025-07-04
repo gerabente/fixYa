@@ -36,10 +36,9 @@ public class InicioSesionFrame extends JFrame {
         ContrasenaPasswordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 400));
         setResizable(false);
 
-        background.setBackground(new java.awt.Color(0, 102, 102));
+        background.setBackground(new java.awt.Color(0, 102, 204));
         background.setPreferredSize(new java.awt.Dimension(700, 400));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -48,6 +47,7 @@ public class InicioSesionFrame extends JFrame {
         CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 51));
         CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
         CrearCuentaBtn.setText("Crear cuenta");
+        CrearCuentaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 CrearCuentaBtnMousePressed(evt);
@@ -77,6 +77,7 @@ public class InicioSesionFrame extends JFrame {
         IniciarSesionBtn.setBackground(new java.awt.Color(0, 51, 51));
         IniciarSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
         IniciarSesionBtn.setText("Iniciar sesión");
+        IniciarSesionBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         IniciarSesionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarSesionBtnActionPerformed(evt);
@@ -96,9 +97,9 @@ public class InicioSesionFrame extends JFrame {
 
         background.add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 30));
 
-        Header.setBackground(new java.awt.Color(0, 102, 102));
+        Header.setBackground(new java.awt.Color(0, 102, 204));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new java.awt.Color(0, 102, 204));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -108,18 +109,22 @@ public class InicioSesionFrame extends JFrame {
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 70));
 
-        NombreUsuario.setBackground(new java.awt.Color(0, 153, 153));
+        NombreUsuario.setBackground(new java.awt.Color(153, 204, 255));
+        NombreUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        NombreUsuarioField.setBackground(new java.awt.Color(255, 255, 255));
         NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NombreUsuarioField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +132,7 @@ public class InicioSesionFrame extends JFrame {
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setBackground(new java.awt.Color(0, 51, 204));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre de usuario");
@@ -152,14 +157,14 @@ public class InicioSesionFrame extends JFrame {
 
         background.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 160, 90));
 
-        Contrasena.setBackground(new java.awt.Color(0, 153, 153));
+        Contrasena.setBackground(new java.awt.Color(153, 204, 255));
+        Contrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Contraseña");
 
-        ContrasenaPasswordField.setBackground(new java.awt.Color(255, 255, 255));
         ContrasenaPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ContrasenaPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +176,7 @@ public class InicioSesionFrame extends JFrame {
         Contrasena.setLayout(ContrasenaLayout);
         ContrasenaLayout.setHorizontalGroup(
             ContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
             .addComponent(ContrasenaPasswordField)
         );
         ContrasenaLayout.setVerticalGroup(
@@ -179,7 +184,7 @@ public class InicioSesionFrame extends JFrame {
             .addGroup(ContrasenaLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContrasenaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                .addComponent(ContrasenaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
         );
 
         background.add(Contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 160, 90));
@@ -192,17 +197,11 @@ public class InicioSesionFrame extends JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 406, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NombreUsuarioFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreUsuarioFieldActionPerformed
 
     private void IniciarSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionBtnActionPerformed
         // TODO add your handling code here:
@@ -222,6 +221,10 @@ public class InicioSesionFrame extends JFrame {
     private void ContrasenaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContrasenaPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContrasenaPasswordFieldActionPerformed
+
+    private void NombreUsuarioFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreUsuarioFieldActionPerformed
     private void realizarLogin() {
         String usuario = NombreUsuarioField.getText();
         String contrasena = new String(ContrasenaPasswordField.getPassword());
