@@ -46,6 +46,7 @@ public class CrearCuentaFrame extends JFrame {
         ContrasenaField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         background.setBackground(new java.awt.Color(0, 102, 102));
         background.setPreferredSize(new java.awt.Dimension(700, 400));
@@ -261,12 +262,14 @@ public class CrearCuentaFrame extends JFrame {
 
     private void VolverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverBtnMousePressed
         // TODO add your handling code here:
-            if (InicioSesionFrame != null) InicioSesionFrame.setVisible(true);
-            dispose();
+            new InicioSesionFrame().setVisible(true);
+            setVisible(false);
     }//GEN-LAST:event_VolverBtnMousePressed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         // TODO add your handling code here:
+            new InicioSesionFrame().setVisible(true);
+            setVisible(false);
     }//GEN-LAST:event_VolverBtnActionPerformed
 
     private void CrearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearCuentaBtnActionPerformed
@@ -289,7 +292,7 @@ public class CrearCuentaFrame extends JFrame {
         if (creado) {
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
             if (InicioSesionFrame != null) InicioSesionFrame.setVisible(true);
-            dispose();
+            setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
         }

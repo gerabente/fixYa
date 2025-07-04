@@ -49,6 +49,7 @@ public class LoginFrame extends JFrame {
         Usuario u = auth.iniciarSesion(usuario, contrasena);
         if (u != null) {
             JOptionPane.showMessageDialog(this, "Bienvenido " + u.getNombre());
+            new MenuPrincipalFrame();
         } else {
             JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
         }

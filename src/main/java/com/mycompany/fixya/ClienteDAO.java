@@ -47,4 +47,10 @@ public class ClienteDAO {
         }
         return false;
     }
+    
+//    public boolean agregarVisita(Cliente cliente){
+//        String sqlVisita = "INSERT INTO visitas (cliente_id, fecha) " +
+//            "VALUES ((select c.persona_id from clientes c where c.dni = 5422518),now());";
+//        
+//    }
 }
