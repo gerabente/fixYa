@@ -1,25 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.fixya;
 
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author estebanpardo
- */
-public class BuscarVehiculo extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVehiculo.class.getName());
+public class BuscarVehiculoFrame extends javax.swing.JFrame {
+    private JFrame MenuVehiculoFrame;
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVehiculoFrame.class.getName());
 
     /**
      * Creates new form BuscarVehiculo
      */
-    public BuscarVehiculo() {
+    public BuscarVehiculoFrame() {
+        this.MenuVehiculoFrame = new MenuVehiculoFrame();
         this.setContentPane(new imagenes());
         initComponents();
     }
@@ -33,7 +28,7 @@ public class BuscarVehiculo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        VolverBtn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -41,10 +36,15 @@ public class BuscarVehiculo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Volver");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 380, 40));
 
         jButton1.setBackground(new java.awt.Color(51, 102, 255));
@@ -60,6 +60,12 @@ public class BuscarVehiculo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+        MenuVehiculoFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VolverBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,7 +89,7 @@ public class BuscarVehiculo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new BuscarVehiculo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new BuscarVehiculoFrame().setVisible(true));
     }
 
     public class imagenes extends JPanel{
@@ -99,8 +105,8 @@ public class BuscarVehiculo extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

@@ -3,19 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.fixya;
-
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author estebanpardo
  */
 public class CrearVehiculoFrame extends javax.swing.JFrame {
-    
+    private JFrame MenuVehiculoFrame;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CrearVehiculoFrame.class.getName());
 
     /**
      * Creates new form CrearVehiculoFrame
      */
     public CrearVehiculoFrame() {
+        this.MenuVehiculoFrame = new MenuVehiculoFrame();
         initComponents();
     }
 
@@ -29,7 +31,7 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        VolverBtn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -42,10 +44,15 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Volver");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +116,12 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+        MenuVehiculoFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VolverBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -135,8 +148,8 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;

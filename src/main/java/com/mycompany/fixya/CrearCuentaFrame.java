@@ -122,13 +122,13 @@ public class CrearCuentaFrame extends JFrame {
 
     private void VolverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverBtnMousePressed
         // TODO add your handling code here:
-            new InicioSesionFrame().setVisible(true);
+            InicioSesionFrame.setVisible(true);
             setVisible(false);
     }//GEN-LAST:event_VolverBtnMousePressed
 
     private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
         // TODO add your handling code here:
-            new InicioSesionFrame().setVisible(true);
+            InicioSesionFrame.setVisible(true);
             setVisible(false);
     }//GEN-LAST:event_VolverBtnActionPerformed
 

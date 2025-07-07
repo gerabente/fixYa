@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
  */
 public class AgregarVisitaFrame extends javax.swing.JFrame {
     private ClienteDAO clienteDAO;
-    private JFrame AgregarVistaFrame;
+    private JFrame MenuClienteFrame;
 
     /**
      * Creates new form AgregarVistaFram
      */
     public AgregarVisitaFrame() {
-     this.AgregarVistaFrame=AgregarVistaFrame;
+     this.MenuClienteFrame= new MenuClienteFrame();
      clienteDAO = new ClienteDAO();
         initComponents();
     }
@@ -34,7 +34,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        VolverBtn = new javax.swing.JButton();
         AgregarVisitaBtn = new javax.swing.JButton();
         DNIField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -45,10 +45,15 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Volver");
-        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
         AgregarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -98,6 +103,12 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private void DNIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DNIFieldActionPerformed
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+        MenuClienteFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VolverBtnActionPerformed
     
     private void agregarVisita(){
         String DNIString = DNIField.getText();
@@ -151,8 +162,8 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JTextField DNIField;
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

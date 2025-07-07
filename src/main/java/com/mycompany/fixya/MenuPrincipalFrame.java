@@ -24,7 +24,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         BG = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        SalirBtn = new javax.swing.JButton();
         MenuCLienteBoton = new javax.swing.JButton();
         MenuVehiculoBoton = new javax.swing.JButton();
         MenuOrdenes = new javax.swing.JButton();
@@ -36,10 +36,16 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         BG.setBackground(new java.awt.Color(0, 102, 204));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Volver");
-        BG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        SalirBtn.setBackground(new java.awt.Color(255, 51, 51));
+        SalirBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SalirBtn.setForeground(new java.awt.Color(255, 255, 255));
+        SalirBtn.setText("SALIR");
+        SalirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirBtnActionPerformed(evt);
+            }
+        });
+        BG.add(SalirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         MenuCLienteBoton.setBackground(new java.awt.Color(51, 102, 255));
         MenuCLienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -114,7 +120,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
     private void MenuVehiculoBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVehiculoBotonMousePressed
         // TODO add your handling code here:
-       new MenuVehiculoJframe().setVisible(true);
+       new MenuVehiculoFrame().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_MenuVehiculoBotonMousePressed
 
@@ -123,6 +129,11 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         new MenuOrdenesFrame().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_MenuOrdenesMousePressed
+
+    private void SalirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_SalirBtnActionPerformed
   
     /**
      * @param args the command line arguments
@@ -165,7 +176,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JButton MenuCLienteBoton;
     private javax.swing.JButton MenuOrdenes;
     private javax.swing.JButton MenuVehiculoBoton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton SalirBtn;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

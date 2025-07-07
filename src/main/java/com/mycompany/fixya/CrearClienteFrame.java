@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  * @author Tote
  */
 public class CrearClienteFrame extends javax.swing.JFrame {
-    private JFrame CrearClienteFrame;
+    private JFrame MenuClienteFrame;
     private ClienteDAO clienteDAO;
 
     /**
@@ -18,7 +18,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
      */
     public CrearClienteFrame() {
         initComponents();
-        this.CrearClienteFrame=CrearClienteFrame;
+        this.MenuClienteFrame= new MenuClienteFrame();
         clienteDAO = new ClienteDAO();
     }
 
@@ -32,7 +32,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        VolverBtn = new javax.swing.JButton();
         ApellidoField = new javax.swing.JTextField();
         CorreoField = new javax.swing.JTextField();
         TelefonoField = new javax.swing.JTextField();
@@ -48,10 +48,15 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         bg.setPreferredSize(new java.awt.Dimension(700, 400));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Volver");
-        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bg.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 370, 40));
@@ -142,6 +147,12 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private void NombreTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTxtFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreTxtFieldActionPerformed
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+        MenuClienteFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VolverBtnActionPerformed
     private void registrarCliente(){
         String nombre = NombreTxtField.getText();
         String apellido = ApellidoField.getText();
@@ -197,8 +208,8 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private javax.swing.JTextField DNIField;
     private javax.swing.JTextField NombreTxtField;
     private javax.swing.JTextField TelefonoField;
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

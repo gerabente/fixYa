@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Tote
  */
 public class BuscarClienteFrame extends javax.swing.JFrame {
-    private JFrame BuscarClienteFrame;
+    private JFrame MenuClienteFrame;
     private ClienteDAO clienteDAO;
 
     /**
@@ -21,7 +21,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     public BuscarClienteFrame() {
         initComponents();
         clienteDAO = new ClienteDAO();
-        this.BuscarClienteFrame=BuscarClienteFrame;
+        this.MenuClienteFrame= new MenuClienteFrame();
     }
 
     /**
@@ -34,7 +34,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        VolverBtn = new javax.swing.JButton();
         NumeroDeCedulaTxtField = new javax.swing.JTextField();
         BuscarBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -45,10 +45,15 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Volver");
-        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        VolverBtn.setText("Volver");
+        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverBtnActionPerformed(evt);
+            }
+        });
+        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         NumeroDeCedulaTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bg.add(NumeroDeCedulaTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
@@ -89,6 +94,12 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         buscarCliente();
     }//GEN-LAST:event_BuscarBtnActionPerformed
+
+    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+        // TODO add your handling code here:
+        MenuClienteFrame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VolverBtnActionPerformed
 
     private void buscarCliente(){
         String DNIString = NumeroDeCedulaTxtField.getText();
@@ -139,8 +150,8 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBtn;
     private javax.swing.JTextField NumeroDeCedulaTxtField;
+    private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
