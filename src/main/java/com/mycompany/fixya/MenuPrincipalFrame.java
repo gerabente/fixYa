@@ -24,13 +24,10 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         BG = new javax.swing.JPanel();
-        LogoClinete = new javax.swing.JLabel();
-        LogoVehiculo = new javax.swing.JLabel();
-        LogoOrden = new javax.swing.JLabel();
         MenuCLienteBoton = new javax.swing.JButton();
         MenuVehiculoBoton = new javax.swing.JButton();
         MenuOrdenes = new javax.swing.JButton();
-        Titulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -38,19 +35,12 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         BG.setBackground(new java.awt.Color(0, 102, 204));
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LogoClinete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoCLiente.png"))); // NOI18N
-        BG.add(LogoClinete, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 190, 170));
-
-        LogoVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoVehiculo.png"))); // NOI18N
-        BG.add(LogoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 210, 170));
-
-        LogoOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoOrden.png"))); // NOI18N
-        BG.add(LogoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 200, 170));
-
-        MenuCLienteBoton.setBackground(new java.awt.Color(153, 204, 255));
+        MenuCLienteBoton.setBackground(new java.awt.Color(51, 102, 255));
         MenuCLienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuCLienteBoton.setForeground(new java.awt.Color(255, 255, 255));
         MenuCLienteBoton.setText("Menu Clientes");
         MenuCLienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        MenuCLienteBoton.setBorderPainted(false);
         MenuCLienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MenuCLienteBotonMousePressed(evt);
@@ -61,33 +51,36 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 MenuCLienteBotonActionPerformed(evt);
             }
         });
-        BG.add(MenuCLienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 130, 30));
+        BG.add(MenuCLienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 130, 30));
 
-        MenuVehiculoBoton.setBackground(new java.awt.Color(153, 204, 255));
+        MenuVehiculoBoton.setBackground(new java.awt.Color(51, 102, 255));
         MenuVehiculoBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuVehiculoBoton.setForeground(new java.awt.Color(255, 255, 255));
         MenuVehiculoBoton.setText("Menu Vehiculos");
         MenuVehiculoBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        MenuVehiculoBoton.setBorderPainted(false);
         MenuVehiculoBoton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MenuVehiculoBotonMousePressed(evt);
             }
         });
-        BG.add(MenuVehiculoBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 120, 30));
+        BG.add(MenuVehiculoBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 120, 30));
 
-        MenuOrdenes.setBackground(new java.awt.Color(153, 204, 255));
+        MenuOrdenes.setBackground(new java.awt.Color(51, 102, 255));
         MenuOrdenes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuOrdenes.setForeground(new java.awt.Color(255, 255, 255));
         MenuOrdenes.setText("Menu Ordenes");
         MenuOrdenes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        MenuOrdenes.setBorderPainted(false);
         MenuOrdenes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 MenuOrdenesMousePressed(evt);
             }
         });
-        BG.add(MenuOrdenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 300, 120, 30));
+        BG.add(MenuOrdenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 120, 30));
 
-        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuprincipalLogo.png"))); // NOI18N
-        Titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BG.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 300, 50));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menuprincipal.png"))); // NOI18N
+        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,12 +156,9 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
-    private javax.swing.JLabel LogoClinete;
-    private javax.swing.JLabel LogoOrden;
-    private javax.swing.JLabel LogoVehiculo;
     private javax.swing.JButton MenuCLienteBoton;
     private javax.swing.JButton MenuOrdenes;
     private javax.swing.JButton MenuVehiculoBoton;
-    private javax.swing.JLabel Titulo;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

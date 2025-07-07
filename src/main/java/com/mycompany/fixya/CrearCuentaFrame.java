@@ -24,40 +24,53 @@ public class CrearCuentaFrame extends JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        Volver = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        CrearCuenta = new javax.swing.JPanel();
-        CrearCuentaBtn = new javax.swing.JButton();
-        Header = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        CredencialesPersona = new javax.swing.JPanel();
-        Nombre = new javax.swing.JLabel();
-        NombreField = new javax.swing.JTextField();
-        Apellido = new javax.swing.JLabel();
-        TelefonoField = new javax.swing.JTextField();
-        Correo = new javax.swing.JLabel();
         ApellidoField = new javax.swing.JTextField();
-        Telefono = new javax.swing.JLabel();
+        TelefonoField = new javax.swing.JTextField();
         CorreoField = new javax.swing.JTextField();
-        CredencialesUsuario = new javax.swing.JPanel();
-        NombreUsuario = new javax.swing.JLabel();
-        NombreUsuarioField = new javax.swing.JTextField();
-        Contrasena = new javax.swing.JLabel();
+        NombreField = new javax.swing.JTextField();
         ContrasenaField = new javax.swing.JPasswordField();
+        NombreUsuarioField = new javax.swing.JTextField();
+        VolverBtn = new javax.swing.JButton();
+        CrearCuentaBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        background.setBackground(new java.awt.Color(0, 102, 102));
+        background.setBackground(new java.awt.Color(255, 255, 255));
         background.setPreferredSize(new java.awt.Dimension(700, 400));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Volver.setBackground(new java.awt.Color(0, 153, 153));
+        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ApellidoField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApellidoFieldActionPerformed(evt);
+            }
+        });
+        background.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 290, 50));
 
-        VolverBtn.setBackground(new java.awt.Color(0, 51, 51));
+        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        background.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 290, 50));
+
+        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        background.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 290, 50));
+
+        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        background.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 290, 50));
+
+        ContrasenaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        background.add(ContrasenaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 523, 290, 50));
+
+        NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        background.add(NombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 290, 50));
+
+        VolverBtn.setBackground(new java.awt.Color(0, 51, 255));
+        VolverBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
         VolverBtn.setText("Volver");
         VolverBtn.setToolTipText("");
+        VolverBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        VolverBtn.setBorderPainted(false);
         VolverBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 VolverBtnMousePressed(evt);
@@ -68,25 +81,14 @@ public class CrearCuentaFrame extends JFrame {
                 VolverBtnActionPerformed(evt);
             }
         });
+        background.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 180, 40));
 
-        javax.swing.GroupLayout VolverLayout = new javax.swing.GroupLayout(Volver);
-        Volver.setLayout(VolverLayout);
-        VolverLayout.setHorizontalGroup(
-            VolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(VolverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        VolverLayout.setVerticalGroup(
-            VolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(VolverBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        background.add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 160, 30));
-
-        CrearCuenta.setBackground(new java.awt.Color(0, 153, 153));
-
-        CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 51));
+        CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 255));
+        CrearCuentaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
         CrearCuentaBtn.setText("Crear cuenta");
+        CrearCuentaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CrearCuentaBtn.setBorderPainted(false);
         CrearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 CrearCuentaBtnMousePressed(evt);
@@ -97,163 +99,21 @@ public class CrearCuentaFrame extends JFrame {
                 CrearCuentaBtnActionPerformed(evt);
             }
         });
+        background.add(CrearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 180, 40));
 
-        javax.swing.GroupLayout CrearCuentaLayout = new javax.swing.GroupLayout(CrearCuenta);
-        CrearCuenta.setLayout(CrearCuentaLayout);
-        CrearCuentaLayout.setHorizontalGroup(
-            CrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CrearCuentaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        CrearCuentaLayout.setVerticalGroup(
-            CrearCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CrearCuentaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        background.add(CrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 30));
-
-        Header.setBackground(new java.awt.Color(0, 102, 102));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("FixYa-Taller Vehicular");
-
-        javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
-        Header.setLayout(HeaderLayout);
-        HeaderLayout.setHorizontalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-        );
-        HeaderLayout.setVerticalGroup(
-            HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-        );
-
-        background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 70));
-
-        CredencialesPersona.setBackground(new java.awt.Color(0, 153, 153));
-
-        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Nombre.setText("Nombre");
-
-        NombreField.setBackground(new java.awt.Color(255, 255, 255));
-        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        Apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Apellido.setText("Apellido");
-
-        TelefonoField.setBackground(new java.awt.Color(255, 255, 255));
-        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Correo.setText("Correo");
-
-        ApellidoField.setBackground(new java.awt.Color(255, 255, 255));
-        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Telefono.setText("Telefono");
-
-        CorreoField.setBackground(new java.awt.Color(255, 255, 255));
-        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout CredencialesPersonaLayout = new javax.swing.GroupLayout(CredencialesPersona);
-        CredencialesPersona.setLayout(CredencialesPersonaLayout);
-        CredencialesPersonaLayout.setHorizontalGroup(
-            CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(NombreField)
-            .addComponent(Apellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(TelefonoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(Correo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ApellidoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(CorreoField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(Telefono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        CredencialesPersonaLayout.setVerticalGroup(
-            CredencialesPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CredencialesPersonaLayout.createSequentialGroup()
-                .addComponent(Nombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Apellido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ApellidoField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Correo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CorreoField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TelefonoField, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        background.add(CredencialesPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 280, 200));
-
-        CredencialesUsuario.setBackground(new java.awt.Color(0, 153, 153));
-
-        NombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NombreUsuario.setText("Nombre de usuario");
-
-        NombreUsuarioField.setBackground(new java.awt.Color(255, 255, 255));
-        NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        Contrasena.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Contrasena.setText("Contraseña");
-
-        ContrasenaField.setBackground(new java.awt.Color(255, 255, 255));
-        ContrasenaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout CredencialesUsuarioLayout = new javax.swing.GroupLayout(CredencialesUsuario);
-        CredencialesUsuario.setLayout(CredencialesUsuarioLayout);
-        CredencialesUsuarioLayout.setHorizontalGroup(
-            CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ContrasenaField, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(NombreUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(NombreUsuarioField)
-                        .addComponent(Contrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap()))
-        );
-        CredencialesUsuarioLayout.setVerticalGroup(
-            CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CredencialesUsuarioLayout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(ContrasenaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
-            .addGroup(CredencialesUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CredencialesUsuarioLayout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(NombreUsuario)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(NombreUsuarioField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(Contrasena)
-                    .addContainerGap(84, Short.MAX_VALUE)))
-        );
-
-        background.add(CredencialesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearCuenta.png"))); // NOI18N
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -280,6 +140,10 @@ public class CrearCuentaFrame extends JFrame {
         // TODO add your handling code here:
         registrarUsuario();
     }//GEN-LAST:event_CrearCuentaBtnMousePressed
+
+    private void ApellidoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApellidoFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ApellidoFieldActionPerformed
     private void registrarUsuario() {
         String nombre = NombreUsuarioField.getText();
         String apellido = ApellidoField.getText();
@@ -334,26 +198,15 @@ public class CrearCuentaFrame extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Apellido;
     private javax.swing.JTextField ApellidoField;
-    private javax.swing.JLabel Contrasena;
     private javax.swing.JPasswordField ContrasenaField;
-    private javax.swing.JLabel Correo;
     private javax.swing.JTextField CorreoField;
-    private javax.swing.JPanel CrearCuenta;
     private javax.swing.JButton CrearCuentaBtn;
-    private javax.swing.JPanel CredencialesPersona;
-    private javax.swing.JPanel CredencialesUsuario;
-    private javax.swing.JPanel Header;
-    private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreField;
-    private javax.swing.JLabel NombreUsuario;
     private javax.swing.JTextField NombreUsuarioField;
-    private javax.swing.JLabel Telefono;
     private javax.swing.JTextField TelefonoField;
-    private javax.swing.JPanel Volver;
     private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,10 +24,10 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
         CrearClienteBoton = new javax.swing.JButton();
         BuscarClienteBtn = new javax.swing.JButton();
         AgregarVisitaBtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -35,14 +35,12 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(0, 102, 204));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCLienteLogo.png"))); // NOI18N
-        Titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bg.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
-
-        CrearClienteBoton.setBackground(new java.awt.Color(153, 204, 255));
+        CrearClienteBoton.setBackground(new java.awt.Color(51, 102, 255));
         CrearClienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CrearClienteBoton.setForeground(new java.awt.Color(255, 255, 255));
         CrearClienteBoton.setText("Crear Cliente");
-        CrearClienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CrearClienteBoton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CrearClienteBoton.setBorderPainted(false);
         CrearClienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 CrearClienteBotonMousePressed(evt);
@@ -53,23 +51,27 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 CrearClienteBotonActionPerformed(evt);
             }
         });
-        bg.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 340, 40));
+        bg.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 140, 40));
 
-        BuscarClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
+        BuscarClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
         BuscarClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BuscarClienteBtn.setForeground(new java.awt.Color(255, 255, 255));
         BuscarClienteBtn.setText("Buscar Cliente");
         BuscarClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BuscarClienteBtn.setBorderPainted(false);
         BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 BuscarClienteBtnMousePressed(evt);
             }
         });
-        bg.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 340, 40));
+        bg.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 140, 40));
 
-        AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
+        AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
         AgregarVisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AgregarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
         AgregarVisitaBtn.setText("Agregar Visita");
         AgregarVisitaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AgregarVisitaBtn.setBorderPainted(false);
         AgregarVisitaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 AgregarVisitaBtnMousePressed(evt);
@@ -80,17 +82,22 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 AgregarVisitaBtnActionPerformed(evt);
             }
         });
-        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 340, 40));
+        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 130, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCliente.png"))); // NOI18N
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -160,7 +167,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JButton BuscarClienteBtn;
     private javax.swing.JButton CrearClienteBoton;
-    private javax.swing.JLabel Titulo;
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
