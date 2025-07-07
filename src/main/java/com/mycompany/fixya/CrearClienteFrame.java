@@ -32,10 +32,10 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        Header = new javax.swing.JLabel();
-        NombreField = new javax.swing.JTextField();
+        Titulo = new javax.swing.JLabel();
         PanelNombre = new javax.swing.JPanel();
         Nombre = new javax.swing.JLabel();
+        NombreTxtField = new javax.swing.JTextField();
         PanelApellido = new javax.swing.JPanel();
         Apellido = new javax.swing.JLabel();
         ApellidoField = new javax.swing.JTextField();
@@ -57,25 +57,23 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         bg.setPreferredSize(new java.awt.Dimension(700, 400));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CreacClienteLogo.png"))); // NOI18N
-        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bg.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 350, 50));
-
-        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        NombreField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreFieldActionPerformed(evt);
-            }
-        });
-        bg.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, 40));
+        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CreacClienteLogo.png"))); // NOI18N
+        Titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bg.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 350, 50));
 
         PanelNombre.setBackground(new java.awt.Color(153, 204, 255));
 
         Nombre.setBackground(new java.awt.Color(153, 204, 255));
         Nombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Nombre.setForeground(new java.awt.Color(0, 0, 0));
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nombre.setText("Nombre");
+
+        NombreTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NombreTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreTxtFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelNombreLayout = new javax.swing.GroupLayout(PanelNombre);
         PanelNombre.setLayout(PanelNombreLayout);
@@ -85,21 +83,24 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelNombreLayout.createSequentialGroup()
+                .addComponent(NombreTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelNombreLayout.setVerticalGroup(
             PanelNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNombreLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(NombreTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        bg.add(PanelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 40));
+        bg.add(PanelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 80));
 
         PanelApellido.setBackground(new java.awt.Color(153, 204, 255));
 
         Apellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Apellido.setForeground(new java.awt.Color(0, 0, 0));
         Apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Apellido.setText("Apellido");
 
@@ -128,7 +129,6 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         PanelCorreo.setBackground(new java.awt.Color(153, 204, 255));
 
         Correo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Correo.setForeground(new java.awt.Color(0, 0, 0));
         Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Correo.setText("Correo electronico ");
 
@@ -161,7 +161,6 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         PanelTelefono.setBackground(new java.awt.Color(153, 204, 255));
 
         Telefono.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Telefono.setForeground(new java.awt.Color(0, 0, 0));
         Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Telefono.setText("Teléfono");
 
@@ -194,7 +193,6 @@ public class CrearClienteFrame extends javax.swing.JFrame {
 
         CrearClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
         CrearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        CrearClienteBtn.setForeground(new java.awt.Color(0, 0, 0));
         CrearClienteBtn.setText("Crear");
         CrearClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearClienteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +205,6 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         PanelDNI.setBackground(new java.awt.Color(153, 204, 255));
 
         DNI.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        DNI.setForeground(new java.awt.Color(0, 0, 0));
         DNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DNI.setText("DNI");
 
@@ -251,9 +248,9 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreFieldActionPerformed
+    private void NombreTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTxtFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreFieldActionPerformed
+    }//GEN-LAST:event_NombreTxtFieldActionPerformed
 
     private void CorreoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoFieldActionPerformed
         // TODO add your handling code here:
@@ -272,7 +269,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DNIFieldActionPerformed
     private void registrarCliente(){
-        String nombre = NombreField.getText();
+        String nombre = NombreTxtField.getText();
         String apellido = ApellidoField.getText();
         String correo = CorreoField.getText();
         String telefono = TelefonoField.getText();
@@ -327,9 +324,8 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private javax.swing.JButton CrearClienteBtn;
     private javax.swing.JLabel DNI;
     private javax.swing.JTextField DNIField;
-    private javax.swing.JLabel Header;
     private javax.swing.JLabel Nombre;
-    private javax.swing.JTextField NombreField;
+    private javax.swing.JTextField NombreTxtField;
     private javax.swing.JPanel PanelApellido;
     private javax.swing.JPanel PanelCorreo;
     private javax.swing.JPanel PanelDNI;
@@ -337,6 +333,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTelefono;
     private javax.swing.JLabel Telefono;
     private javax.swing.JTextField TelefonoField;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }

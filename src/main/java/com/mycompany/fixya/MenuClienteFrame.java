@@ -24,7 +24,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        Header = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
         CrearClienteBoton = new javax.swing.JButton();
         BuscarClienteBtn = new javax.swing.JButton();
         AgregarVisitaBtn = new javax.swing.JButton();
@@ -35,13 +35,12 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(0, 102, 204));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCLienteLogo.png"))); // NOI18N
-        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bg.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
+        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCLienteLogo.png"))); // NOI18N
+        Titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bg.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
 
         CrearClienteBoton.setBackground(new java.awt.Color(153, 204, 255));
         CrearClienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CrearClienteBoton.setForeground(new java.awt.Color(0, 0, 0));
         CrearClienteBoton.setText("Crear Cliente");
         CrearClienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearClienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,7 +57,6 @@ public class MenuClienteFrame extends javax.swing.JFrame {
 
         BuscarClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
         BuscarClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BuscarClienteBtn.setForeground(new java.awt.Color(0, 0, 0));
         BuscarClienteBtn.setText("Buscar Cliente");
         BuscarClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,7 +68,6 @@ public class MenuClienteFrame extends javax.swing.JFrame {
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
         AgregarVisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        AgregarVisitaBtn.setForeground(new java.awt.Color(0, 0, 0));
         AgregarVisitaBtn.setText("Agregar Visita");
         AgregarVisitaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         AgregarVisitaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,7 +160,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JButton BuscarClienteBtn;
     private javax.swing.JButton CrearClienteBoton;
-    private javax.swing.JLabel Header;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }

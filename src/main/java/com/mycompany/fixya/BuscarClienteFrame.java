@@ -34,10 +34,10 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        Header = new javax.swing.JLabel();
-        PanelDNI = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
+        PanelSoporte = new javax.swing.JPanel();
         DNI = new javax.swing.JLabel();
-        DNIField = new javax.swing.JTextField();
+        NumeroDeCedulaTxtField = new javax.swing.JTextField();
         BuscarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,42 +46,40 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(0, 102, 204));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarClienteLogo.png"))); // NOI18N
-        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        bg.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 350, 60));
+        Titulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarClienteLogo.png"))); // NOI18N
+        Titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bg.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 350, 60));
 
-        PanelDNI.setBackground(new java.awt.Color(153, 204, 255));
+        PanelSoporte.setBackground(new java.awt.Color(153, 204, 255));
 
         DNI.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        DNI.setForeground(new java.awt.Color(0, 0, 0));
         DNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DNI.setText("Escribe el numero de cedula del cliente");
 
-        javax.swing.GroupLayout PanelDNILayout = new javax.swing.GroupLayout(PanelDNI);
-        PanelDNI.setLayout(PanelDNILayout);
-        PanelDNILayout.setHorizontalGroup(
-            PanelDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDNILayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelSoporteLayout = new javax.swing.GroupLayout(PanelSoporte);
+        PanelSoporte.setLayout(PanelSoporteLayout);
+        PanelSoporteLayout.setHorizontalGroup(
+            PanelSoporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelSoporteLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(DNI)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PanelDNILayout.setVerticalGroup(
-            PanelDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDNILayout.createSequentialGroup()
+        PanelSoporteLayout.setVerticalGroup(
+            PanelSoporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelSoporteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(DNI)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        bg.add(PanelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 340, 40));
+        bg.add(PanelSoporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 360, 40));
 
-        DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 340, 40));
+        NumeroDeCedulaTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(NumeroDeCedulaTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 360, 40));
 
         BuscarBtn.setBackground(new java.awt.Color(153, 204, 255));
         BuscarBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BuscarBtn.setForeground(new java.awt.Color(0, 0, 0));
         BuscarBtn.setText("Buscar ");
         BuscarBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +109,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarBtnActionPerformed
 
     private void buscarCliente(){
-        String DNIString = DNIField.getText();
+        String DNIString = NumeroDeCedulaTxtField.getText();
         int DNI = Integer.parseInt(DNIString);
         boolean busqueda = clienteDAO.buscarCliente(DNI);
         if (busqueda){
@@ -159,9 +157,9 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarBtn;
     private javax.swing.JLabel DNI;
-    private javax.swing.JTextField DNIField;
-    private javax.swing.JLabel Header;
-    private javax.swing.JPanel PanelDNI;
+    private javax.swing.JTextField NumeroDeCedulaTxtField;
+    private javax.swing.JPanel PanelSoporte;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }
