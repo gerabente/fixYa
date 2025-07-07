@@ -5,9 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * DAO para operaciones de persistencia de clientes.
- */
 public class ClienteDAO {
     /**
      * Inserta un nuevo cliente en la base de datos. Primero crea el registro en
