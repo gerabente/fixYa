@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author Tote
  */
-public class AgregarVistaFrame extends javax.swing.JFrame {
+public class AgregarVisitaFrame extends javax.swing.JFrame {
     private ClienteDAO clienteDAO;
     private JFrame AgregarVistaFrame;
 
     /**
      * Creates new form AgregarVistaFram
      */
-    public AgregarVistaFrame() {
+    public AgregarVisitaFrame() {
      this.AgregarVistaFrame=AgregarVistaFrame;
      clienteDAO = new ClienteDAO();
         initComponents();
@@ -33,15 +33,15 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        bg = new javax.swing.JPanel();
         AgregarVisitaBtn = new javax.swing.JButton();
         DNIField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(0, 102, 204));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
         AgregarVisitaBtn.setText("Agregar Visita ");
@@ -51,24 +51,24 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
                 AgregarVisitaBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 40));
+        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 40));
 
         DNIField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DNIFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 240, -1));
+        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 240, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         pack();
@@ -111,21 +111,23 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarVistaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarVisitaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarVistaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarVisitaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarVistaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarVisitaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarVistaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarVisitaFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarVistaFrame().setVisible(true);
+                new AgregarVisitaFrame().setVisible(true);
             }
         });
     }
@@ -133,6 +135,6 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JTextField DNIField;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }

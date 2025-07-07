@@ -107,9 +107,9 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuCLienteBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuCLienteBotonMousePressed
-          new MenuClienteFrame().setVisible(true);
-        setVisible(false);
         // TODO add your handling code here:
+        new MenuClienteFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_MenuCLienteBotonMousePressed
 
     private void MenuCLienteBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCLienteBotonActionPerformed
@@ -117,16 +117,15 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuCLienteBotonActionPerformed
 
     private void MenuVehiculoBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVehiculoBotonMousePressed
+        // TODO add your handling code here:
        new MenuVehiculoFrame().setVisible(true);
         setVisible(false);
-        
-// TODO add your handling code here:
     }//GEN-LAST:event_MenuVehiculoBotonMousePressed
 
     private void MenuOrdenesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuOrdenesMousePressed
-      new MenuOrdenesFrame().setVisible(true);
-        setVisible(false);
         // TODO add your handling code here:
+        new MenuOrdenesFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_MenuOrdenesMousePressed
   
     /**

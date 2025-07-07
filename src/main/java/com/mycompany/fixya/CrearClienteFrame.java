@@ -31,38 +31,35 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        Header = new javax.swing.JLabel();
         NombreField = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        PanelNombre = new javax.swing.JPanel();
+        Nombre = new javax.swing.JLabel();
+        PanelApellido = new javax.swing.JPanel();
+        Apellido = new javax.swing.JLabel();
         ApellidoField = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        PanelCorreo = new javax.swing.JPanel();
+        Correo = new javax.swing.JLabel();
         CorreoField = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        PanelTelefono = new javax.swing.JPanel();
+        Telefono = new javax.swing.JLabel();
         TelefonoField = new javax.swing.JTextField();
         CrearClienteBtn = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        PanelDNI = new javax.swing.JPanel();
+        DNI = new javax.swing.JLabel();
         DNIField = new javax.swing.JTextField();
-
-        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 400));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(0, 102, 204));
+        bg.setPreferredSize(new java.awt.Dimension(700, 400));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CreacClienteLogo.png"))); // NOI18N
-        jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 350, 50));
+        Header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CreacClienteLogo.png"))); // NOI18N
+        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bg.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 350, 50));
 
         NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         NombreField.addActionListener(new java.awt.event.ActionListener() {
@@ -70,88 +67,88 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 NombreFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, 40));
+        bg.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, 40));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        PanelNombre.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setBackground(new java.awt.Color(153, 204, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Nombre");
+        Nombre.setBackground(new java.awt.Color(153, 204, 255));
+        Nombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(0, 0, 0));
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nombre.setText("Nombre");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelNombreLayout = new javax.swing.GroupLayout(PanelNombre);
+        PanelNombre.setLayout(PanelNombreLayout);
+        PanelNombreLayout.setHorizontalGroup(
+            PanelNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelNombreLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        PanelNombreLayout.setVerticalGroup(
+            PanelNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelNombreLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 40));
+        bg.add(PanelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 40));
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        PanelApellido.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Apellido");
+        Apellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Apellido.setForeground(new java.awt.Color(0, 0, 0));
+        Apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Apellido.setText("Apellido");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelApellidoLayout = new javax.swing.GroupLayout(PanelApellido);
+        PanelApellido.setLayout(PanelApellidoLayout);
+        PanelApellidoLayout.setHorizontalGroup(
+            PanelApellidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelApellidoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        PanelApellidoLayout.setVerticalGroup(
+            PanelApellidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelApellidoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(Apellido)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, 40));
+        bg.add(PanelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, 40));
 
         ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
+        bg.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
-        jPanel4.setBackground(new java.awt.Color(153, 204, 255));
+        PanelCorreo.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Correo electronico ");
+        Correo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Correo.setForeground(new java.awt.Color(0, 0, 0));
+        Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Correo.setText("Correo electronico ");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCorreoLayout = new javax.swing.GroupLayout(PanelCorreo);
+        PanelCorreo.setLayout(PanelCorreoLayout);
+        PanelCorreoLayout.setHorizontalGroup(
+            PanelCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCorreoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
+                .addComponent(Correo)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel5)
+        PanelCorreoLayout.setVerticalGroup(
+            PanelCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCorreoLayout.createSequentialGroup()
+                .addComponent(Correo)
                 .addGap(0, 15, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 220, 40));
+        bg.add(PanelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 220, 40));
 
         CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         CorreoField.addActionListener(new java.awt.event.ActionListener() {
@@ -159,33 +156,33 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 CorreoFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 220, 40));
+        bg.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 220, 40));
 
-        jPanel5.setBackground(new java.awt.Color(153, 204, 255));
+        PanelTelefono.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Teléfono");
+        Telefono.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Telefono.setForeground(new java.awt.Color(0, 0, 0));
+        Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Telefono.setText("Teléfono");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelTelefonoLayout = new javax.swing.GroupLayout(PanelTelefono);
+        PanelTelefono.setLayout(PanelTelefonoLayout);
+        PanelTelefonoLayout.setHorizontalGroup(
+            PanelTelefonoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTelefonoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(Telefono)
                 .addContainerGap(145, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        PanelTelefonoLayout.setVerticalGroup(
+            PanelTelefonoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTelefonoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
+                .addComponent(Telefono)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 220, 50));
+        bg.add(PanelTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 220, 50));
 
         TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TelefonoField.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +190,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 TelefonoFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 40));
+        bg.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 40));
 
         CrearClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
         CrearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -205,32 +202,32 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 CrearClienteBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 160, 40));
+        bg.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 160, 40));
 
-        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
+        PanelDNI.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("DNI");
+        DNI.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        DNI.setForeground(new java.awt.Color(0, 0, 0));
+        DNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DNI.setText("DNI");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelDNILayout = new javax.swing.GroupLayout(PanelDNI);
+        PanelDNI.setLayout(PanelDNILayout);
+        PanelDNILayout.setHorizontalGroup(
+            PanelDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDNILayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7)
+                .addComponent(DNI)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel7)
+        PanelDNILayout.setVerticalGroup(
+            PanelDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDNILayout.createSequentialGroup()
+                .addComponent(DNI)
                 .addGap(0, 15, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 140, 40));
+        bg.add(PanelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 140, 40));
 
         DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         DNIField.addActionListener(new java.awt.event.ActionListener() {
@@ -238,17 +235,17 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 DNIFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 140, 40));
+        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -323,24 +320,23 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Apellido;
     private javax.swing.JTextField ApellidoField;
+    private javax.swing.JLabel Correo;
     private javax.swing.JTextField CorreoField;
     private javax.swing.JButton CrearClienteBtn;
+    private javax.swing.JLabel DNI;
     private javax.swing.JTextField DNIField;
+    private javax.swing.JLabel Header;
+    private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreField;
+    private javax.swing.JPanel PanelApellido;
+    private javax.swing.JPanel PanelCorreo;
+    private javax.swing.JPanel PanelDNI;
+    private javax.swing.JPanel PanelNombre;
+    private javax.swing.JPanel PanelTelefono;
+    private javax.swing.JLabel Telefono;
     private javax.swing.JTextField TelefonoField;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }

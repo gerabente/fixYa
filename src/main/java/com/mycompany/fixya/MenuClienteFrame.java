@@ -23,21 +23,21 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        Header = new javax.swing.JLabel();
         CrearClienteBoton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BuscarClienteBtn = new javax.swing.JButton();
+        AgregarVisitaBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(0, 102, 204));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCLienteLogo.png"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
+        Header.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCLienteLogo.png"))); // NOI18N
+        Header.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bg.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
 
         CrearClienteBoton.setBackground(new java.awt.Color(153, 204, 255));
         CrearClienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -54,41 +54,46 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 CrearClienteBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 340, 40));
+        bg.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 340, 40));
 
-        jButton2.setBackground(new java.awt.Color(153, 204, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Buscar Cliente");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        BuscarClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
+        BuscarClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BuscarClienteBtn.setForeground(new java.awt.Color(0, 0, 0));
+        BuscarClienteBtn.setText("Buscar Cliente");
+        BuscarClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton2MousePressed(evt);
+                BuscarClienteBtnMousePressed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 340, 40));
+        bg.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 340, 40));
 
-        jButton3.setBackground(new java.awt.Color(153, 204, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Agregar Visita");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
+        AgregarVisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AgregarVisitaBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AgregarVisitaBtn.setText("Agregar Visita");
+        AgregarVisitaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AgregarVisitaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton3MousePressed(evt);
+                AgregarVisitaBtnMousePressed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 340, 40));
+        AgregarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarVisitaBtnActionPerformed(evt);
+            }
+        });
+        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 340, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
         );
 
         pack();
@@ -104,16 +109,20 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CrearClienteBotonMousePressed
 
-    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+    private void BuscarClienteBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarClienteBtnMousePressed
   new BuscarClienteFrame().setVisible(true);
         setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MousePressed
+    }//GEN-LAST:event_BuscarClienteBtnMousePressed
 
-    private void jButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MousePressed
-      new AgregarVistaFrame().setVisible(true);
+    private void AgregarVisitaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarVisitaBtnMousePressed
+      new AgregarVisitaFrame().setVisible(true);
         setVisible(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3MousePressed
+    }//GEN-LAST:event_AgregarVisitaBtnMousePressed
+
+    private void AgregarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVisitaBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarVisitaBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,10 +160,10 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AgregarVisitaBtn;
+    private javax.swing.JButton BuscarClienteBtn;
     private javax.swing.JButton CrearClienteBoton;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel Header;
+    private javax.swing.JPanel bg;
     // End of variables declaration//GEN-END:variables
 }
