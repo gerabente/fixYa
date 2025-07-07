@@ -32,14 +32,14 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        ApellidoField = new javax.swing.JTextField();
-        CorreoField = new javax.swing.JTextField();
-        TelefonoField = new javax.swing.JTextField();
-        CrearClienteBtn = new javax.swing.JButton();
-        DNIField = new javax.swing.JTextField();
-        NombreTxtField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        volverBtn = new javax.swing.JButton();
+        apellidoField = new javax.swing.JTextField();
+        correoField = new javax.swing.JTextField();
+        telefonoField = new javax.swing.JTextField();
+        crearClienteBtn = new javax.swing.JButton();
+        dniField = new javax.swing.JTextField();
+        nombreField = new javax.swing.JTextField();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -48,66 +48,66 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         bg.setPreferredSize(new java.awt.Dimension(700, 400));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        bg.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 370, 40));
+        apellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(apellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 370, 40));
 
-        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CorreoField.addActionListener(new java.awt.event.ActionListener() {
+        correoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        correoField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CorreoFieldActionPerformed(evt);
+                correoFieldActionPerformed(evt);
             }
         });
-        bg.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 370, 40));
+        bg.add(correoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 370, 40));
 
-        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TelefonoField.addActionListener(new java.awt.event.ActionListener() {
+        telefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        telefonoField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TelefonoFieldActionPerformed(evt);
+                telefonoFieldActionPerformed(evt);
             }
         });
-        bg.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 370, 40));
+        bg.add(telefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 370, 40));
 
-        CrearClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
-        CrearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        CrearClienteBtn.setForeground(new java.awt.Color(255, 255, 255));
-        CrearClienteBtn.setText("Crear");
-        CrearClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        CrearClienteBtn.setBorderPainted(false);
-        CrearClienteBtn.addActionListener(new java.awt.event.ActionListener() {
+        crearClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
+        crearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        crearClienteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        crearClienteBtn.setText("Crear");
+        crearClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        crearClienteBtn.setBorderPainted(false);
+        crearClienteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearClienteBtnActionPerformed(evt);
+                crearClienteBtnActionPerformed(evt);
             }
         });
-        bg.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 220, 50));
+        bg.add(crearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 220, 50));
 
-        DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DNIField.addActionListener(new java.awt.event.ActionListener() {
+        dniField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dniField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DNIFieldActionPerformed(evt);
+                dniFieldActionPerformed(evt);
             }
         });
-        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 370, 40));
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 370, 40));
 
-        NombreTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        NombreTxtField.addActionListener(new java.awt.event.ActionListener() {
+        nombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nombreField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreTxtFieldActionPerformed(evt);
+                nombreFieldActionPerformed(evt);
             }
         });
-        bg.add(NombreTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 370, 40));
+        bg.add(nombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 370, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearClientes.png"))); // NOI18N
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearClientes.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,38 +127,38 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CorreoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoFieldActionPerformed
+    private void correoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CorreoFieldActionPerformed
+    }//GEN-LAST:event_correoFieldActionPerformed
 
-    private void TelefonoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonoFieldActionPerformed
+    private void telefonoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TelefonoFieldActionPerformed
+    }//GEN-LAST:event_telefonoFieldActionPerformed
 
-    private void CrearClienteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearClienteBtnActionPerformed
+    private void crearClienteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearClienteBtnActionPerformed
         // TODO add your handling code here:
         registrarCliente();
-    }//GEN-LAST:event_CrearClienteBtnActionPerformed
+    }//GEN-LAST:event_crearClienteBtnActionPerformed
 
-    private void DNIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIFieldActionPerformed
+    private void dniFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DNIFieldActionPerformed
+    }//GEN-LAST:event_dniFieldActionPerformed
 
-    private void NombreTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTxtFieldActionPerformed
+    private void nombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreTxtFieldActionPerformed
+    }//GEN-LAST:event_nombreFieldActionPerformed
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
         MenuClienteFrame.setVisible(true);
         dispose();
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
     private void registrarCliente(){
-        String nombre = NombreTxtField.getText();
-        String apellido = ApellidoField.getText();
-        String correo = CorreoField.getText();
-        String telefono = TelefonoField.getText();
-        String DNIString = DNIField.getText();
+        String nombre = nombreField.getText();
+        String apellido = apellidoField.getText();
+        String correo = correoField.getText();
+        String telefono = telefonoField.getText();
+        String DNIString = dniField.getText();
         int DNI = Integer.parseInt(DNIString);
         Cliente cliente = new Cliente(nombre,apellido,correo,telefono,DNI);
         boolean insertarCliente = clienteDAO.insertarCliente(cliente);
@@ -202,14 +202,14 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ApellidoField;
-    private javax.swing.JTextField CorreoField;
-    private javax.swing.JButton CrearClienteBtn;
-    private javax.swing.JTextField DNIField;
-    private javax.swing.JTextField NombreTxtField;
-    private javax.swing.JTextField TelefonoField;
-    private javax.swing.JButton VolverBtn;
+    private javax.swing.JTextField apellidoField;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField correoField;
+    private javax.swing.JButton crearClienteBtn;
+    private javax.swing.JTextField dniField;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JTextField nombreField;
+    private javax.swing.JTextField telefonoField;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

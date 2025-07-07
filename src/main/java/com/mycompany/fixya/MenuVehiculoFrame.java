@@ -36,89 +36,89 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        CrearVehiculoBtn = new javax.swing.JButton();
-        BuscarVehiculoBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        volverBtn = new javax.swing.JButton();
+        crearVehiculoBtn = new javax.swing.JButton();
+        buscarVehiculoBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setPreferredSize(new java.awt.Dimension(800, 800));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        CrearVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
-        CrearVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        CrearVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        CrearVehiculoBtn.setText("Crear Vehículo");
-        CrearVehiculoBtn.setToolTipText("");
-        CrearVehiculoBtn.setBorderPainted(false);
-        CrearVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
+        crearVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        crearVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        crearVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        crearVehiculoBtn.setText("Crear Vehículo");
+        crearVehiculoBtn.setToolTipText("");
+        crearVehiculoBtn.setBorderPainted(false);
+        crearVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearVehiculoBtnActionPerformed(evt);
+                crearVehiculoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(CrearVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 220, 50));
+        bg.add(crearVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 220, 50));
 
-        BuscarVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
-        BuscarVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        BuscarVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarVehiculoBtn.setText("Buscar Vehículo");
-        BuscarVehiculoBtn.setBorderPainted(false);
-        BuscarVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
+        buscarVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        buscarVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        buscarVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarVehiculoBtn.setText("Buscar Vehículo");
+        buscarVehiculoBtn.setBorderPainted(false);
+        buscarVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarVehiculoBtnActionPerformed(evt);
+                buscarVehiculoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(BuscarVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 220, 50));
+        bg.add(buscarVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vehiculo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vehiculo.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1021, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1021, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
         MenuPrincipalFrame.setVisible(true);
         dispose();
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void CrearVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearVehiculoBtnActionPerformed
+    private void crearVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearVehiculoBtnActionPerformed
         // TODO add your handling code here:
         new CrearVehiculoFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_CrearVehiculoBtnActionPerformed
+    }//GEN-LAST:event_crearVehiculoBtnActionPerformed
 
-    private void BuscarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarVehiculoBtnActionPerformed
+    private void buscarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarVehiculoBtnActionPerformed
         // TODO add your handling code here:
         new BuscarVehiculoFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_BuscarVehiculoBtnActionPerformed
+    }//GEN-LAST:event_buscarVehiculoBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,10 +161,10 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarVehiculoBtn;
-    private javax.swing.JButton CrearVehiculoBtn;
-    private javax.swing.JButton VolverBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel bg;
+    private javax.swing.JButton buscarVehiculoBtn;
+    private javax.swing.JButton crearVehiculoBtn;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

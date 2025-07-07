@@ -34,10 +34,10 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        NumeroDeCedulaTxtField = new javax.swing.JTextField();
-        BuscarBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        volverBtn = new javax.swing.JButton();
+        dniField = new javax.swing.JTextField();
+        buscarBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -45,34 +45,34 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        NumeroDeCedulaTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        bg.add(NumeroDeCedulaTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
+        dniField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
 
-        BuscarBtn.setBackground(new java.awt.Color(51, 102, 255));
-        BuscarBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BuscarBtn.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarBtn.setText("Buscar ");
-        BuscarBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BuscarBtn.setBorderPainted(false);
-        BuscarBtn.addActionListener(new java.awt.event.ActionListener() {
+        buscarBtn.setBackground(new java.awt.Color(51, 102, 255));
+        buscarBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        buscarBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarBtn.setText("Buscar ");
+        buscarBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscarBtn.setBorderPainted(false);
+        buscarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarBtnActionPerformed(evt);
+                buscarBtnActionPerformed(evt);
             }
         });
-        bg.add(BuscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 220, 50));
+        bg.add(buscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,19 +90,19 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BuscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBtnActionPerformed
+    private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
         // TODO add your handling code here:
         buscarCliente();
-    }//GEN-LAST:event_BuscarBtnActionPerformed
+    }//GEN-LAST:event_buscarBtnActionPerformed
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
         MenuClienteFrame.setVisible(true);
         dispose();
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
     private void buscarCliente(){
-        String DNIString = NumeroDeCedulaTxtField.getText();
+        String DNIString = dniField.getText();
         int DNI = Integer.parseInt(DNIString);
         boolean busqueda = clienteDAO.buscarCliente(DNI);
         if (busqueda){
@@ -148,10 +148,10 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarBtn;
-    private javax.swing.JTextField NumeroDeCedulaTxtField;
-    private javax.swing.JButton VolverBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton buscarBtn;
+    private javax.swing.JTextField dniField;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

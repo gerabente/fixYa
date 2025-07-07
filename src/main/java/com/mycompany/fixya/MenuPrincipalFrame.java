@@ -23,117 +23,117 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BG = new javax.swing.JPanel();
-        SalirBtn = new javax.swing.JButton();
-        MenuCLienteBoton = new javax.swing.JButton();
-        MenuVehiculoBoton = new javax.swing.JButton();
-        MenuOrdenes = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        salirBtn = new javax.swing.JButton();
+        menuClienteBtn = new javax.swing.JButton();
+        menuVehiculoBtn = new javax.swing.JButton();
+        menuOrdenesBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        BG.setBackground(new java.awt.Color(0, 102, 204));
-        BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(0, 102, 204));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SalirBtn.setBackground(new java.awt.Color(255, 51, 51));
-        SalirBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        SalirBtn.setForeground(new java.awt.Color(255, 255, 255));
-        SalirBtn.setText("SALIR");
-        SalirBtn.addActionListener(new java.awt.event.ActionListener() {
+        salirBtn.setBackground(new java.awt.Color(255, 51, 51));
+        salirBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        salirBtn.setForeground(new java.awt.Color(255, 255, 255));
+        salirBtn.setText("SALIR");
+        salirBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirBtnActionPerformed(evt);
+                salirBtnActionPerformed(evt);
             }
         });
-        BG.add(SalirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        bg.add(salirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        MenuCLienteBoton.setBackground(new java.awt.Color(51, 102, 255));
-        MenuCLienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        MenuCLienteBoton.setForeground(new java.awt.Color(255, 255, 255));
-        MenuCLienteBoton.setText("Menu Clientes");
-        MenuCLienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MenuCLienteBoton.setBorderPainted(false);
-        MenuCLienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
+        menuClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuClienteBtn.setForeground(new java.awt.Color(255, 255, 255));
+        menuClienteBtn.setText("Menu Clientes");
+        menuClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menuClienteBtn.setBorderPainted(false);
+        menuClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                MenuCLienteBotonMousePressed(evt);
+                menuClienteBtnMousePressed(evt);
             }
         });
-        MenuCLienteBoton.addActionListener(new java.awt.event.ActionListener() {
+        menuClienteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuCLienteBotonActionPerformed(evt);
+                menuClienteBtnActionPerformed(evt);
             }
         });
-        BG.add(MenuCLienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 130, 30));
+        bg.add(menuClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 130, 30));
 
-        MenuVehiculoBoton.setBackground(new java.awt.Color(51, 102, 255));
-        MenuVehiculoBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        MenuVehiculoBoton.setForeground(new java.awt.Color(255, 255, 255));
-        MenuVehiculoBoton.setText("Menu Vehiculos");
-        MenuVehiculoBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MenuVehiculoBoton.setBorderPainted(false);
-        MenuVehiculoBoton.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        menuVehiculoBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        menuVehiculoBtn.setText("Menu Vehiculos");
+        menuVehiculoBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menuVehiculoBtn.setBorderPainted(false);
+        menuVehiculoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                MenuVehiculoBotonMousePressed(evt);
+                menuVehiculoBtnMousePressed(evt);
             }
         });
-        BG.add(MenuVehiculoBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 120, 30));
+        bg.add(menuVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 120, 30));
 
-        MenuOrdenes.setBackground(new java.awt.Color(51, 102, 255));
-        MenuOrdenes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        MenuOrdenes.setForeground(new java.awt.Color(255, 255, 255));
-        MenuOrdenes.setText("Menu Ordenes");
-        MenuOrdenes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MenuOrdenes.setBorderPainted(false);
-        MenuOrdenes.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuOrdenesBtn.setBackground(new java.awt.Color(51, 102, 255));
+        menuOrdenesBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuOrdenesBtn.setForeground(new java.awt.Color(255, 255, 255));
+        menuOrdenesBtn.setText("Menu Ordenes");
+        menuOrdenesBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        menuOrdenesBtn.setBorderPainted(false);
+        menuOrdenesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                MenuOrdenesMousePressed(evt);
+                menuOrdenesBtnMousePressed(evt);
             }
         });
-        BG.add(MenuOrdenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 120, 30));
+        bg.add(menuOrdenesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 120, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menuprincipal.png"))); // NOI18N
-        BG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menuprincipal.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuCLienteBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuCLienteBotonMousePressed
+    private void menuClienteBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuClienteBtnMousePressed
         // TODO add your handling code here:
         new MenuClienteFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_MenuCLienteBotonMousePressed
+    }//GEN-LAST:event_menuClienteBtnMousePressed
 
-    private void MenuCLienteBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCLienteBotonActionPerformed
+    private void menuClienteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuClienteBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuCLienteBotonActionPerformed
+    }//GEN-LAST:event_menuClienteBtnActionPerformed
 
-    private void MenuVehiculoBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVehiculoBotonMousePressed
+    private void menuVehiculoBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuVehiculoBtnMousePressed
         // TODO add your handling code here:
        new MenuVehiculoFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_MenuVehiculoBotonMousePressed
+    }//GEN-LAST:event_menuVehiculoBtnMousePressed
 
-    private void MenuOrdenesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuOrdenesMousePressed
+    private void menuOrdenesBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuOrdenesBtnMousePressed
         // TODO add your handling code here:
         new MenuOrdenesFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_MenuOrdenesMousePressed
+    }//GEN-LAST:event_menuOrdenesBtnMousePressed
 
-    private void SalirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirBtnActionPerformed
+    private void salirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirBtnActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_SalirBtnActionPerformed
+    }//GEN-LAST:event_salirBtnActionPerformed
   
     /**
      * @param args the command line arguments
@@ -172,11 +172,11 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BG;
-    private javax.swing.JButton MenuCLienteBoton;
-    private javax.swing.JButton MenuOrdenes;
-    private javax.swing.JButton MenuVehiculoBoton;
-    private javax.swing.JButton SalirBtn;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel bg;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton menuClienteBtn;
+    private javax.swing.JButton menuOrdenesBtn;
+    private javax.swing.JButton menuVehiculoBtn;
+    private javax.swing.JButton salirBtn;
     // End of variables declaration//GEN-END:variables
 }

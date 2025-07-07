@@ -30,97 +30,97 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        volverBtn = new javax.swing.JButton();
+        fabricanteField = new javax.swing.JTextField();
+        modeloField = new javax.swing.JTextField();
+        anioField = new javax.swing.JTextField();
+        chapaField = new javax.swing.JTextField();
+        dniField = new javax.swing.JTextField();
+        registrarVehiculoBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        fabricanteField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                fabricanteFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 380, 50));
+        bg.add(fabricanteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 380, 50));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        modeloField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                modeloFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 380, 50));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 380, 50));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 380, 50));
+        bg.add(modeloField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 380, 50));
+        bg.add(anioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 380, 50));
+        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 380, 50));
 
-        jTextField5.setToolTipText("");
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 380, 50));
+        dniField.setToolTipText("");
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 380, 50));
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registrar Vehículo");
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        registrarVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        registrarVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        registrarVehiculoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        registrarVehiculoBtn.setText("Registrar Vehículo");
+        registrarVehiculoBtn.setBorderPainted(false);
+        registrarVehiculoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                registrarVehiculoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 220, 50));
+        bg.add(registrarVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RegistrarVehiculo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RegistrarVehiculo.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void fabricanteFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fabricanteFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_fabricanteFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void modeloFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modeloFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_modeloFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void registrarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarVehiculoBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registrarVehiculoBtnActionPerformed
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
         MenuVehiculoFrame.setVisible(true);
         dispose();
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,14 +148,14 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton VolverBtn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField anioField;
+    private javax.swing.JPanel bg;
+    private javax.swing.JTextField chapaField;
+    private javax.swing.JTextField dniField;
+    private javax.swing.JTextField fabricanteField;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JTextField modeloField;
+    private javax.swing.JButton registrarVehiculoBtn;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

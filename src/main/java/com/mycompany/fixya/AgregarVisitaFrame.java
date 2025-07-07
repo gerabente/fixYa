@@ -34,10 +34,10 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        VolverBtn = new javax.swing.JButton();
-        AgregarVisitaBtn = new javax.swing.JButton();
-        DNIField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        volverBtn = new javax.swing.JButton();
+        agregarVisitaBtn = new javax.swing.JButton();
+        dniField = new javax.swing.JTextField();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -45,39 +45,39 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        VolverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        bg.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
-        AgregarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        AgregarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        AgregarVisitaBtn.setText("Agregar Visita ");
-        AgregarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        AgregarVisitaBtn.setBorderPainted(false);
-        AgregarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
+        agregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        agregarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        agregarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        agregarVisitaBtn.setText("Agregar Visita ");
+        agregarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        agregarVisitaBtn.setBorderPainted(false);
+        agregarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarVisitaBtnActionPerformed(evt);
+                agregarVisitaBtnActionPerformed(evt);
             }
         });
-        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 220, 50));
+        bg.add(agregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 220, 50));
 
-        DNIField.addActionListener(new java.awt.event.ActionListener() {
+        dniField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DNIFieldActionPerformed(evt);
+                dniFieldActionPerformed(evt);
             }
         });
-        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 370, 30));
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 370, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarVisitaCliente.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarVisitaCliente.png"))); // NOI18N
+        imagen.setText("jLabel1");
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,23 +95,23 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVisitaBtnActionPerformed
+    private void agregarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarVisitaBtnActionPerformed
         // TODO add your handling code here:
         agregarVisita();
-    }//GEN-LAST:event_AgregarVisitaBtnActionPerformed
+    }//GEN-LAST:event_agregarVisitaBtnActionPerformed
 
-    private void DNIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIFieldActionPerformed
+    private void dniFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DNIFieldActionPerformed
+    }//GEN-LAST:event_dniFieldActionPerformed
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
         MenuClienteFrame.setVisible(true);
         dispose();
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
     
     private void agregarVisita(){
-        String DNIString = DNIField.getText();
+        String DNIString = dniField.getText();
         int DNI = Integer.parseInt(DNIString);
         boolean agregar = clienteDAO.agregarVisita(DNI);
         if (agregar){
@@ -160,10 +160,10 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarVisitaBtn;
-    private javax.swing.JTextField DNIField;
-    private javax.swing.JButton VolverBtn;
+    private javax.swing.JButton agregarVisitaBtn;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField dniField;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

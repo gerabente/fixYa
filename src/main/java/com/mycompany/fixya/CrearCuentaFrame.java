@@ -23,134 +23,134 @@ public class CrearCuentaFrame extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
-        ApellidoField = new javax.swing.JTextField();
-        TelefonoField = new javax.swing.JTextField();
-        CorreoField = new javax.swing.JTextField();
-        NombreField = new javax.swing.JTextField();
-        ContrasenaField = new javax.swing.JPasswordField();
-        NombreUsuarioField = new javax.swing.JTextField();
-        VolverBtn = new javax.swing.JButton();
-        CrearCuentaBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        apellidoField = new javax.swing.JTextField();
+        telefonoField = new javax.swing.JTextField();
+        correoField = new javax.swing.JTextField();
+        nombreField = new javax.swing.JTextField();
+        contrasenaPasswordField = new javax.swing.JPasswordField();
+        nombreUsuarioField = new javax.swing.JTextField();
+        volverBtn = new javax.swing.JButton();
+        crearCuentaBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setPreferredSize(new java.awt.Dimension(700, 400));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setPreferredSize(new java.awt.Dimension(700, 400));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ApellidoField.addActionListener(new java.awt.event.ActionListener() {
+        apellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        apellidoField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ApellidoFieldActionPerformed(evt);
+                apellidoFieldActionPerformed(evt);
             }
         });
-        background.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 290, 50));
+        bg.add(apellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 290, 50));
 
-        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        background.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 290, 50));
+        telefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(telefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 290, 50));
 
-        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        background.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 290, 50));
+        correoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(correoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 290, 50));
 
-        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        background.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 290, 50));
+        nombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(nombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 290, 50));
 
-        ContrasenaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        background.add(ContrasenaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 523, 290, 50));
+        contrasenaPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(contrasenaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 523, 290, 50));
 
-        NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        background.add(NombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 290, 50));
+        nombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        bg.add(nombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 440, 290, 50));
 
-        VolverBtn.setBackground(new java.awt.Color(0, 51, 255));
-        VolverBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        VolverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        VolverBtn.setText("Volver");
-        VolverBtn.setToolTipText("");
-        VolverBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        VolverBtn.setBorderPainted(false);
-        VolverBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        volverBtn.setBackground(new java.awt.Color(0, 51, 255));
+        volverBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.setToolTipText("");
+        volverBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        volverBtn.setBorderPainted(false);
+        volverBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                VolverBtnMousePressed(evt);
+                volverBtnMousePressed(evt);
             }
         });
-        VolverBtn.addActionListener(new java.awt.event.ActionListener() {
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverBtnActionPerformed(evt);
+                volverBtnActionPerformed(evt);
             }
         });
-        background.add(VolverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 180, 40));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 180, 40));
 
-        CrearCuentaBtn.setBackground(new java.awt.Color(0, 51, 255));
-        CrearCuentaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        CrearCuentaBtn.setText("Crear cuenta");
-        CrearCuentaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        CrearCuentaBtn.setBorderPainted(false);
-        CrearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        crearCuentaBtn.setBackground(new java.awt.Color(0, 51, 255));
+        crearCuentaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        crearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        crearCuentaBtn.setText("Crear cuenta");
+        crearCuentaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        crearCuentaBtn.setBorderPainted(false);
+        crearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                CrearCuentaBtnMousePressed(evt);
+                crearCuentaBtnMousePressed(evt);
             }
         });
-        CrearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
+        crearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearCuentaBtnActionPerformed(evt);
+                crearCuentaBtnActionPerformed(evt);
             }
         });
-        background.add(CrearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 180, 40));
+        bg.add(crearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 180, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearCuenta.png"))); // NOI18N
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearCuenta.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverBtnMousePressed
+    private void volverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverBtnMousePressed
         // TODO add your handling code here:
             InicioSesionFrame.setVisible(true);
             setVisible(false);
-    }//GEN-LAST:event_VolverBtnMousePressed
+    }//GEN-LAST:event_volverBtnMousePressed
 
-    private void VolverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverBtnActionPerformed
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
             InicioSesionFrame.setVisible(true);
             setVisible(false);
-    }//GEN-LAST:event_VolverBtnActionPerformed
+    }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void CrearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearCuentaBtnActionPerformed
+    private void crearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CrearCuentaBtnActionPerformed
+    }//GEN-LAST:event_crearCuentaBtnActionPerformed
 
-    private void CrearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCuentaBtnMousePressed
+    private void crearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaBtnMousePressed
         // TODO add your handling code here:
         registrarUsuario();
-    }//GEN-LAST:event_CrearCuentaBtnMousePressed
+    }//GEN-LAST:event_crearCuentaBtnMousePressed
 
-    private void ApellidoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApellidoFieldActionPerformed
+    private void apellidoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidoFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ApellidoFieldActionPerformed
+    }//GEN-LAST:event_apellidoFieldActionPerformed
     private void registrarUsuario() {
-        String nombre = NombreUsuarioField.getText();
-        String apellido = ApellidoField.getText();
-        String correo = CorreoField.getText();
-        String telefono = TelefonoField.getText();
-        String nombreUsuario = NombreUsuarioField.getText();
-        String contrasena = new String(ContrasenaField.getPassword());
+        String nombre = nombreUsuarioField.getText();
+        String apellido = apellidoField.getText();
+        String correo = correoField.getText();
+        String telefono = telefonoField.getText();
+        String nombreUsuario = nombreUsuarioField.getText();
+        String contrasena = new String(contrasenaPasswordField.getPassword());
 
         boolean creado = auth.registrarUsuario(nombre, apellido, correo, telefono, nombreUsuario, contrasena);
         if (creado) {
@@ -198,15 +198,15 @@ public class CrearCuentaFrame extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ApellidoField;
-    private javax.swing.JPasswordField ContrasenaField;
-    private javax.swing.JTextField CorreoField;
-    private javax.swing.JButton CrearCuentaBtn;
-    private javax.swing.JTextField NombreField;
-    private javax.swing.JTextField NombreUsuarioField;
-    private javax.swing.JTextField TelefonoField;
-    private javax.swing.JButton VolverBtn;
-    private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField apellidoField;
+    private javax.swing.JPanel bg;
+    private javax.swing.JPasswordField contrasenaPasswordField;
+    private javax.swing.JTextField correoField;
+    private javax.swing.JButton crearCuentaBtn;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JTextField nombreField;
+    private javax.swing.JTextField nombreUsuarioField;
+    private javax.swing.JTextField telefonoField;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

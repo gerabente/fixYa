@@ -23,112 +23,112 @@ public class InicioSesionFrame extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
-        ContrasenaPasswordField = new javax.swing.JPasswordField();
-        CrearCuentaBtn = new javax.swing.JButton();
-        NombreUsuarioField = new javax.swing.JTextField();
-        IniciarSesionBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        bg = new javax.swing.JPanel();
+        contrasenaPasswordField = new javax.swing.JPasswordField();
+        crearCuentaBtn = new javax.swing.JButton();
+        nombreUsuarioField = new javax.swing.JTextField();
+        iniciarSesionBtn = new javax.swing.JButton();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setPreferredSize(new java.awt.Dimension(700, 400));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setPreferredSize(new java.awt.Dimension(700, 400));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ContrasenaPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ContrasenaPasswordField.addActionListener(new java.awt.event.ActionListener() {
+        contrasenaPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contrasenaPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ContrasenaPasswordFieldActionPerformed(evt);
+                contrasenaPasswordFieldActionPerformed(evt);
             }
         });
-        background.add(ContrasenaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 290, 50));
+        bg.add(contrasenaPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 290, 50));
 
-        CrearCuentaBtn.setBackground(new java.awt.Color(51, 51, 255));
-        CrearCuentaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        CrearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        CrearCuentaBtn.setText("Crear cuenta");
-        CrearCuentaBtn.setToolTipText("");
-        CrearCuentaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        CrearCuentaBtn.setBorderPainted(false);
-        CrearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        crearCuentaBtn.setBackground(new java.awt.Color(51, 51, 255));
+        crearCuentaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        crearCuentaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        crearCuentaBtn.setText("Crear cuenta");
+        crearCuentaBtn.setToolTipText("");
+        crearCuentaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        crearCuentaBtn.setBorderPainted(false);
+        crearCuentaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                CrearCuentaBtnMousePressed(evt);
+                crearCuentaBtnMousePressed(evt);
             }
         });
-        CrearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
+        crearCuentaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearCuentaBtnActionPerformed(evt);
+                crearCuentaBtnActionPerformed(evt);
             }
         });
-        background.add(CrearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 220, 50));
+        bg.add(crearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 220, 50));
 
-        NombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        NombreUsuarioField.addActionListener(new java.awt.event.ActionListener() {
+        nombreUsuarioField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nombreUsuarioField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreUsuarioFieldActionPerformed(evt);
+                nombreUsuarioFieldActionPerformed(evt);
             }
         });
-        background.add(NombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 290, 50));
+        bg.add(nombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 290, 50));
 
-        IniciarSesionBtn.setBackground(new java.awt.Color(51, 51, 255));
-        IniciarSesionBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        IniciarSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IniciarSesionBtn.setText("Iniciar sesión");
-        IniciarSesionBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        IniciarSesionBtn.setBorderPainted(false);
-        IniciarSesionBtn.addActionListener(new java.awt.event.ActionListener() {
+        iniciarSesionBtn.setBackground(new java.awt.Color(51, 51, 255));
+        iniciarSesionBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        iniciarSesionBtn.setForeground(new java.awt.Color(255, 255, 255));
+        iniciarSesionBtn.setText("Iniciar sesión");
+        iniciarSesionBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        iniciarSesionBtn.setBorderPainted(false);
+        iniciarSesionBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniciarSesionBtnActionPerformed(evt);
+                iniciarSesionBtnActionPerformed(evt);
             }
         });
-        background.add(IniciarSesionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 220, 50));
+        bg.add(iniciarSesionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IniciarSesion.png"))); // NOI18N
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 580));
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IniciarSesion.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1022, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 574, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 574, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IniciarSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionBtnActionPerformed
+    private void iniciarSesionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionBtnActionPerformed
         // TODO add your handling code here:
         realizarLogin();
-    }//GEN-LAST:event_IniciarSesionBtnActionPerformed
+    }//GEN-LAST:event_iniciarSesionBtnActionPerformed
 
-    private void CrearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearCuentaBtnActionPerformed
+    private void crearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CrearCuentaBtnActionPerformed
+    }//GEN-LAST:event_crearCuentaBtnActionPerformed
 
-    private void CrearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCuentaBtnMousePressed
+    private void crearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaBtnMousePressed
         // TODO add your handling code here:
         CrearCuentaFrame.setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_CrearCuentaBtnMousePressed
+    }//GEN-LAST:event_crearCuentaBtnMousePressed
 
-    private void NombreUsuarioFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioFieldActionPerformed
+    private void nombreUsuarioFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreUsuarioFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreUsuarioFieldActionPerformed
+    }//GEN-LAST:event_nombreUsuarioFieldActionPerformed
 
-    private void ContrasenaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContrasenaPasswordFieldActionPerformed
+    private void contrasenaPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contrasenaPasswordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ContrasenaPasswordFieldActionPerformed
+    }//GEN-LAST:event_contrasenaPasswordFieldActionPerformed
     private void realizarLogin() {
-        String usuario = NombreUsuarioField.getText();
-        String contrasena = new String(ContrasenaPasswordField.getPassword());
+        String usuario = nombreUsuarioField.getText();
+        String contrasena = new String(contrasenaPasswordField.getPassword());
 
         Usuario u = auth.iniciarSesion(usuario, contrasena);
         if (u != null) {
@@ -176,11 +176,11 @@ public class InicioSesionFrame extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField ContrasenaPasswordField;
-    private javax.swing.JButton CrearCuentaBtn;
-    private javax.swing.JButton IniciarSesionBtn;
-    private javax.swing.JTextField NombreUsuarioField;
-    private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel bg;
+    private javax.swing.JPasswordField contrasenaPasswordField;
+    private javax.swing.JButton crearCuentaBtn;
+    private javax.swing.JLabel imagen;
+    private javax.swing.JButton iniciarSesionBtn;
+    private javax.swing.JTextField nombreUsuarioField;
     // End of variables declaration//GEN-END:variables
 }
