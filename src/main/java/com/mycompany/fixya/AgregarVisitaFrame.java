@@ -36,11 +36,12 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         bg = new javax.swing.JPanel();
         AgregarVisitaBtn = new javax.swing.JButton();
         DNIField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        bg.setBackground(new java.awt.Color(0, 102, 204));
+        bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
@@ -51,24 +52,30 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
                 AgregarVisitaBtnActionPerformed(evt);
             }
         });
-        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 40));
+        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 220, 50));
 
         DNIField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DNIFieldActionPerformed(evt);
             }
         });
-        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 240, -1));
+        bg.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 370, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarVisitaCliente.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -136,5 +143,6 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JTextField DNIField;
     private javax.swing.JPanel bg;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
