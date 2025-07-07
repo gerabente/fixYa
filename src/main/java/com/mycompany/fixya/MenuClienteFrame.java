@@ -3,15 +3,7 @@ package com.mycompany.fixya;
 
 import javax.swing.JFrame;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author Tote
- */
 public class MenuClienteFrame extends javax.swing.JFrame {
     private JFrame MenuPrincipal;
     /**
@@ -38,7 +30,6 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 400));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
@@ -49,6 +40,8 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 300, 50));
 
         CrearClienteBoton.setBackground(new java.awt.Color(153, 204, 255));
+        CrearClienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CrearClienteBoton.setForeground(new java.awt.Color(0, 0, 0));
         CrearClienteBoton.setText("Crear Cliente");
         CrearClienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearClienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,6 +57,8 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         jPanel1.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 340, 40));
 
         jButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Buscar Cliente");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -74,6 +69,8 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 340, 40));
 
         jButton3.setBackground(new java.awt.Color(153, 204, 255));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Agregar Visita");
         jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {

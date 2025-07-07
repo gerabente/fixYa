@@ -4,10 +4,7 @@
  */
 package com.mycompany.fixya;
 import javax.swing.*;
-/**
- *
- * @author Tote
- */
+
 public class MenuPrincipalFrame extends javax.swing.JFrame {
 
     /**
@@ -51,6 +48,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 200, 170));
 
         MenuCLienteBoton.setBackground(new java.awt.Color(153, 204, 255));
+        MenuCLienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuCLienteBoton.setForeground(new java.awt.Color(0, 0, 0));
         MenuCLienteBoton.setText("Menu Clientes");
         MenuCLienteBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MenuCLienteBoton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -66,6 +65,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         jPanel2.add(MenuCLienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 130, 30));
 
         MenuVehiculoBoton.setBackground(new java.awt.Color(153, 204, 255));
+        MenuVehiculoBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuVehiculoBoton.setForeground(new java.awt.Color(0, 0, 0));
         MenuVehiculoBoton.setText("Menu Vehiculos");
         MenuVehiculoBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MenuVehiculoBoton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,6 +77,8 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         jPanel2.add(MenuVehiculoBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 120, 30));
 
         MenuOrdenes.setBackground(new java.awt.Color(153, 204, 255));
+        MenuOrdenes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        MenuOrdenes.setForeground(new java.awt.Color(0, 0, 0));
         MenuOrdenes.setText("Menu Ordenes");
         MenuOrdenes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MenuOrdenes.addMouseListener(new java.awt.event.MouseAdapter() {

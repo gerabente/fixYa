@@ -4,12 +4,14 @@
  */
 package com.mycompany.fixya;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Tote
  */
 public class CrearClienteFrame extends javax.swing.JFrame {
     private JFrame CrearClienteFrame;
+    private ClienteDAO clienteDAO;
 
     /**
      * Creates new form CrearClienteFrame
@@ -17,6 +19,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     public CrearClienteFrame() {
         initComponents();
         this.CrearClienteFrame=CrearClienteFrame;
+        clienteDAO = new ClienteDAO();
     }
 
     /**
@@ -31,19 +34,22 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        NombreField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        ApellidoField = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        CorreoField = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        TelefonoField = new javax.swing.JTextField();
+        CrearClienteBtn = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        DNIField = new javax.swing.JTextField();
 
         jLabel4.setText("jLabel4");
 
@@ -58,17 +64,20 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         jLabel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 350, 50));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NombreField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NombreFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, 40));
+        jPanel1.add(NombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 190, 40));
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel1.setBackground(new java.awt.Color(153, 204, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nombre");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -93,6 +102,8 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Apellido");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -113,11 +124,15 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 190, 40));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
+
+        ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
 
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Correo electronico ");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -136,18 +151,21 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 .addGap(0, 15, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 220, 40));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 220, 40));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        CorreoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CorreoField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                CorreoFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 220, 40));
+        jPanel1.add(CorreoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 220, 40));
 
         jPanel5.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Teléfono");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -167,20 +185,60 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 220, 50));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 220, 50));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        TelefonoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TelefonoField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                TelefonoFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 220, 40));
+        jPanel1.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 220, 40));
 
-        jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Crear");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 160, 40));
+        CrearClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
+        CrearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CrearClienteBtn.setForeground(new java.awt.Color(0, 0, 0));
+        CrearClienteBtn.setText("Crear");
+        CrearClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CrearClienteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearClienteBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 160, 40));
+
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("DNI");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addGap(0, 15, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 140, 40));
+
+        DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DNIField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DNIFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,18 +254,39 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void NombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_NombreFieldActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void CorreoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_CorreoFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void TelefonoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonoFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_TelefonoFieldActionPerformed
 
+    private void CrearClienteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearClienteBtnActionPerformed
+        // TODO add your handling code here:
+        registrarCliente();
+    }//GEN-LAST:event_CrearClienteBtnActionPerformed
+
+    private void DNIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DNIFieldActionPerformed
+    private void registrarCliente(){
+        String nombre = NombreField.getText();
+        String apellido = ApellidoField.getText();
+        String correo = CorreoField.getText();
+        String telefono = TelefonoField.getText();
+        String DNIString = DNIField.getText();
+        int DNI = Integer.parseInt(DNIString);
+        Cliente cliente = new Cliente(nombre,apellido,correo,telefono,DNI);
+        boolean insertarCliente = clienteDAO.insertarCliente(cliente);
+        if (insertarCliente) {
+            JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -244,21 +323,24 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField ApellidoField;
+    private javax.swing.JTextField CorreoField;
+    private javax.swing.JButton CrearClienteBtn;
+    private javax.swing.JTextField DNIField;
+    private javax.swing.JTextField NombreField;
+    private javax.swing.JTextField TelefonoField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }

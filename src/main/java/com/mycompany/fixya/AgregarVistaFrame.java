@@ -5,12 +5,14 @@
 package com.mycompany.fixya;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Tote
  */
 public class AgregarVistaFrame extends javax.swing.JFrame {
+    private ClienteDAO clienteDAO;
     private JFrame AgregarVistaFrame;
 
     /**
@@ -18,6 +20,7 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
      */
     public AgregarVistaFrame() {
      this.AgregarVistaFrame=AgregarVistaFrame;
+     clienteDAO = new ClienteDAO();
         initComponents();
     }
 
@@ -31,43 +34,66 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        AgregarVisitaBtn = new javax.swing.JButton();
+        DNIField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 400));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(153, 204, 255));
-        jButton1.setText("Agregar Visita ");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
+        AgregarVisitaBtn.setText("Agregar Visita ");
+        AgregarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AgregarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AgregarVisitaBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 150, 40));
+        jPanel1.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 150, 40));
+
+        DNIField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DNIFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 240, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AgregarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVisitaBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        agregarVisita();
+    }//GEN-LAST:event_AgregarVisitaBtnActionPerformed
 
+    private void DNIFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DNIFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DNIFieldActionPerformed
+    
+    private void agregarVisita(){
+        String DNIString = DNIField.getText();
+        int DNI = Integer.parseInt(DNIString);
+        boolean agregar = clienteDAO.agregarVisita(DNI);
+        if (agregar){
+            JOptionPane.showMessageDialog(this, "Visita al cliente agregada");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo agregar la visita", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -105,7 +131,8 @@ public class AgregarVistaFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton AgregarVisitaBtn;
+    private javax.swing.JTextField DNIField;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

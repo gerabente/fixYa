@@ -5,6 +5,7 @@
 package com.mycompany.fixya;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,12 +13,14 @@ import javax.swing.JFrame;
  */
 public class BuscarClienteFrame extends javax.swing.JFrame {
     private JFrame BuscarClienteFrame;
+    private ClienteDAO clienteDAO;
 
     /**
      * Creates new form BuscarCliente
      */
     public BuscarClienteFrame() {
         initComponents();
+        clienteDAO = new ClienteDAO();
         this.BuscarClienteFrame=BuscarClienteFrame;
     }
 
@@ -34,7 +37,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        DNIField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,6 +53,8 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Escribe el numero de cedula del cliente");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -70,10 +75,13 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 340, 40));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 340, 40));
+
+        DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(DNIField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 340, 40));
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Buscar ");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,8 +107,19 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        buscarCliente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void buscarCliente(){
+        String DNIString = DNIField.getText();
+        int DNI = Integer.parseInt(DNIString);
+        boolean busqueda = clienteDAO.buscarCliente(DNI);
+        if (busqueda){
+            JOptionPane.showMessageDialog(this, "Cliente encontrado");
+        } else{
+            JOptionPane.showMessageDialog(this,"El cliente no existe","ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -138,11 +157,11 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField DNIField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
