@@ -66,8 +66,9 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         });
         bg.add(TelefonoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 370, 40));
 
-        CrearClienteBtn.setBackground(new java.awt.Color(153, 204, 255));
+        CrearClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
         CrearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        CrearClienteBtn.setForeground(new java.awt.Color(255, 255, 255));
         CrearClienteBtn.setText("Crear");
         CrearClienteBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearClienteBtn.setBorderPainted(false);
@@ -76,7 +77,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 CrearClienteBtnActionPerformed(evt);
             }
         });
-        bg.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 220, 50));
+        bg.add(CrearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 220, 50));
 
         DNIField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         DNIField.addActionListener(new java.awt.event.ActionListener() {

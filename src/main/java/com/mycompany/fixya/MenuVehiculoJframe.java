@@ -14,13 +14,15 @@ import javax.swing.JLabel;
  *
  * @author Tote
  */
-public class VehiculoJframe extends javax.swing.JFrame {
+public class MenuVehiculoJframe extends javax.swing.JFrame {
+    private JFrame MenuVehiculoFrame;
 
     /**
      * Creates new form VehiculoJframe
      */
-    public VehiculoJframe() {
+    public MenuVehiculoJframe() {
            initComponents();
+    this.MenuVehiculoFrame= MenuVehiculoFrame;
     
     
     }
@@ -35,6 +37,9 @@ public class VehiculoJframe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,8 +48,28 @@ public class VehiculoJframe extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/9.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1020, 590));
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Volver");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Crear Vehículo");
+        jButton1.setToolTipText("");
+        jButton1.setBorderPainted(false);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 220, 50));
+
+        jButton2.setBackground(new java.awt.Color(51, 102, 255));
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Buscar Vehículo");
+        jButton2.setBorderPainted(false);
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 220, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vehiculo.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,20 +104,21 @@ public class VehiculoJframe extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuVehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuVehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuVehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuVehiculoJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VehiculoJframe().setVisible(true);
+                new MenuVehiculoJframe().setVisible(true);
             }
         });
     }
@@ -100,6 +126,9 @@ public class VehiculoJframe extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

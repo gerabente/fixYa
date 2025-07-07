@@ -108,7 +108,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
 
     private void MenuVehiculoBotonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVehiculoBotonMousePressed
         // TODO add your handling code here:
-       new MenuVehiculoFrame().setVisible(true);
+       new MenuVehiculoJframe().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_MenuVehiculoBotonMousePressed
 

@@ -51,7 +51,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 CrearClienteBotonActionPerformed(evt);
             }
         });
-        bg.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 140, 40));
+        bg.add(CrearClienteBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 220, 50));
 
         BuscarClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
         BuscarClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -64,7 +64,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 BuscarClienteBtnMousePressed(evt);
             }
         });
-        bg.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 140, 40));
+        bg.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 220, 50));
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
         AgregarVisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -82,9 +82,9 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 AgregarVisitaBtnActionPerformed(evt);
             }
         });
-        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 130, 40));
+        bg.add(AgregarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MenuCliente.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clientes.png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

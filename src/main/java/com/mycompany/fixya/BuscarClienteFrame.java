@@ -47,8 +47,9 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         NumeroDeCedulaTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bg.add(NumeroDeCedulaTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
 
-        BuscarBtn.setBackground(new java.awt.Color(153, 204, 255));
+        BuscarBtn.setBackground(new java.awt.Color(51, 102, 255));
         BuscarBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BuscarBtn.setForeground(new java.awt.Color(255, 255, 255));
         BuscarBtn.setText("Buscar ");
         BuscarBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BuscarBtn.setBorderPainted(false);
@@ -57,7 +58,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
                 BuscarBtnActionPerformed(evt);
             }
         });
-        bg.add(BuscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 220, 50));
+        bg.add(BuscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 220, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));

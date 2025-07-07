@@ -44,9 +44,12 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AgregarVisitaBtn.setBackground(new java.awt.Color(153, 204, 255));
+        AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        AgregarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        AgregarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
         AgregarVisitaBtn.setText("Agregar Visita ");
         AgregarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AgregarVisitaBtn.setBorderPainted(false);
         AgregarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarVisitaBtnActionPerformed(evt);
