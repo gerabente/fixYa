@@ -32,6 +32,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         ApellidoField = new javax.swing.JTextField();
         CorreoField = new javax.swing.JTextField();
         TelefonoField = new javax.swing.JTextField();
@@ -46,6 +47,11 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         bg.setBackground(new java.awt.Color(0, 102, 204));
         bg.setPreferredSize(new java.awt.Dimension(700, 400));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         ApellidoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bg.add(ApellidoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 370, 40));
@@ -192,6 +198,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
     private javax.swing.JTextField NombreTxtField;
     private javax.swing.JTextField TelefonoField;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

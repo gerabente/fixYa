@@ -24,6 +24,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         CrearClienteBoton = new javax.swing.JButton();
         BuscarClienteBtn = new javax.swing.JButton();
         AgregarVisitaBtn = new javax.swing.JButton();
@@ -34,6 +35,21 @@ public class MenuClienteFrame extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(0, 102, 204));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         CrearClienteBoton.setBackground(new java.awt.Color(51, 102, 255));
         CrearClienteBoton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -128,6 +144,14 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AgregarVisitaBtnActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+          // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -168,6 +192,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     private javax.swing.JButton BuscarClienteBtn;
     private javax.swing.JButton CrearClienteBoton;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

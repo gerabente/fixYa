@@ -34,6 +34,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         AgregarVisitaBtn = new javax.swing.JButton();
         DNIField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -43,6 +44,11 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         AgregarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
         AgregarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -146,6 +152,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     private javax.swing.JButton AgregarVisitaBtn;
     private javax.swing.JTextField DNIField;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

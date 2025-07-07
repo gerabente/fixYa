@@ -34,6 +34,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         NumeroDeCedulaTxtField = new javax.swing.JTextField();
         BuscarBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -43,6 +44,11 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Volver");
+        bg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         NumeroDeCedulaTxtField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bg.add(NumeroDeCedulaTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
@@ -134,6 +140,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     private javax.swing.JButton BuscarBtn;
     private javax.swing.JTextField NumeroDeCedulaTxtField;
     private javax.swing.JPanel bg;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -37,7 +37,7 @@ public class MenuVehiculoJframe extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -48,10 +48,10 @@ public class MenuVehiculoJframe extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Volver");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Volver");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(51, 102, 255));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -128,7 +128,7 @@ public class MenuVehiculoJframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
