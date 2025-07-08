@@ -118,6 +118,7 @@ public class CrearCuentaFrame extends JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverBtnMousePressed
