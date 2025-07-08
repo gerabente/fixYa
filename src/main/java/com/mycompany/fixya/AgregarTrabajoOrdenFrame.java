@@ -4,11 +4,15 @@
  */
 package com.mycompany.fixya;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estebanpardo
  */
 public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
+    private OrdenDAO ordenDAO = new OrdenDAO();
+    private TrabajoDAO trabajoDAO = new TrabajoDAO();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AgregarTrabajoOrdenFrame.class.getName());
 
@@ -16,6 +20,8 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
      * Creates new form AgregarTrabajoOrdenFrame
      */
     public AgregarTrabajoOrdenFrame() {
+        this.ordenDAO = ordenDAO;
+        this.trabajoDAO = trabajoDAO;
         initComponents();
     }
 
@@ -30,11 +36,16 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        IngresarChapaBtn = new javax.swing.JButton();
-        AgregarTrabajoBtn = new javax.swing.JButton();
+        descripcionField = new javax.swing.JTextField();
+        costoField = new javax.swing.JTextField();
+        chapaField = new javax.swing.JTextField();
+        idOrdenField = new javax.swing.JTextField();
+        buscarOrden = new javax.swing.JButton();
+        agregarTrabajoBtn = new javax.swing.JButton();
         volverBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ordenesTable = new javax.swing.JTable();
 
         jButton1.setText("jButton1");
 
@@ -43,39 +54,49 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 190, 50));
+        descripcionField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(descripcionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 80));
 
-        IngresarChapaBtn.setBackground(new java.awt.Color(51, 102, 255));
-        IngresarChapaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        IngresarChapaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        IngresarChapaBtn.setText("Ingresar");
-        IngresarChapaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        IngresarChapaBtn.setBorderPainted(false);
-        IngresarChapaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresarChapaBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(IngresarChapaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 180, 40));
+        costoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(costoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, 210, 50));
 
-        AgregarTrabajoBtn.setBackground(new java.awt.Color(51, 102, 255));
-        AgregarTrabajoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        AgregarTrabajoBtn.setForeground(new java.awt.Color(255, 255, 255));
-        AgregarTrabajoBtn.setText("Agregar Trabajo ");
-        AgregarTrabajoBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        AgregarTrabajoBtn.setBorderPainted(false);
-        AgregarTrabajoBtn.addActionListener(new java.awt.event.ActionListener() {
+        chapaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        chapaField.setToolTipText("");
+        chapaField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarTrabajoBtnActionPerformed(evt);
+                chapaFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarTrabajoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, 220, 50));
+        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 190, 50));
+
+        idOrdenField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(idOrdenField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 190, 50));
+
+        buscarOrden.setBackground(new java.awt.Color(51, 102, 255));
+        buscarOrden.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        buscarOrden.setForeground(new java.awt.Color(255, 255, 255));
+        buscarOrden.setText("Buscar Orden");
+        buscarOrden.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscarOrden.setBorderPainted(false);
+        buscarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarOrdenActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buscarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 180, 40));
+
+        agregarTrabajoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        agregarTrabajoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        agregarTrabajoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        agregarTrabajoBtn.setText("Agregar Trabajo ");
+        agregarTrabajoBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        agregarTrabajoBtn.setBorderPainted(false);
+        agregarTrabajoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarTrabajoBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(agregarTrabajoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, 220, 50));
 
         volverBtn.setBackground(new java.awt.Color(102, 102, 102));
         volverBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,6 +110,21 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
+
+        ordenesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(ordenesTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 290, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,24 +147,46 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        //MenuVehiculoFrame.setVisible(true);
-        //dispose();
+        new MenuOrdenesFrame().setVisible(true);
+        dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void IngresarChapaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarChapaBtnActionPerformed
+    private void buscarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarOrdenActionPerformed
         // TODO add your handling code here:
-        // agregarVisita();
-    }//GEN-LAST:event_IngresarChapaBtnActionPerformed
+        buscarOrden();
+    }//GEN-LAST:event_buscarOrdenActionPerformed
 
-    private void AgregarTrabajoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarTrabajoBtnActionPerformed
+    private void agregarTrabajoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarTrabajoBtnActionPerformed
         // TODO add your handling code here:
-        // agregarVisita();
-    }//GEN-LAST:event_AgregarTrabajoBtnActionPerformed
+        agregarTrabajoOrden();
+    }//GEN-LAST:event_agregarTrabajoBtnActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void chapaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chapaFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_chapaFieldActionPerformed
 
+    private void buscarOrden(){
+        String chapa = chapaField.getText();
+        ordenDAO.buscarOrdenSimple(chapa,ordenesTable);
+    }
+    
+    private void agregarTrabajoOrden(){
+        String idString = idOrdenField.getText();
+        int idOrden = Integer.parseInt(idString);
+        String descripcion = descripcionField.getText();
+        String costoString = costoField.getText();
+        int costo = Integer.parseInt(costoString);
+        boolean trabajoAgregado = trabajoDAO.insertarTrabajo(idOrden, descripcion, costo);
+        if (trabajoAgregado) {
+            JOptionPane.showMessageDialog(this, "Trabajo agregado correctamente");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(this, "El trabajo no se ha podido agregar");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -155,12 +213,17 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarTrabajoBtn;
-    private javax.swing.JButton IngresarChapaBtn;
+    private javax.swing.JButton agregarTrabajoBtn;
+    private javax.swing.JButton buscarOrden;
+    private javax.swing.JTextField chapaField;
+    private javax.swing.JTextField costoField;
+    private javax.swing.JTextField descripcionField;
+    private javax.swing.JTextField idOrdenField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable ordenesTable;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

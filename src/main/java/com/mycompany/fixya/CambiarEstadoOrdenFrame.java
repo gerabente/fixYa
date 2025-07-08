@@ -1,21 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.fixya;
 
-/**
- *
- * @author estebanpardo
- */
+import javax.swing.JOptionPane;
+
 public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
-    
+    private OrdenDAO ordenDAO = new OrdenDAO();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CambiarEstadoOrdenFrame.class.getName());
 
     /**
      * Creates new form CambiarEstadoOrdenFrame
      */
     public CambiarEstadoOrdenFrame() {
+        this.ordenDAO = ordenDAO;
         initComponents();
     }
 
@@ -30,10 +25,14 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         volverBtn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        ordenIdField = new javax.swing.JTextField();
+        buscarOrdenBtn = new javax.swing.JButton();
+        estadosComboBox = new javax.swing.JComboBox<>();
+        chapaField = new javax.swing.JTextField();
         cambiarEstadoOrdenBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ordenesTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,19 +48,48 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 390, 50));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        ordenIdField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ordenIdField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                ordenIdFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 390, 50));
+        jPanel1.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 210, 50));
+
+        buscarOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
+        buscarOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        buscarOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarOrdenBtn.setText("Buscar orden");
+        buscarOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscarOrdenBtn.setBorderPainted(false);
+        buscarOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarOrdenBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 40));
+
+        estadosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espera", "Proceso", "Terminada" }));
+        estadosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                estadosComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(estadosComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 200, 50));
+
+        chapaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        chapaField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chapaFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 170, 50));
 
         cambiarEstadoOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         cambiarEstadoOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         cambiarEstadoOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
-        cambiarEstadoOrdenBtn.setText("Crear Orden");
+        cambiarEstadoOrdenBtn.setText("Cambiar estado");
         cambiarEstadoOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cambiarEstadoOrdenBtn.setBorderPainted(false);
         cambiarEstadoOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -69,10 +97,25 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 cambiarEstadoOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 220, 50));
+        jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cambiar Estado Orden.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarTrabajoOrden.Mejoradopng.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
+
+        ordenesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(ordenesTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 310, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,19 +138,75 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        //MenuVehiculoFrame.setVisible(true);
-        //dispose();
+        new MenuOrdenesFrame().setVisible(true);
+        dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
+
+    private void buscarOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarOrdenBtnActionPerformed
+        // TODO add your handling code here:
+        buscarOrden();
+    }//GEN-LAST:event_buscarOrdenBtnActionPerformed
+
+    private void ordenIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenIdFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ordenIdFieldActionPerformed
+
+    private void estadosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadosComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estadosComboBoxActionPerformed
+
+    private void chapaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chapaFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chapaFieldActionPerformed
 
     private void cambiarEstadoOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarEstadoOrdenBtnActionPerformed
         // TODO add your handling code here:
-       // agregarVisita();
+        cambiarEstadoOrden();
     }//GEN-LAST:event_cambiarEstadoOrdenBtnActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
+    private void buscarOrden(){
+    String chapa = chapaField.getText();
+    ordenDAO.buscarOrdenSimple(chapa, ordenesTable);
+}
+    private void cambiarEstadoOrden(){
+        String ordenIdString = ordenIdField.getText();
+        int ordenId = Integer.parseInt(ordenIdString);
+        int opcionEstado = estadosComboBox.getSelectedIndex() + 1;
+        if (opcionEstado==1){
+            boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId,opcionEstado);
+            if (cambio) {
+            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Espera' ");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }else{
+            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }
+        }else if (opcionEstado==2){
+            boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId, opcionEstado);
+            if (cambio) {
+            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Proceso' ");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }else{
+            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }
+        }else if (opcionEstado==3){
+        boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId, opcionEstado);
+        ordenDAO.cerrarOrden(ordenId);
+            if (cambio) {
+            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Terminada' ");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }else{
+            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -134,11 +233,15 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buscarOrdenBtn;
     private javax.swing.JButton cambiarEstadoOrdenBtn;
+    private javax.swing.JTextField chapaField;
+    private javax.swing.JComboBox<String> estadosComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField ordenIdField;
+    private javax.swing.JTable ordenesTable;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

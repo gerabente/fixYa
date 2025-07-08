@@ -30,7 +30,8 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
         volverBtn = new javax.swing.JButton();
         agregarTrabajoBtn = new javax.swing.JButton();
         buscarOrdenBtn = new javax.swing.JButton();
-        cambiarestadoOrdenBtn = new javax.swing.JButton();
+        verTrabajosPorOrdenBtn = new javax.swing.JButton();
+        cambiarEstadoOrdenBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,7 +50,7 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
                 crearOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(crearOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 220, 50));
+        jPanel1.add(crearOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 220, 60));
 
         volverBtn.setBackground(new java.awt.Color(102, 102, 102));
         volverBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,7 +73,7 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
                 agregarTrabajoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(agregarTrabajoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 220, 50));
+        jPanel1.add(agregarTrabajoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 220, 60));
 
         buscarOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         buscarOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -85,20 +86,33 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
                 buscarOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 220, 50));
+        jPanel1.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 220, 60));
 
-        cambiarestadoOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
-        cambiarestadoOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        cambiarestadoOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
-        cambiarestadoOrdenBtn.setText("Cambiar Estado Orden");
-        cambiarestadoOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        cambiarestadoOrdenBtn.setBorderPainted(false);
-        cambiarestadoOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
+        verTrabajosPorOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
+        verTrabajosPorOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        verTrabajosPorOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
+        verTrabajosPorOrdenBtn.setText("Ver trabajos por orden");
+        verTrabajosPorOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        verTrabajosPorOrdenBtn.setBorderPainted(false);
+        verTrabajosPorOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cambiarestadoOrdenBtnActionPerformed(evt);
+                verTrabajosPorOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(cambiarestadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 220, 50));
+        jPanel1.add(verTrabajosPorOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 220, 60));
+
+        cambiarEstadoOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
+        cambiarEstadoOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        cambiarEstadoOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
+        cambiarEstadoOrdenBtn.setText("Cambiar Estado Orden");
+        cambiarEstadoOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cambiarEstadoOrdenBtn.setBorderPainted(false);
+        cambiarEstadoOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarEstadoOrdenBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 220, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu Orden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
@@ -146,11 +160,17 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_buscarOrdenBtnActionPerformed
 
-    private void cambiarestadoOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarestadoOrdenBtnActionPerformed
+    private void verTrabajosPorOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTrabajosPorOrdenBtnActionPerformed
+        // TODO add your handling code here:
+        new VerTrabajosPorOrdenFrame().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_verTrabajosPorOrdenBtnActionPerformed
+
+    private void cambiarEstadoOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarEstadoOrdenBtnActionPerformed
         // TODO add your handling code here:
         new CambiarEstadoOrdenFrame().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_cambiarestadoOrdenBtnActionPerformed
+    }//GEN-LAST:event_cambiarEstadoOrdenBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,10 +210,11 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarTrabajoBtn;
     private javax.swing.JButton buscarOrdenBtn;
-    private javax.swing.JButton cambiarestadoOrdenBtn;
+    private javax.swing.JButton cambiarEstadoOrdenBtn;
     private javax.swing.JButton crearOrdenBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton verTrabajosPorOrdenBtn;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

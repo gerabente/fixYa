@@ -109,7 +109,10 @@ public class ClienteDAO {
             pstmtBusquedaDNI.setInt(1, DNI);
 
             ResultSet rs = pstmtBusquedaDNI.executeQuery();
-            if (rs.next()) {
+            if (!rs.next()) {
+                return false;
+                }else{
+                
                 int cliente_id = rs.getInt(1);
                 
                 try (PreparedStatement pstmtVisita = conn.prepareStatement(sqlVisita)) {
@@ -117,13 +120,12 @@ public class ClienteDAO {
 
                     int filasInsertadas = pstmtVisita.executeUpdate();
                     return filasInsertadas > 0;
+                    }
                 }
-            }
         } catch (SQLException e) {
             System.err.println("El cliente no existe: " + e.getMessage());
             return false;
         }
-        return true;
     }
         public void buscarVisita(int dni, JTable tablaVisitas) {
         // Definimos los nombres de columna

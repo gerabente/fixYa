@@ -6,17 +6,17 @@ package com.mycompany.fixya;
 
 /**
  *
- * @author estebanpardo
+ * @author PC
  */
-public class BuscarOrdenFrame extends javax.swing.JFrame {
+public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
     private OrdenDAO ordenDAO = new OrdenDAO();
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarOrdenFrame.class.getName());
-
+    private TrabajoDAO trabajoDAO = new TrabajoDAO();
     /**
-     * Creates new form BuscarOrdenFrame
+     * Creates new form VerTrabajosPorOrdenFrame
      */
-    public BuscarOrdenFrame() {
+    public VerTrabajosPorOrdenFrame() {
         this.ordenDAO = ordenDAO;
+        this.trabajoDAO = trabajoDAO;
         initComponents();
     }
 
@@ -30,33 +30,41 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        volverBtn = new javax.swing.JButton();
-        buscarOrdenBtn = new javax.swing.JButton();
+        ordenIdField = new javax.swing.JTextField();
+        verTrabajosBtn = new javax.swing.JButton();
         chapaField = new javax.swing.JTextField();
-        ocultarFondoPanel = new javax.swing.JPanel();
+        buscarOrdenBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenesTable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        trabajosTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1020, 570));
 
+        bg.setPreferredSize(new java.awt.Dimension(1020, 570));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bg.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 150, 50));
 
-        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
-        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
-        volverBtn.setText("Volver");
-        volverBtn.addActionListener(new java.awt.event.ActionListener() {
+        verTrabajosBtn.setBackground(new java.awt.Color(51, 102, 255));
+        verTrabajosBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        verTrabajosBtn.setForeground(new java.awt.Color(255, 255, 255));
+        verTrabajosBtn.setText("Ver trabajos");
+        verTrabajosBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        verTrabajosBtn.setBorderPainted(false);
+        verTrabajosBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volverBtnActionPerformed(evt);
+                verTrabajosBtnActionPerformed(evt);
             }
         });
-        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(verTrabajosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 160, 40));
+        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 180, 50));
 
         buscarOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         buscarOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         buscarOrdenBtn.setForeground(new java.awt.Color(255, 255, 255));
-        buscarOrdenBtn.setText("Buscar Orden ");
+        buscarOrdenBtn.setText("Buscar orden");
         buscarOrdenBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buscarOrdenBtn.setBorderPainted(false);
         buscarOrdenBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -64,34 +72,9 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
                 buscarOrdenBtnActionPerformed(evt);
             }
         });
-        bg.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 220, 50));
+        bg.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 40));
 
-        chapaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        chapaField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chapaFieldActionPerformed(evt);
-            }
-        });
-        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 390, 60));
-
-        ocultarFondoPanel.setBackground(new java.awt.Color(255, 255, 255));
-        ocultarFondoPanel.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout ocultarFondoPanelLayout = new javax.swing.GroupLayout(ocultarFondoPanel);
-        ocultarFondoPanel.setLayout(ocultarFondoPanelLayout);
-        ocultarFondoPanelLayout.setHorizontalGroup(
-            ocultarFondoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
-        );
-        ocultarFondoPanelLayout.setVerticalGroup(
-            ocultarFondoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-
-        bg.add(ocultarFondoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 430, 260));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TrabajosDeLaOrden.png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         ordenesTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,43 +90,56 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(ordenesTable);
 
-        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 281, 530, 220));
+        bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 310, 140));
+
+        trabajosTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(trabajosTable);
+
+        bg.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 321, 510, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
+    private void verTrabajosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTrabajosBtnActionPerformed
         // TODO add your handling code here:
-        new MenuOrdenesFrame().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_volverBtnActionPerformed
+        verTrabajos();
+    }//GEN-LAST:event_verTrabajosBtnActionPerformed
 
     private void buscarOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarOrdenBtnActionPerformed
         // TODO add your handling code here:
         buscarOrden();
     }//GEN-LAST:event_buscarOrdenBtnActionPerformed
-
-    private void chapaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chapaFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chapaFieldActionPerformed
     
     private void buscarOrden(){
         String chapa = chapaField.getText();
-        ordenDAO.buscarOrden(chapa, ordenesTable);
+        ordenDAO.buscarOrdenSimple(chapa,ordenesTable);
+    }
+    
+    private void verTrabajos(){
+        String ordenIdString = ordenIdField.getText();
+        int ordenId = Integer.parseInt(ordenIdString);
+        trabajoDAO.verTrabajos(ordenId,trabajosTable);
     }
     /**
      * @param args the command line arguments
@@ -161,13 +157,23 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VerTrabajosPorOrdenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VerTrabajosPorOrdenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VerTrabajosPorOrdenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VerTrabajosPorOrdenFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new BuscarOrdenFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VerTrabajosPorOrdenFrame().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -176,8 +182,10 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
     private javax.swing.JTextField chapaField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel ocultarFondoPanel;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField ordenIdField;
     private javax.swing.JTable ordenesTable;
-    private javax.swing.JButton volverBtn;
+    private javax.swing.JTable trabajosTable;
+    private javax.swing.JButton verTrabajosBtn;
     // End of variables declaration//GEN-END:variables
 }

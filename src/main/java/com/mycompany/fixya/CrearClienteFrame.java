@@ -167,6 +167,10 @@ public class CrearClienteFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
             MenuClienteFrame.setVisible(true);
             dispose();
+        }else{
+            JOptionPane.showMessageDialog(this, "El cliente no se ha podido registrar");
+            MenuClienteFrame.setVisible(true);
+            dispose();
         }
     }
     /**

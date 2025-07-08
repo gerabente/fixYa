@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
  */
 public class AgregarVisitaFrame extends javax.swing.JFrame {
     private ClienteDAO clienteDAO;
-    private JFrame MenuClienteFrame;
 
     /**
      * Creates new form AgregarVistaFram
