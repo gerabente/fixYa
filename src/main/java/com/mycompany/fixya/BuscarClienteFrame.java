@@ -21,7 +21,6 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     public BuscarClienteFrame() {
         initComponents();
         clienteDAO = new ClienteDAO();
-        this.MenuClienteFrame= new MenuClienteFrame();
     }
 
     /**
@@ -38,6 +37,8 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         dniField = new javax.swing.JTextField();
         buscarBtn = new javax.swing.JButton();
         imagen = new javax.swing.JLabel();
+        scrollPane = new javax.swing.JScrollPane();
+        clientesTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -55,7 +56,13 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         });
         bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
+        dniField.setBackground(new java.awt.Color(255, 255, 255));
         dniField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dniField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dniFieldActionPerformed(evt);
+            }
+        });
         bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 470, 50));
 
         buscarBtn.setBackground(new java.awt.Color(51, 102, 255));
@@ -74,6 +81,21 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
 
+        clientesTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollPane.setViewportView(clientesTable);
+
+        bg.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 281, 480, 220));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,6 +110,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
@@ -97,19 +120,18 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuClienteFrame.setVisible(true);
+        new MenuClienteFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
+
+    private void dniFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dniFieldActionPerformed
 
     private void buscarCliente(){
         String DNIString = dniField.getText();
         int DNI = Integer.parseInt(DNIString);
-        boolean busqueda = clienteDAO.buscarCliente(DNI);
-        if (busqueda){
-            JOptionPane.showMessageDialog(this, "Cliente encontrado");
-        } else{
-            JOptionPane.showMessageDialog(this,"El cliente no existe","ERROR", JOptionPane.ERROR_MESSAGE);
-        }
+        clienteDAO.buscarCliente(DNI,clientesTable);
     }
     /**
      * @param args the command line arguments
@@ -150,8 +172,10 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton buscarBtn;
+    private javax.swing.JTable clientesTable;
     private javax.swing.JTextField dniField;
     private javax.swing.JLabel imagen;
+    private javax.swing.JScrollPane scrollPane;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

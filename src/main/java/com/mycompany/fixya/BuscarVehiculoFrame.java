@@ -5,17 +5,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class BuscarVehiculoFrame extends javax.swing.JFrame {
     private JFrame MenuVehiculoFrame;
+    private VehiculoDAO vehiculoDAO = new VehiculoDAO();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVehiculoFrame.class.getName());
 
     /**
      * Creates new form BuscarVehiculo
      */
     public BuscarVehiculoFrame() {
-        this.MenuVehiculoFrame = new MenuVehiculoFrame();
         this.setContentPane(new imagenes());
+        this.vehiculoDAO = vehiculoDAO;
         initComponents();
     }
 
@@ -32,6 +34,8 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
         chapaField = new javax.swing.JTextField();
         buscarBtn = new javax.swing.JButton();
         imagen = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        vehiculosTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,20 +57,49 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
         buscarBtn.setText("Buscar Vehículo");
         buscarBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buscarBtn.setBorderPainted(false);
+        buscarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(buscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 220, 50));
 
         imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarVehiculo (1).png"))); // NOI18N
         getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 580));
+
+        vehiculosTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(vehiculosTable);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 281, 430, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuVehiculoFrame.setVisible(true);
+        new MenuVehiculoFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
+    private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
+        // TODO add your handling code here:
+        buscarVehiculo();
+    }//GEN-LAST:event_buscarBtnActionPerformed
+
+    private void buscarVehiculo(){
+        String chapa = chapaField.getText();
+        vehiculoDAO.buscarVehiculo(chapa,vehiculosTable);
+    }
     /**
      * @param args the command line arguments
      */
@@ -108,6 +141,8 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
     private javax.swing.JButton buscarBtn;
     private javax.swing.JTextField chapaField;
     private javax.swing.JLabel imagen;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable vehiculosTable;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

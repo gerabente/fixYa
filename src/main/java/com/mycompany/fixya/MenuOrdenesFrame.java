@@ -8,14 +8,12 @@ import javax.swing.JFrame;
  * @author Tote
  */
 public class MenuOrdenesFrame extends javax.swing.JFrame {
-    private JFrame MenuOrdenesFrame;
 
     /**
      * Creates new form MenuOrdenesFrame
      */
     public MenuOrdenesFrame() {
         initComponents();
-        this.MenuOrdenesFrame= new MenuOrdenesFrame();
     }
 
     /**
@@ -126,28 +124,32 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        //MenuVehiculoFrame.setVisible(true);
-        //dispose();
+        new MenuPrincipalFrame().setVisible(true);
+        dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void crearOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenBtnActionPerformed
         // TODO add your handling code here:
-
+        new CrearOrdenFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_crearOrdenBtnActionPerformed
 
     private void agregarTrabajoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarTrabajoBtnActionPerformed
         // TODO add your handling code here:
-
+        new AgregarTrabajoOrdenFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_agregarTrabajoBtnActionPerformed
 
     private void buscarOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarOrdenBtnActionPerformed
         // TODO add your handling code here:
-
+        new BuscarOrdenFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_buscarOrdenBtnActionPerformed
 
     private void cambiarestadoOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarestadoOrdenBtnActionPerformed
         // TODO add your handling code here:
-
+        new CambiarEstadoOrdenFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_cambiarestadoOrdenBtnActionPerformed
 
     /**

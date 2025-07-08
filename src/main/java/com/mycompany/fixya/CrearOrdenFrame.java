@@ -4,18 +4,21 @@
  */
 package com.mycompany.fixya;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estebanpardo
  */
 public class CrearOrdenFrame extends javax.swing.JFrame {
-    
+    private OrdenDAO ordenDAO = new OrdenDAO();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CrearOrdenFrame.class.getName());
 
     /**
      * Creates new form CrearOrdenFrame
      */
     public CrearOrdenFrame() {
+        this.ordenDAO = ordenDAO;
         initComponents();
     }
 
@@ -29,7 +32,7 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        chapaField = new javax.swing.JTextField();
         volverBtn = new javax.swing.JButton();
         crearOrdenBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -38,7 +41,7 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 390, 50));
+        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 390, 50));
 
         volverBtn.setBackground(new java.awt.Color(102, 102, 102));
         volverBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,14 +88,28 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
+        new MenuOrdenesFrame().setVisible(true);
+        dispose();
        
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void crearOrdenBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearOrdenBtnActionPerformed
         // TODO add your handling code here:
+        crearOrden();
    
     }//GEN-LAST:event_crearOrdenBtnActionPerformed
 
+    private void crearOrden(){
+        String chapa = chapaField.getText();
+        boolean ordenCreada = ordenDAO.insertarOrden(chapa);
+        if (ordenCreada){
+        JOptionPane.showMessageDialog(this, "Orden creada correctamente");
+            new MenuOrdenesFrame().setVisible(true);
+            dispose();
+    }else{
+        JOptionPane.showMessageDialog(this, "La orden no se pudo crear", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     /**
      * @param args the command line arguments
      */
@@ -119,10 +136,10 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField chapaField;
     private javax.swing.JButton crearOrdenBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

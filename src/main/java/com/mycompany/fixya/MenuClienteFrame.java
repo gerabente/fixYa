@@ -10,7 +10,6 @@ public class MenuClienteFrame extends javax.swing.JFrame {
      * Creates new form MenuClienteFrame
      */
     public MenuClienteFrame() {
-        this.MenuPrincipalFrame = new MenuPrincipalFrame();
         initComponents();
     }
 
@@ -28,7 +27,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         crearClienteBtn = new javax.swing.JButton();
         agregarVisitaBtn = new javax.swing.JButton();
         buscarClienteBtn = new javax.swing.JButton();
-        BuscarvisitaBtn = new javax.swing.JButton();
+        buscarVisitaBtn = new javax.swing.JButton();
         imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,18 +100,18 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         });
         bg.add(buscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 220, 50));
 
-        BuscarvisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
-        BuscarvisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BuscarvisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarvisitaBtn.setText("Buscar Visita");
-        BuscarvisitaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BuscarvisitaBtn.setBorderPainted(false);
-        BuscarvisitaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        buscarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        buscarVisitaBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buscarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarVisitaBtn.setText("Buscar Visita");
+        buscarVisitaBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscarVisitaBtn.setBorderPainted(false);
+        buscarVisitaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                BuscarvisitaBtnMousePressed(evt);
+                buscarVisitaBtnMousePressed(evt);
             }
         });
-        bg.add(BuscarvisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 220, 50));
+        bg.add(buscarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 220, 50));
 
         imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clientes.png"))); // NOI18N
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
@@ -144,10 +143,10 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_crearClienteBtnMousePressed
 
-    private void BuscarvisitaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarvisitaBtnMousePressed
-        new BuscarClienteFrame().setVisible(true);
+    private void buscarVisitaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarVisitaBtnMousePressed
+        new BuscarVisitaFrame().setVisible(true);
         setVisible(false);        // TODO add your handling code here:
-    }//GEN-LAST:event_BuscarvisitaBtnMousePressed
+    }//GEN-LAST:event_buscarVisitaBtnMousePressed
 
     private void agregarVisitaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarVisitaBtnMousePressed
       new AgregarVisitaFrame().setVisible(true);
@@ -165,12 +164,14 @@ public class MenuClienteFrame extends javax.swing.JFrame {
 
     private void volverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverBtnMousePressed
           // TODO add your handling code here:
-          MenuPrincipalFrame.setVisible(true);
+          new MenuPrincipalFrame().setVisible(true);
           dispose();
     }//GEN-LAST:event_volverBtnMousePressed
 
     private void buscarClienteBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarClienteBtnMousePressed
         // TODO add your handling code here:
+        new BuscarClienteFrame().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_buscarClienteBtnMousePressed
 
     /**
@@ -209,10 +210,10 @@ public class MenuClienteFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarvisitaBtn;
     private javax.swing.JButton agregarVisitaBtn;
     private javax.swing.JPanel bg;
     private javax.swing.JButton buscarClienteBtn;
+    private javax.swing.JButton buscarVisitaBtn;
     private javax.swing.JButton crearClienteBtn;
     private javax.swing.JLabel imagen;
     private javax.swing.JButton volverBtn;

@@ -11,13 +11,14 @@ import javax.swing.JOptionPane;
  */
 public class CrearVehiculoFrame extends javax.swing.JFrame {
     private JFrame MenuVehiculoFrame;
+    private VehiculoDAO vehiculoDAO = new VehiculoDAO();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CrearVehiculoFrame.class.getName());
 
     /**
      * Creates new form CrearVehiculoFrame
      */
     public CrearVehiculoFrame() {
-        this.MenuVehiculoFrame = new MenuVehiculoFrame();
+        this.vehiculoDAO = vehiculoDAO;
         initComponents();
     }
 
@@ -115,14 +116,33 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
 
     private void registrarVehiculoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarVehiculoBtnActionPerformed
         // TODO add your handling code here:
+        registrarVehiculo();
     }//GEN-LAST:event_registrarVehiculoBtnActionPerformed
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuVehiculoFrame.setVisible(true);
+        new MenuVehiculoFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
+    public void registrarVehiculo(){
+    String fabricante = fabricanteField.getText();
+    String chapa = chapaField.getText();
+    String modelo = modeloField.getText();
+    String anioString = anioField.getText();
+    int anio = Integer.parseInt(anioString);
+    String dniString = dniField.getText();
+    int dni = Integer.parseInt(dniString);
+    Vehiculo vehiculo = new Vehiculo(chapa,fabricante,modelo,anio);
+    boolean insertarVehiculo = vehiculoDAO.insertarVehiculo(vehiculo, dni);
+    if (insertarVehiculo){
+        JOptionPane.showMessageDialog(this, "Vehiculo registrado correctamente");
+            new MenuVehiculoFrame().setVisible(true);
+            dispose();
+    }else{
+        JOptionPane.showMessageDialog(this, "El vehiculo no se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
     /**
      * @param args the command line arguments
      */

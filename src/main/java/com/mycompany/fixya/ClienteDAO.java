@@ -1,9 +1,9 @@
 package com.mycompany.fixya;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ClienteDAO {
     /**
@@ -44,31 +44,64 @@ public class ClienteDAO {
         return false;
     }
     
-    public boolean buscarCliente(int DNI){
-        String sqlBusqueda = "SELECT p.nombre, p.apellido, p.correo, p.telefono, c.dni FROM personas p "
-                + " JOIN clientes c on p.id = c.persona_id "
-                + " WHERE c.dni = (?) ";
+    public void buscarCliente(int dni, JTable tablaClientes) {
+        // Definimos los nombres de columna
+        String[] columnNames = { "Nombre", "Apellido", "Correo", "Teléfono", "DNI" };
+        // Modelo vacío con las columnas
+        DefaultTableModel model = new DefaultTableModel(null, columnNames);
+
+        String sql = "SELECT p.nombre, p.apellido, p.correo, p.telefono, c.dni " +
+                     "FROM personas p " +
+                     "JOIN clientes c ON p.id = c.persona_id " +
+                     "WHERE c.dni = ?";
+
         try (Connection conn = ConexionDB.obtenerConexion();
-             PreparedStatement pstmtBusqueda = conn.prepareStatement(sqlBusqueda)) {
+             PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            pstmtBusqueda.setInt(1, DNI);
+            ps.setInt(1, dni);
 
-            ResultSet rs = pstmtBusqueda.executeQuery();
-            if (rs.next()) {
-                return true;
+            try (ResultSet rs = ps.executeQuery()) {
+                // Recorremos el resultado y vamos añadiendo filas al modelo
+                while (rs.next()) {
+                    Object[] row = {
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getString("correo"),
+                        rs.getString("telefono"),
+                        rs.getInt("dni")
+                    };
+                    model.addRow(row);
+                }
             }
+
+            // Asignamos el modelo (con 0 o más filas) al JTable
+            tablaClientes.setModel(model);
+
+            // Si no hay filas, avisamos al usuario
+            if (model.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(
+                    tablaClientes,
+                    "No se encontró ningún cliente con DNI " + dni,
+                    "Búsqueda sin resultados",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+
         } catch (SQLException e) {
-            System.err.println("El cliente no existe: " + e.getMessage());
-            return false;
+            JOptionPane.showMessageDialog(
+                tablaClientes,
+                "Error al cargar los datos del cliente:\n" + e.getMessage(),
+                "Error de base de datos",
+                JOptionPane.ERROR_MESSAGE
+            );
         }
-        return true;
     }
     
     public boolean agregarVisita(int DNI){
         String sqlVisita = "INSERT INTO visitas (cliente_id, fecha) " +
-            "VALUES ((?),NOW())";
+            "VALUES (?,NOW())";
         
-        String sqlBusquedaDNI = "SELECT c.persona_id from clientes c where dni = (?)";
+        String sqlBusquedaDNI = "SELECT c.persona_id from clientes c where dni = ?";
         
         try (Connection conn = ConexionDB.obtenerConexion();
              PreparedStatement pstmtBusquedaDNI = conn.prepareStatement(sqlBusquedaDNI)) {
@@ -91,5 +124,56 @@ public class ClienteDAO {
             return false;
         }
         return true;
+    }
+        public void buscarVisita(int dni, JTable tablaVisitas) {
+        // Definimos los nombres de columna
+        String[] columnNames = { "Nombre", "Apellido", "Fecha"};
+        // Modelo vacío con las columnas
+        DefaultTableModel model = new DefaultTableModel(null, columnNames);
+
+        String sql = "SELECT p.nombre, p.apellido, v.fecha " +
+                     "FROM visitas v " +
+                     "JOIN personas p ON p.id = v.cliente_id " +
+                     "JOIN clientes c ON v.cliente_id = c.persona_id " +
+                     "WHERE c.dni = ?";
+
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, dni);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                // Recorremos el resultado y vamos añadiendo filas al modelo
+                while (rs.next()) {
+                    Object[] row = {
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getDate("fecha")
+                    };
+                    model.addRow(row);
+                }
+            }
+
+            // Asignamos el modelo (con 0 o más filas) al JTable
+            tablaVisitas.setModel(model);
+
+            // Si no hay filas, avisamos al usuario
+            if (model.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(
+                    tablaVisitas,
+                    "No se encontró ningúna visitas del cliente con DNI " + dni,
+                    "Búsqueda sin resultados",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(
+                tablaVisitas,
+                "Error al cargar los datos del cliente:\n" + e.getMessage(),
+                "Error de base de datos",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 }

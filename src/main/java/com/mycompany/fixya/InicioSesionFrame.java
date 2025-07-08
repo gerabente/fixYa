@@ -9,7 +9,6 @@ public class InicioSesionFrame extends JFrame {
      * Creates new form InicioSesion
      */
     public InicioSesionFrame() {
-        this.CrearCuentaFrame = CrearCuentaFrame;
         auth = new Autenticacion();
         initComponents();
     }
@@ -116,7 +115,7 @@ public class InicioSesionFrame extends JFrame {
 
     private void crearCuentaBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaBtnMousePressed
         // TODO add your handling code here:
-        CrearCuentaFrame.setVisible(true);
+        new CrearCuentaFrame().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_crearCuentaBtnMousePressed
 

@@ -22,9 +22,6 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
      */
     public MenuVehiculoFrame() {
            initComponents();
-    this.MenuPrincipalFrame = new MenuPrincipalFrame();
-    
-    
     }
 
     /**
@@ -105,7 +102,7 @@ public class MenuVehiculoFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuPrincipalFrame.setVisible(true);
+        new MenuPrincipalFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 

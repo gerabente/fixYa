@@ -165,6 +165,8 @@ public class CrearClienteFrame extends javax.swing.JFrame {
         boolean insertarCliente = clienteDAO.insertarCliente(cliente);
         if (insertarCliente) {
             JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
+            MenuClienteFrame.setVisible(true);
+            dispose();
         }
     }
     /**

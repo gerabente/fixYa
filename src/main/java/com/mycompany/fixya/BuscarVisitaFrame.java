@@ -3,19 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.fixya;
-
+import javax.swing.JFrame;
 /**
  *
  * @author estebanpardo
  */
 public class BuscarVisitaFrame extends javax.swing.JFrame {
-    
+    private ClienteDAO clienteDAO = new ClienteDAO();
+    private JFrame MenuClienteFrame;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVisitaFrame.class.getName());
 
     /**
      * Creates new form BuscarVisitaFrame
      */
     public BuscarVisitaFrame() {
+        this.clienteDAO = clienteDAO;
         initComponents();
     }
 
@@ -30,9 +32,11 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         volverBtn = new javax.swing.JButton();
-        BuscarVisitaBtn = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        buscarVisitaBtn = new javax.swing.JButton();
+        dniField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        visitasTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,22 +53,37 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
         });
         jPanel1.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        BuscarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
-        BuscarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        BuscarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
-        BuscarVisitaBtn.setText("Buscar Visita ");
-        BuscarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BuscarVisitaBtn.setBorderPainted(false);
-        BuscarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
+        buscarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        buscarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        buscarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        buscarVisitaBtn.setText("Buscar Visita ");
+        buscarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        buscarVisitaBtn.setBorderPainted(false);
+        buscarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarVisitaBtnActionPerformed(evt);
+                buscarVisitaBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(BuscarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 230, 60));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 480, 60));
+        jPanel1.add(buscarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 230, 60));
+        jPanel1.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 480, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 570));
+
+        visitasTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(visitasTable);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 480, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,15 +106,20 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        //MenuVehiculoFrame.setVisible(true);
-        //dispose();
+        new MenuClienteFrame().setVisible(true);
+        dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
-    private void BuscarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarVisitaBtnActionPerformed
+    private void buscarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarVisitaBtnActionPerformed
         // TODO add your handling code here:
+        buscarVisita();
+    }//GEN-LAST:event_buscarVisitaBtnActionPerformed
 
-    }//GEN-LAST:event_BuscarVisitaBtnActionPerformed
-
+    private void buscarVisita(){
+        String dniString = dniField.getText();
+        int dni = Integer.parseInt(dniString);
+        clienteDAO.buscarVisita(dni,visitasTable);
+    }
     /**
      * @param args the command line arguments
      */
@@ -122,10 +146,12 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BuscarVisitaBtn;
+    private javax.swing.JButton buscarVisitaBtn;
+    private javax.swing.JTextField dniField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable visitasTable;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

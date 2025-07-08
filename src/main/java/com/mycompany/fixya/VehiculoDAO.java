@@ -1,6 +1,8 @@
 package com.mycompany.fixya;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -9,7 +11,7 @@ public class VehiculoDAO {
     
     public boolean insertarVehiculo (Vehiculo vehiculo, int DNI){
         String sqlBusquedaID = "SELECT c.persona_id from clientes c where dni = (?)";
-        String sqlVehiculo = "INSERT INTO vehiculos v (cliente_id, chapa, fabricante, modelo, anio, fecha_registro "
+        String sqlVehiculo = "INSERT INTO vehiculos (cliente_id, chapa, fabricante, modelo, anio, fecha_registro) "
                 + " VALUES (?, ?, ?, ?, ?, NOW())";
         try (Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement pstmtBusquedaID = conn.prepareStatement(sqlBusquedaID)){
@@ -45,7 +47,7 @@ public class VehiculoDAO {
      * @param chapa La chapa del vehículo a buscar.
      * @return DefaultTableModel con las columnas: Fabricante, Modelo, Año, Chapa, Nombre, Apellido, DNI.
      */
-    public DefaultTableModel buscarVehiculo(String chapa) {
+    public void buscarVehiculo(String chapa, JTable tablaVehiculos) {
         String sql = "SELECT v.fabricante, v.modelo, v.anio, v.chapa, "
                    + "p.nombre, p.apellido, c.dni "
                    + "FROM vehiculos v "
@@ -55,7 +57,7 @@ public class VehiculoDAO {
 
         // Definir los nombres de columna
         String[] columnas = {"Fabricante","Modelo","Año","Chapa","Nombre","Apellido","DNI"};
-        DefaultTableModel model = new DefaultTableModel(columnas, 0) {
+        DefaultTableModel model = new DefaultTableModel(null, columnas) {
             @Override
             public boolean isCellEditable(int row, int col) {
                 return false;
@@ -80,11 +82,18 @@ public class VehiculoDAO {
                     model.addRow(fila);
                 }
             }
-
+            tablaVehiculos.setModel(model);
+            // Si no hay filas, avisamos al usuario
+            if (model.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(
+                    tablaVehiculos,
+                    "No se encontró ningún vehiculo con chapa " + chapa,
+                    "Búsqueda sin resultados",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
         } catch (SQLException e) {
             System.err.println("Error al buscar el vehículo: " + e.getMessage());
         }
-
-        return model;
     }
 }

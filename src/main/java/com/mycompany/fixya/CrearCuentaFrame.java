@@ -9,7 +9,6 @@ public class CrearCuentaFrame extends JFrame {
      * Creates new form CrearCuenta
      */
     public CrearCuentaFrame() {
-        this.InicioSesionFrame = InicioSesionFrame;
         auth = new Autenticacion();
         initComponents();
     }
@@ -123,14 +122,14 @@ public class CrearCuentaFrame extends JFrame {
 
     private void volverBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverBtnMousePressed
         // TODO add your handling code here:
-            InicioSesionFrame.setVisible(true);
-            setVisible(false);
+            new InicioSesionFrame().setVisible(true);
+            dispose();
     }//GEN-LAST:event_volverBtnMousePressed
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-            InicioSesionFrame.setVisible(true);
-            setVisible(false);
+            new InicioSesionFrame().setVisible(true);
+            dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
 
     private void crearCuentaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaBtnActionPerformed
@@ -156,8 +155,8 @@ public class CrearCuentaFrame extends JFrame {
         boolean creado = auth.registrarUsuario(nombre, apellido, correo, telefono, nombreUsuario, contrasena);
         if (creado) {
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
-            if (InicioSesionFrame != null) InicioSesionFrame.setVisible(true);
-            setVisible(false);
+            new InicioSesionFrame().setVisible(true);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
         }

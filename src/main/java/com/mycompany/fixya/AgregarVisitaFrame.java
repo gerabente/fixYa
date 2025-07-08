@@ -19,7 +19,6 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
      * Creates new form AgregarVistaFram
      */
     public AgregarVisitaFrame() {
-     this.MenuClienteFrame= new MenuClienteFrame();
      clienteDAO = new ClienteDAO();
         initComponents();
     }
@@ -107,7 +106,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuClienteFrame.setVisible(true);
+        new MenuClienteFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
     
@@ -117,6 +116,8 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         boolean agregar = clienteDAO.agregarVisita(DNI);
         if (agregar){
             JOptionPane.showMessageDialog(this, "Visita al cliente agregada");
+            new MenuClienteFrame().setVisible(true);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo agregar la visita", "Error", JOptionPane.ERROR_MESSAGE);
         }
