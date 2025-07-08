@@ -29,12 +29,39 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        volverBtn = new javax.swing.JButton();
+        BuscarVisitaBtn = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+
+        BuscarVisitaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        BuscarVisitaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        BuscarVisitaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        BuscarVisitaBtn.setText("Buscar Visita ");
+        BuscarVisitaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BuscarVisitaBtn.setBorderPainted(false);
+        BuscarVisitaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarVisitaBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BuscarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 230, 60));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 480, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 570));
@@ -57,6 +84,17 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
+        // TODO add your handling code here:
+        //MenuVehiculoFrame.setVisible(true);
+        //dispose();
+    }//GEN-LAST:event_volverBtnActionPerformed
+
+    private void BuscarVisitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarVisitaBtnActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_BuscarVisitaBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,7 +122,10 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuscarVisitaBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

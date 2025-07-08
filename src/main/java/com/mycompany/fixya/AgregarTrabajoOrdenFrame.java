@@ -28,13 +28,64 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        IngresarChapaBtn = new javax.swing.JButton();
+        AgregarTrabajoBtn = new javax.swing.JButton();
+        volverBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField1.setToolTipText("");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 190, 50));
+
+        IngresarChapaBtn.setBackground(new java.awt.Color(51, 102, 255));
+        IngresarChapaBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        IngresarChapaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        IngresarChapaBtn.setText("Ingresar");
+        IngresarChapaBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        IngresarChapaBtn.setBorderPainted(false);
+        IngresarChapaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarChapaBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(IngresarChapaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 180, 40));
+
+        AgregarTrabajoBtn.setBackground(new java.awt.Color(51, 102, 255));
+        AgregarTrabajoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        AgregarTrabajoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AgregarTrabajoBtn.setText("Agregar Trabajo ");
+        AgregarTrabajoBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AgregarTrabajoBtn.setBorderPainted(false);
+        AgregarTrabajoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarTrabajoBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AgregarTrabajoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, 220, 50));
+
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
@@ -57,6 +108,26 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
+        // TODO add your handling code here:
+        //MenuVehiculoFrame.setVisible(true);
+        //dispose();
+    }//GEN-LAST:event_volverBtnActionPerformed
+
+    private void IngresarChapaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarChapaBtnActionPerformed
+        // TODO add your handling code here:
+        // agregarVisita();
+    }//GEN-LAST:event_IngresarChapaBtnActionPerformed
+
+    private void AgregarTrabajoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarTrabajoBtnActionPerformed
+        // TODO add your handling code here:
+        // agregarVisita();
+    }//GEN-LAST:event_AgregarTrabajoBtnActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,7 +155,12 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AgregarTrabajoBtn;
+    private javax.swing.JButton IngresarChapaBtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }
