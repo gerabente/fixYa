@@ -1,21 +1,22 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.mycompany.fixya;
-
-import javax.swing.JFrame;
 
 /**
  *
- * @author Tote
+ * @author estebanpardo
  */
-public class MenuOrdenesFrame extends javax.swing.JFrame {
-    private JFrame MenuOrdenesFrame;
+public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CambiarEstadoOrdenFrame.class.getName());
 
     /**
-     * Creates new form MenuOrdenesFrame
+     * Creates new form CambiarEstadoOrdenFrame
      */
-    public MenuOrdenesFrame() {
+    public CambiarEstadoOrdenFrame() {
         initComponents();
-        this.MenuOrdenesFrame= new MenuOrdenesFrame();
     }
 
     /**
@@ -35,7 +36,7 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menu Orden.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cambiar Estado Orden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -73,23 +74,13 @@ public class MenuOrdenesFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuOrdenesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuOrdenesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuOrdenesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuOrdenesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuOrdenesFrame().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new CambiarEstadoOrdenFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

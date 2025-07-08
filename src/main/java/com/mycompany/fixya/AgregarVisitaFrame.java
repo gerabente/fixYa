@@ -75,7 +75,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
         });
         bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 390, 50));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarVisitaCliente.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarVisitaCliente (1).png"))); // NOI18N
         imagen.setText("jLabel1");
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 580));
 

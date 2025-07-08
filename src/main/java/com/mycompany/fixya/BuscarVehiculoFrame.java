@@ -55,7 +55,7 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
         buscarBtn.setBorderPainted(false);
         getContentPane().add(buscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 220, 50));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarVehiculo.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarVehiculo (1).png"))); // NOI18N
         getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 580));
 
         pack();
