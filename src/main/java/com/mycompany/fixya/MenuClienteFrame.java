@@ -37,6 +37,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         volverBtn.setForeground(new java.awt.Color(255, 255, 255));
         volverBtn.setText("Volver");
         volverBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -49,7 +50,7 @@ public class MenuClienteFrame extends javax.swing.JFrame {
                 volverBtnActionPerformed(evt);
             }
         });
-        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
 
         crearClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
         crearClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

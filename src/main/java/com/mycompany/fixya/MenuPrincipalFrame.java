@@ -37,7 +37,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         salirBtn.setBackground(new java.awt.Color(255, 51, 51));
-        salirBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        salirBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         salirBtn.setForeground(new java.awt.Color(255, 255, 255));
         salirBtn.setText("SALIR");
         salirBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -45,7 +45,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
                 salirBtnActionPerformed(evt);
             }
         });
-        bg.add(salirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        bg.add(salirBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
 
         menuClienteBtn.setBackground(new java.awt.Color(51, 102, 255));
         menuClienteBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

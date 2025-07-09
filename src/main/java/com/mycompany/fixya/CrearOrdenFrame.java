@@ -44,6 +44,7 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
         jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 390, 50));
 
         volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         volverBtn.setForeground(new java.awt.Color(255, 255, 255));
         volverBtn.setText("Volver");
         volverBtn.addActionListener(new java.awt.event.ActionListener() {

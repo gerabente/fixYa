@@ -34,6 +34,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         verTrabajosBtn = new javax.swing.JButton();
         chapaField = new javax.swing.JTextField();
         buscarOrdenBtn = new javax.swing.JButton();
+        volverBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenesTable = new javax.swing.JTable();
@@ -41,7 +42,6 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         trabajosTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1020, 570));
 
         bg.setPreferredSize(new java.awt.Dimension(1020, 570));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,6 +73,17 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
             }
         });
         bg.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 40));
+
+        volverBtn.setBackground(new java.awt.Color(102, 102, 102));
+        volverBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        volverBtn.setForeground(new java.awt.Color(255, 255, 255));
+        volverBtn.setText("Volver");
+        volverBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverBtnActionPerformed(evt);
+            }
+        });
+        bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TrabajosDeLaOrden.png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -130,6 +141,12 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         buscarOrden();
     }//GEN-LAST:event_buscarOrdenBtnActionPerformed
+
+    private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
+        // TODO add your handling code here:
+        new MenuOrdenesFrame().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_volverBtnActionPerformed
     
     private void buscarOrden(){
         String chapa = chapaField.getText();
@@ -187,5 +204,6 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
     private javax.swing.JTable ordenesTable;
     private javax.swing.JTable trabajosTable;
     private javax.swing.JButton verTrabajosBtn;
+    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }

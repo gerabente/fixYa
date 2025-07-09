@@ -74,7 +74,7 @@ public class OrdenDAO {
                         rs.getString("fabricante"),
                         rs.getString("modelo"),
                         rs.getDate("fecha_creacion"),
-                        rs.getString("fecha_cierre"),
+                        rs.getDate("fecha_cierre"),
                         rs.getDouble("Monto")
                     };
                     model.addRow(fila);
