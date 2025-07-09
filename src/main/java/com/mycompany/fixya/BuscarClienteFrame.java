@@ -57,8 +57,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         });
         bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        dniField.setBackground(new java.awt.Color(255, 255, 255));
-        dniField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dniField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         dniField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dniFieldActionPerformed(evt);

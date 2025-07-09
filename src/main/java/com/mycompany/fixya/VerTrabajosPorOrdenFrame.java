@@ -45,7 +45,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
 
         bg.setPreferredSize(new java.awt.Dimension(1020, 570));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        bg.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 150, 50));
+        bg.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 130, 30));
 
         verTrabajosBtn.setBackground(new java.awt.Color(51, 102, 255));
         verTrabajosBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -58,8 +58,8 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
                 verTrabajosBtnActionPerformed(evt);
             }
         });
-        bg.add(verTrabajosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 160, 40));
-        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 180, 50));
+        bg.add(verTrabajosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 160, 40));
+        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 180, 40));
 
         buscarOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         buscarOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -85,7 +85,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         });
         bg.add(volverBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TrabajosDeLaOrden.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden (1).png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         ordenesTable.setModel(new javax.swing.table.DefaultTableModel(

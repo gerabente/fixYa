@@ -33,7 +33,6 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
         volverBtn = new javax.swing.JButton();
         buscarOrdenBtn = new javax.swing.JButton();
         chapaField = new javax.swing.JTextField();
-        ocultarFondoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenesTable = new javax.swing.JTable();
@@ -74,22 +73,6 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
             }
         });
         bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 390, 60));
-
-        ocultarFondoPanel.setBackground(new java.awt.Color(255, 255, 255));
-        ocultarFondoPanel.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout ocultarFondoPanelLayout = new javax.swing.GroupLayout(ocultarFondoPanel);
-        ocultarFondoPanel.setLayout(ocultarFondoPanelLayout);
-        ocultarFondoPanelLayout.setHorizontalGroup(
-            ocultarFondoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
-        );
-        ocultarFondoPanelLayout.setVerticalGroup(
-            ocultarFondoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-
-        bg.add(ocultarFondoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 430, 260));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden (1).png"))); // NOI18N
@@ -177,7 +160,6 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
     private javax.swing.JTextField chapaField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel ocultarFondoPanel;
     private javax.swing.JTable ordenesTable;
     private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables

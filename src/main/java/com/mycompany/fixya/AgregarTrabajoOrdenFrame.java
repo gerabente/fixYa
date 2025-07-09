@@ -55,10 +55,10 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         descripcionField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(descripcionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 300, 80));
+        jPanel1.add(descripcionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 290, 70));
 
         costoField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(costoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, 210, 50));
+        jPanel1.add(costoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 210, 40));
 
         chapaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         chapaField.setToolTipText("");
@@ -67,10 +67,10 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
                 chapaFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 190, 50));
+        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 190, 40));
 
         idOrdenField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(idOrdenField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 190, 50));
+        jPanel1.add(idOrdenField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 280, 40));
 
         buscarOrden.setBackground(new java.awt.Color(51, 102, 255));
         buscarOrden.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -83,7 +83,7 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
                 buscarOrdenActionPerformed(evt);
             }
         });
-        jPanel1.add(buscarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 180, 40));
+        jPanel1.add(buscarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 180, 40));
 
         agregarTrabajoBtn.setBackground(new java.awt.Color(51, 102, 255));
         agregarTrabajoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N

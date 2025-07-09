@@ -91,7 +91,7 @@ public class MenuPrincipalFrame extends javax.swing.JFrame {
         });
         bg.add(menuOrdenesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 120, 30));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Menuprincipal.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearCuenta2 (1).png"))); // NOI18N
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -61,19 +61,24 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
                 fabricanteFieldActionPerformed(evt);
             }
         });
-        bg.add(fabricanteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 380, 50));
+        bg.add(fabricanteField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 380, 40));
 
         modeloField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modeloFieldActionPerformed(evt);
             }
         });
-        bg.add(modeloField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 380, 50));
-        bg.add(anioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 380, 50));
-        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 380, 50));
+        bg.add(modeloField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 380, 40));
+        bg.add(anioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 380, 40));
+        bg.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 330, 380, 40));
 
         dniField.setToolTipText("");
-        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, 380, 50));
+        dniField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dniFieldActionPerformed(evt);
+            }
+        });
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 380, 40));
 
         registrarVehiculoBtn.setBackground(new java.awt.Color(51, 102, 255));
         registrarVehiculoBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -85,9 +90,9 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
                 registrarVehiculoBtnActionPerformed(evt);
             }
         });
-        bg.add(registrarVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 220, 50));
+        bg.add(registrarVehiculoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 210, 40));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RegistrarVehiculo.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RegistrarVehiculo (1).png"))); // NOI18N
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,6 +130,10 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
         new MenuVehiculoFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
+
+    private void dniFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dniFieldActionPerformed
 
     public void registrarVehiculo(){
     String fabricante = fabricanteField.getText();

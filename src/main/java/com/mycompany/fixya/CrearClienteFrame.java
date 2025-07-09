@@ -89,7 +89,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 crearClienteBtnActionPerformed(evt);
             }
         });
-        bg.add(crearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 220, 50));
+        bg.add(crearClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 480, 200, 40));
 
         dniField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         dniField.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class CrearClienteFrame extends javax.swing.JFrame {
                 dniFieldActionPerformed(evt);
             }
         });
-        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 370, 40));
+        bg.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 370, 40));
 
         nombreField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombreField.addActionListener(new java.awt.event.ActionListener() {

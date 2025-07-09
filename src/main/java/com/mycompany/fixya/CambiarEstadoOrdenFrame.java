@@ -56,7 +56,7 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 ordenIdFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 210, 50));
+        jPanel1.add(ordenIdField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 180, 40));
 
         buscarOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         buscarOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -69,7 +69,7 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 buscarOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 40));
+        jPanel1.add(buscarOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 160, 40));
 
         estadosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Espera", "Proceso", "Terminada" }));
         estadosComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +77,7 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 estadosComboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(estadosComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 200, 50));
+        jPanel1.add(estadosComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 210, 40));
 
         chapaField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         chapaField.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 chapaFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 170, 50));
+        jPanel1.add(chapaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 180, 40));
 
         cambiarEstadoOrdenBtn.setBackground(new java.awt.Color(51, 102, 255));
         cambiarEstadoOrdenBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -98,9 +98,9 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
                 cambiarEstadoOrdenBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 220, 50));
+        jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AgregarTrabajoOrden.Mejoradopng.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden (2).png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
         ordenesTable.setModel(new javax.swing.table.DefaultTableModel(
