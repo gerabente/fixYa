@@ -33,9 +33,9 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
         volverBtn = new javax.swing.JButton();
         chapaField = new javax.swing.JTextField();
         buscarBtn = new javax.swing.JButton();
-        imagen = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         vehiculosTable = new javax.swing.JTable();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -66,23 +66,12 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
         });
         getContentPane().add(buscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 220, 50));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarVehiculo (1).png"))); // NOI18N
-        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 580));
-
-        vehiculosTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane1.setViewportView(vehiculosTable);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 281, 430, 230));
+
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarVehiculo (1).png"))); // NOI18N
+        getContentPane().add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 580));
 
         pack();
         setLocationRelativeTo(null);

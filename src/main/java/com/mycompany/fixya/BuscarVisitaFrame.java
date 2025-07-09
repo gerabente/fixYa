@@ -34,9 +34,9 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
         volverBtn = new javax.swing.JButton();
         buscarVisitaBtn = new javax.swing.JButton();
         dniField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         visitasTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -68,23 +68,12 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
         jPanel1.add(buscarVisitaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 230, 60));
         jPanel1.add(dniField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 480, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 570));
-
-        visitasTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane1.setViewportView(visitasTable);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 480, 220));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

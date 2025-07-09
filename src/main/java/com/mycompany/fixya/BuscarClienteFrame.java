@@ -36,9 +36,9 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         volverBtn = new javax.swing.JButton();
         dniField = new javax.swing.JTextField();
         buscarBtn = new javax.swing.JButton();
-        imagen = new javax.swing.JLabel();
         scrollPane = new javax.swing.JScrollPane();
         clientesTable = new javax.swing.JTable();
+        imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -78,23 +78,12 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
         });
         bg.add(buscarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 220, 50));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
-        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
-
-        clientesTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         scrollPane.setViewportView(clientesTable);
 
         bg.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 281, 480, 220));
+
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarCliente.png"))); // NOI18N
+        bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

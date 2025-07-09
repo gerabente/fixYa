@@ -30,9 +30,9 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
         estadosComboBox = new javax.swing.JComboBox<>();
         chapaField = new javax.swing.JTextField();
         cambiarEstadoOrdenBtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenesTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -100,23 +100,12 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
         });
         jPanel1.add(cambiarEstadoOrdenBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 220, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden (2).png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
-
-        ordenesTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
         jScrollPane1.setViewportView(ordenesTable);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 310, 160));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden (2).png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
