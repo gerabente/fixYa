@@ -100,7 +100,7 @@ public class CrearCuentaFrame extends JFrame {
         });
         bg.add(crearCuentaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 180, 40));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CrearCuenta.png"))); // NOI18N
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Nexus.png"))); // NOI18N
         bg.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
