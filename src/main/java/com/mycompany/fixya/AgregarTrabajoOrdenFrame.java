@@ -168,8 +168,9 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Completa todos los campos para agregar el trabajo a la orden", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             int idOrden = Integer.parseInt(idString);
-            int costo = Integer.parseInt(costoString);
-            boolean trabajoAgregado = trabajoDAO.insertarTrabajo(idOrden, descripcion, costo);
+            double costo = Double.parseDouble(costoString);
+            Trabajo trabajo = new Trabajo(descripcion,costo);
+            boolean trabajoAgregado = trabajoDAO.insertarTrabajo(idOrden, trabajo);
             if (trabajoAgregado) {
                 JOptionPane.showMessageDialog(this, "Trabajo agregado correctamente");
                 new MenuOrdenesFrame().setVisible(true);

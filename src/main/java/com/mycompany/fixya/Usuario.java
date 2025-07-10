@@ -15,13 +15,6 @@ public class Usuario extends Persona{
 
     }
 
-    public Usuario(String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion, String nombreUsuario, String contrasenaHash){
-        super(nombre, apellido , correo, telefono, fechaCreacion);
-        this.nombreUsuario = nombreUsuario;
-        this.contrasena = contrasenaHash;
-
-    }
-
     public String getNombreUsuario() {
         return nombreUsuario;
     }

@@ -7,18 +7,12 @@ public class Persona {
     private String apellido;
     private String correo;
     private String telefono;
-    private LocalDateTime fechaCreacion;
 
     public Persona(String nombre, String apellido, String correo, String telefono){
-        this(nombre, apellido, correo, telefono, LocalDateTime.now());
-    }
-
-    public Persona(String nombre, String apellido, String correo, String telefono, LocalDateTime fechaCreacion){
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.telefono = telefono;
-        this.fechaCreacion = fechaCreacion;
 
     }
     //Metodo para desplegar informacion esencial de la persona
@@ -57,13 +51,4 @@ public class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
 }
