@@ -48,8 +48,13 @@ public class ClienteDAO {
         // Definimos los nombres de columna
         String[] columnNames = { "Nombre", "Apellido", "Correo", "Teléfono", "DNI" };
         // Modelo vacío con las columnas
-        DefaultTableModel model = new DefaultTableModel(null, columnNames);
-
+        DefaultTableModel model = new DefaultTableModel(null, columnNames){
+            @Override
+            public boolean isCellEditable(int row, int col){
+                return false;
+            }
+        };
+        
         String sql = "SELECT p.nombre, p.apellido, p.correo, p.telefono, c.dni " +
                      "FROM personas p " +
                      "JOIN clientes c ON p.id = c.persona_id " +
@@ -131,8 +136,12 @@ public class ClienteDAO {
         // Definimos los nombres de columna
         String[] columnNames = { "Nombre", "Apellido", "Fecha"};
         // Modelo vacío con las columnas
-        DefaultTableModel model = new DefaultTableModel(null, columnNames);
-
+        DefaultTableModel model = new DefaultTableModel(null, columnNames){
+            @Override
+            public boolean isCellEditable(int row, int col){
+                return false;
+            }
+        };
         String sql = "SELECT p.nombre, p.apellido, v.fecha " +
                      "FROM visitas v " +
                      "JOIN personas p ON p.id = v.cliente_id " +

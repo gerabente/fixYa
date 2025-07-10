@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * @author estebanpardo
  */
 public class BuscarVisitaFrame extends javax.swing.JFrame {
-    private ClienteDAO clienteDAO = new ClienteDAO();
+    private ClienteDAO clienteDAO;
     private JFrame MenuClienteFrame;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVisitaFrame.class.getName());
 
@@ -17,7 +17,7 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
      * Creates new form BuscarVisitaFrame
      */
     public BuscarVisitaFrame() {
-        this.clienteDAO = clienteDAO;
+        this.clienteDAO = new ClienteDAO();
         initComponents();
     }
 
@@ -70,7 +70,7 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(visitasTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 480, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 490, 220));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BuscarOrden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 570));
@@ -106,7 +106,7 @@ public class BuscarVisitaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarVisitaBtnActionPerformed
 
     private void buscarVisita(){
-        String dniString = dniField.getText();
+        String dniString = dniField.getText().trim();
         int dni = Integer.parseInt(dniString);
         clienteDAO.buscarVisita(dni,visitasTable);
     }

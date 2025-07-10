@@ -3,14 +3,14 @@ package com.mycompany.fixya;
 import javax.swing.JOptionPane;
 
 public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
-    private OrdenDAO ordenDAO = new OrdenDAO();
+    private OrdenDAO ordenDAO;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CambiarEstadoOrdenFrame.class.getName());
 
     /**
      * Creates new form CambiarEstadoOrdenFrame
      */
     public CambiarEstadoOrdenFrame() {
-        this.ordenDAO = ordenDAO;
+        this.ordenDAO = new OrdenDAO();
         initComponents();
     }
 
@@ -154,46 +154,52 @@ public class CambiarEstadoOrdenFrame extends javax.swing.JFrame {
         cambiarEstadoOrden();
     }//GEN-LAST:event_cambiarEstadoOrdenBtnActionPerformed
     private void buscarOrden(){
-    String chapa = chapaField.getText();
+    String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
     ordenDAO.buscarOrdenSimple(chapa, ordenesTable);
 }
     private void cambiarEstadoOrden(){
-        String ordenIdString = ordenIdField.getText();
-        int ordenId = Integer.parseInt(ordenIdString);
+        String ordenIdString = ordenIdField.getText().trim();
         int opcionEstado = estadosComboBox.getSelectedIndex() + 1;
-        if (opcionEstado==1){
-            boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId,opcionEstado);
-            if (cambio) {
-            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Espera' ");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
-            }else{
-            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
-            }
-        }else if (opcionEstado==2){
+        if (ordenIdString.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Completa con el N° de Orden para cambiar el estado", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            if (opcionEstado==1){
+                int ordenId = Integer.parseInt(ordenIdString);
+                boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId,opcionEstado);
+                if (cambio) {
+                JOptionPane.showMessageDialog(this, "La orden se cambio a 'Espera' ");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }else{
+                JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }
+            }else if (opcionEstado==2){
+                int ordenId = Integer.parseInt(ordenIdString);
+                boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId, opcionEstado);
+                if (cambio) {
+                JOptionPane.showMessageDialog(this, "La orden se cambio a 'Proceso' ");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }else{
+                JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }
+            }else if (opcionEstado==3){
+            int ordenId = Integer.parseInt(ordenIdString);
             boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId, opcionEstado);
-            if (cambio) {
-            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Proceso' ");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
-            }else{
-            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
-            }
-        }else if (opcionEstado==3){
-        boolean cambio = ordenDAO.cambiarEstadoOrden(ordenId, opcionEstado);
-        ordenDAO.cerrarOrden(ordenId);
-            if (cambio) {
-            JOptionPane.showMessageDialog(this, "La orden se cambio a 'Terminada' ");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
-            }else{
-            JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
+            ordenDAO.cerrarOrden(ordenId);
+                if (cambio) {
+                JOptionPane.showMessageDialog(this, "La orden se cambio a 'Terminada' ");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }else{
+                JOptionPane.showMessageDialog(this, "No se ha podido cambiar el estado de la orden");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+                }
             }
         }
     }

@@ -118,7 +118,7 @@ public class BuscarClienteFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dniFieldActionPerformed
 
     private void buscarCliente(){
-        String DNIString = dniField.getText();
+        String DNIString = dniField.getText().trim();
         int DNI = Integer.parseInt(DNIString);
         clienteDAO.buscarCliente(DNI,clientesTable);
     }

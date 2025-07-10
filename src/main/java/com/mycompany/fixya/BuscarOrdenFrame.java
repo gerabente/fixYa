@@ -9,14 +9,14 @@ package com.mycompany.fixya;
  * @author estebanpardo
  */
 public class BuscarOrdenFrame extends javax.swing.JFrame {
-    private OrdenDAO ordenDAO = new OrdenDAO();
+    private OrdenDAO ordenDAO;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarOrdenFrame.class.getName());
 
     /**
      * Creates new form BuscarOrdenFrame
      */
     public BuscarOrdenFrame() {
-        this.ordenDAO = ordenDAO;
+        this.ordenDAO = new OrdenDAO();
         initComponents();
     }
 
@@ -115,7 +115,7 @@ public class BuscarOrdenFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_chapaFieldActionPerformed
     
     private void buscarOrden(){
-        String chapa = chapaField.getText();
+        String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
         ordenDAO.buscarOrden(chapa, ordenesTable);
     }
     /**

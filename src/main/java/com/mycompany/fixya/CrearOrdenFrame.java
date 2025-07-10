@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  * @author estebanpardo
  */
 public class CrearOrdenFrame extends javax.swing.JFrame {
-    private OrdenDAO ordenDAO = new OrdenDAO();
+    private OrdenDAO ordenDAO;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CrearOrdenFrame.class.getName());
 
     /**
      * Creates new form CrearOrdenFrame
      */
     public CrearOrdenFrame() {
-        this.ordenDAO = ordenDAO;
+        this.ordenDAO = new OrdenDAO();
         initComponents();
     }
 
@@ -101,7 +101,7 @@ public class CrearOrdenFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_crearOrdenBtnActionPerformed
 
     private void crearOrden(){
-        String chapa = chapaField.getText();
+        String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
         boolean ordenCreada = ordenDAO.insertarOrden(chapa);
         if (ordenCreada){
         JOptionPane.showMessageDialog(this, "Orden creada correctamente");

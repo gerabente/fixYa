@@ -145,21 +145,25 @@ public class CrearCuentaFrame extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_apellidoFieldActionPerformed
     private void registrarUsuario() {
-        String nombre = nombreUsuarioField.getText();
-        String apellido = apellidoField.getText();
-        String correo = correoField.getText();
-        String telefono = telefonoField.getText();
-        String nombreUsuario = nombreUsuarioField.getText();
-        String contrasena = new String(contrasenaPasswordField.getPassword());
-
-        boolean creado = auth.registrarUsuario(nombre, apellido, correo, telefono, nombreUsuario, contrasena);
-        if (creado) {
+        String nombre = nombreField.getText().trim();
+        String apellido = apellidoField.getText().trim();
+        String correo = correoField.getText().trim();
+        String telefono = telefonoField.getText().trim();
+        String nombreUsuario = nombreUsuarioField.getText().trim();
+        String contrasena = new String(contrasenaPasswordField.getPassword()).trim();
+        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || telefono.isEmpty() || nombreUsuario.isEmpty() || contrasena.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Completa todos los campos para crear el usuario", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            boolean creado = auth.registrarUsuario(nombre, apellido, correo, telefono, nombreUsuario, contrasena);
+            if (creado) {
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente");
             new InicioSesionFrame().setVisible(true);
             dispose();
-        } else {
+            } else {
             JOptionPane.showMessageDialog(this, "No se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
+        
     }
     /**
      * @param args the command line arguments

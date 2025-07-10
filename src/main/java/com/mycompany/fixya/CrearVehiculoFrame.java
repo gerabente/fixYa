@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  */
 public class CrearVehiculoFrame extends javax.swing.JFrame {
     private JFrame MenuVehiculoFrame;
-    private VehiculoDAO vehiculoDAO = new VehiculoDAO();
+    private VehiculoDAO vehiculoDAO;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CrearVehiculoFrame.class.getName());
 
     /**
      * Creates new form CrearVehiculoFrame
      */
     public CrearVehiculoFrame() {
-        this.vehiculoDAO = vehiculoDAO;
+        this.vehiculoDAO = new VehiculoDAO();
         initComponents();
     }
 
@@ -136,21 +136,25 @@ public class CrearVehiculoFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_dniFieldActionPerformed
 
     public void registrarVehiculo(){
-    String fabricante = fabricanteField.getText();
-    String chapa = chapaField.getText();
-    String modelo = modeloField.getText();
-    String anioString = anioField.getText();
-    int anio = Integer.parseInt(anioString);
-    String dniString = dniField.getText();
-    int dni = Integer.parseInt(dniString);
-    Vehiculo vehiculo = new Vehiculo(chapa,fabricante,modelo,anio);
-    boolean insertarVehiculo = vehiculoDAO.insertarVehiculo(vehiculo, dni);
-    if (insertarVehiculo){
-        JOptionPane.showMessageDialog(this, "Vehiculo registrado correctamente");
-            new MenuVehiculoFrame().setVisible(true);
-            dispose();
+    String fabricante = fabricanteField.getText().trim();
+    String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
+    String modelo = modeloField.getText().trim();
+    String anioString = anioField.getText().trim();
+    String dniString = dniField.getText().trim();
+    if (fabricante.isEmpty() || chapa.isEmpty() || modelo.isEmpty() || anioString.isEmpty() || dniString.isEmpty()){
+        JOptionPane.showMessageDialog(this, "Completa todos los campos para registrar el vehiculo", "Erorr", JOptionPane.ERROR_MESSAGE);
     }else{
-        JOptionPane.showMessageDialog(this, "El vehiculo no se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
+        int anio = Integer.parseInt(anioString);
+        int dni = Integer.parseInt(dniString);
+        Vehiculo vehiculo = new Vehiculo(chapa,fabricante,modelo,anio);
+        boolean insertarVehiculo = vehiculoDAO.insertarVehiculo(vehiculo, dni);
+        if (insertarVehiculo){
+            JOptionPane.showMessageDialog(this, "Vehiculo registrado correctamente");
+                new MenuVehiculoFrame().setVisible(true);
+                dispose();
+        }else{
+            JOptionPane.showMessageDialog(this, "El vehiculo no se pudo registrar", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
     /**

@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
  * @author estebanpardo
  */
 public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
-    private OrdenDAO ordenDAO = new OrdenDAO();
-    private TrabajoDAO trabajoDAO = new TrabajoDAO();
+    private OrdenDAO ordenDAO;
+    private TrabajoDAO trabajoDAO;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AgregarTrabajoOrdenFrame.class.getName());
 
@@ -20,8 +20,8 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
      * Creates new form AgregarTrabajoOrdenFrame
      */
     public AgregarTrabajoOrdenFrame() {
-        this.ordenDAO = ordenDAO;
-        this.trabajoDAO = trabajoDAO;
+        this.ordenDAO = new OrdenDAO();
+        this.trabajoDAO = new TrabajoDAO();
         initComponents();
     }
 
@@ -111,7 +111,7 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(ordenesTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 290, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 300, 130));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 570));
@@ -156,25 +156,29 @@ public class AgregarTrabajoOrdenFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_chapaFieldActionPerformed
 
     private void buscarOrden(){
-        String chapa = chapaField.getText();
+        String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
         ordenDAO.buscarOrdenSimple(chapa,ordenesTable);
     }
     
     private void agregarTrabajoOrden(){
-        String idString = idOrdenField.getText();
-        int idOrden = Integer.parseInt(idString);
-        String descripcion = descripcionField.getText();
-        String costoString = costoField.getText();
-        int costo = Integer.parseInt(costoString);
-        boolean trabajoAgregado = trabajoDAO.insertarTrabajo(idOrden, descripcion, costo);
-        if (trabajoAgregado) {
-            JOptionPane.showMessageDialog(this, "Trabajo agregado correctamente");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
+        String idString = idOrdenField.getText().trim();
+        String descripcion = descripcionField.getText().trim();
+        String costoString = costoField.getText().trim();
+        if (idString.isEmpty() || descripcion.isEmpty() || costoString.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Completa todos los campos para agregar el trabajo a la orden", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(this, "El trabajo no se ha podido agregar");
-            new MenuOrdenesFrame().setVisible(true);
-            dispose();
+            int idOrden = Integer.parseInt(idString);
+            int costo = Integer.parseInt(costoString);
+            boolean trabajoAgregado = trabajoDAO.insertarTrabajo(idOrden, descripcion, costo);
+            if (trabajoAgregado) {
+                JOptionPane.showMessageDialog(this, "Trabajo agregado correctamente");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(this, "El trabajo no se ha podido agregar");
+                new MenuOrdenesFrame().setVisible(true);
+                dispose();
+            }
         }
     }
     /**

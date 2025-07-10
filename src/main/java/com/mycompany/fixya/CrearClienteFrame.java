@@ -18,7 +18,6 @@ public class CrearClienteFrame extends javax.swing.JFrame {
      */
     public CrearClienteFrame() {
         initComponents();
-        this.MenuClienteFrame= new MenuClienteFrame();
         clienteDAO = new ClienteDAO();
     }
 
@@ -152,26 +151,30 @@ public class CrearClienteFrame extends javax.swing.JFrame {
 
     private void volverBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBtnActionPerformed
         // TODO add your handling code here:
-        MenuClienteFrame.setVisible(true);
+        new MenuClienteFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverBtnActionPerformed
     private void registrarCliente(){
-        String nombre = nombreField.getText();
-        String apellido = apellidoField.getText();
-        String correo = correoField.getText();
-        String telefono = telefonoField.getText();
-        String DNIString = dniField.getText();
-        int DNI = Integer.parseInt(DNIString);
-        Cliente cliente = new Cliente(nombre,apellido,correo,telefono,DNI);
-        boolean insertarCliente = clienteDAO.insertarCliente(cliente);
-        if (insertarCliente) {
-            JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
-            MenuClienteFrame.setVisible(true);
-            dispose();
+        String nombre = nombreField.getText().trim();
+        String apellido = apellidoField.getText().trim();
+        String correo = correoField.getText().trim();
+        String telefono = telefonoField.getText().trim();
+        String DNIString = dniField.getText().trim();
+        if (nombre.isEmpty() || apellido.isEmpty() || correo.isEmpty() || telefono.isEmpty() || DNIString.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Completa todos los campos para crear un cliente", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(this, "El cliente no se ha podido registrar");
-            MenuClienteFrame.setVisible(true);
-            dispose();
+            int DNI = Integer.parseInt(DNIString);
+            Cliente cliente = new Cliente(nombre,apellido,correo,telefono,DNI);
+            boolean insertarCliente = clienteDAO.insertarCliente(cliente);
+            if (insertarCliente) {
+                JOptionPane.showMessageDialog(this, "Cliente registrado correctamente");
+                new MenuClienteFrame().setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(this, "El cliente no se ha podido registrar");
+                new MenuClienteFrame().setVisible(true);
+                dispose();
+            }
         }
     }
     /**

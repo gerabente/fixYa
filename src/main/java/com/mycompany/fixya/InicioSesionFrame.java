@@ -127,10 +127,10 @@ public class InicioSesionFrame extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contrasenaPasswordFieldActionPerformed
     private void realizarLogin() {
-        String usuario = nombreUsuarioField.getText();
+        String nombreUsuario = nombreUsuarioField.getText();
         String contrasena = new String(contrasenaPasswordField.getPassword());
 
-        Usuario u = auth.iniciarSesion(usuario, contrasena);
+        Usuario u = auth.iniciarSesion(nombreUsuario, contrasena);
         if (u != null) {
             JOptionPane.showMessageDialog(this, "Bienvenido " + u.getNombre());
             new MenuPrincipalFrame().setVisible(true);

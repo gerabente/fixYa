@@ -111,7 +111,7 @@ public class AgregarVisitaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_volverBtnActionPerformed
     
     private void agregarVisita(){
-        String DNIString = dniField.getText();
+        String DNIString = dniField.getText().trim();
         int DNI = Integer.parseInt(DNIString);
         boolean agregar = clienteDAO.agregarVisita(DNI);
         if (agregar){

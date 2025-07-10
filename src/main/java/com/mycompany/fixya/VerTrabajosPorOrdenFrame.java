@@ -4,19 +4,21 @@
  */
 package com.mycompany.fixya;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author PC
  */
 public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
-    private OrdenDAO ordenDAO = new OrdenDAO();
-    private TrabajoDAO trabajoDAO = new TrabajoDAO();
+    private OrdenDAO ordenDAO;
+    private TrabajoDAO trabajoDAO ;
     /**
      * Creates new form VerTrabajosPorOrdenFrame
      */
     public VerTrabajosPorOrdenFrame() {
-        this.ordenDAO = ordenDAO;
-        this.trabajoDAO = trabajoDAO;
+        this.ordenDAO = new OrdenDAO();
+        this.trabajoDAO = new TrabajoDAO();
         initComponents();
     }
 
@@ -42,6 +44,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         bg.setPreferredSize(new java.awt.Dimension(1020, 570));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,7 +94,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(trabajosTable);
 
-        bg.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 321, 510, 160));
+        bg.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 321, 520, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar Trabajo Orden (1).png"))); // NOI18N
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -108,6 +111,7 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void verTrabajosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verTrabajosBtnActionPerformed
@@ -127,14 +131,18 @@ public class VerTrabajosPorOrdenFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_volverBtnActionPerformed
     
     private void buscarOrden(){
-        String chapa = chapaField.getText();
+        String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
         ordenDAO.buscarOrdenSimple(chapa,ordenesTable);
     }
     
     private void verTrabajos(){
-        String ordenIdString = ordenIdField.getText();
-        int ordenId = Integer.parseInt(ordenIdString);
-        trabajoDAO.verTrabajos(ordenId,trabajosTable);
+        String ordenIdString = ordenIdField.getText().trim();
+        if (ordenIdString.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Completa con el N° de Orden para ver los trabajos realizados", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            int ordenId = Integer.parseInt(ordenIdString);
+            trabajoDAO.verTrabajos(ordenId,trabajosTable);
+        }
     }
     /**
      * @param args the command line arguments

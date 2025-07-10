@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class BuscarVehiculoFrame extends javax.swing.JFrame {
     private JFrame MenuVehiculoFrame;
-    private VehiculoDAO vehiculoDAO = new VehiculoDAO();
+    private VehiculoDAO vehiculoDAO;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BuscarVehiculoFrame.class.getName());
 
     /**
@@ -17,7 +17,7 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
      */
     public BuscarVehiculoFrame() {
         this.setContentPane(new imagenes());
-        this.vehiculoDAO = vehiculoDAO;
+        this.vehiculoDAO = new VehiculoDAO();
         initComponents();
     }
 
@@ -89,7 +89,7 @@ public class BuscarVehiculoFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void buscarVehiculo(){
-        String chapa = chapaField.getText();
+        String chapa = chapaField.getText().toUpperCase().replace(" ", "").trim();
         vehiculoDAO.buscarVehiculo(chapa,vehiculosTable);
     }
     /**
