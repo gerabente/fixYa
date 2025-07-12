@@ -1,5 +1,6 @@
 package com.mycompany.fixya;
 
+import DB.ConexionDB;
 import java.sql.*;
 
 public class UsuarioDAO {
